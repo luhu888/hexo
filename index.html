@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,62 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-hexo安装教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/21/hexo安装教程/" class="article-date">
+  <time datetime="2017-10-20T16:04:20.000Z" itemprop="datePublished">2017-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/21/hexo安装教程/">hexo安装教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#hexo+Github博客网站搭建</p>
+<p>##配置环境</p>
+<ol>
+<li>安装node.js，一路安装即可，在命令行输入node验证是否安装成功；</li>
+<li>安装git，一路安装即可，安装完配置环境变量，在path中添加git所在的bin目录（D:\Program Files\Git\bin），打开命令行输入git验证安装；</li>
+<li>申请github账号，在其中添加公钥，使用git bash命令行生成公钥，输入ssh-keygen命令，一路回车将公钥报存在默认路径，输入命令cat ~/.ssh/id_rsa.pub查看公钥，将看到的一长串字符串输入到github设置中；<br><img src="https://i.imgur.com/c4LdFXc.png" alt=""></li>
+<li>在github上创建一个空的repository，命名必须是github账户名.github.io，然后使用gitclone到本地已创建好的空文件夹hexo下；</li>
+<li>安装hexo，打开git bash命令行切换到已创建好的空文件夹hexo下，依次输入命令npm install -g hexo，npm install hexo-deployer-git –save下载时间可能较长，安装好后输入hexo -v 验证安装；</li>
+<li>切换到clone的github账户名.github.io文件夹下，输入命令hexo init；</li>
+<li><p>配置_config.yml文件：<br><small>deploy:  </small></p>
+<pre><code>type: git  
+repo: github上项目的git clone路径（git@github.com:luhu888/luhu888.github.io.git）      
+branch: master&lt;/small&gt;
+</code></pre></li>
+<li><p>git上传文件部署项目，依次输入命令hexo clean，hexo generate，hexo deploy；</p>
+</li>
+<li>部署成功，输入github账户名.github.io即可访问。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/21/hexo安装教程/" data-id="cj905yg460001ycixibokbo1z" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安装教程/">安装教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -104,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/20/hello-world/" data-id="cj905vh4800008gix8ep0989k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/20/hello-world/" data-id="cj905yg330000ycix0n2ogydh" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -123,13 +179,27 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/安装教程/">安装教程</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/安装教程/" style="font-size: 10px;">安装教程</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
     </div>
@@ -139,9 +209,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/21/hexo安装教程/">hexo安装教程</a>
+          </li>
         
           <li>
             <a href="/2017/10/20/hello-world/">Hello World</a>
@@ -160,7 +234,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 旅行的意义<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
