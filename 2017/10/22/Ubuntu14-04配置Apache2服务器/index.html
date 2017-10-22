@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="hexo,Github," />
+  <meta name="keywords" content="Ubuntu,Apache2," />
 
 
 
@@ -81,21 +81,18 @@
 
 
 
-<meta name="description" content="安装node.js，一路安装即可，在命令行输入node验证是否安装成功； 安装git，一路安装即可，安装完配置环境变量，在path中添加git所在的bin目录（D:\Program Files\Git\bin），打开命令行输入git验证安装； 申请github账号，在其中添加公钥，使用git bash命令行生成公钥，输入ssh-keygen命令，一路回车将公钥报存在默认路径，输入命令cat ~/">
-<meta name="keywords" content="hexo,Github">
+<meta name="description" content="ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）1、下载ubuntu14.04 iso镜像文件2、下载rufus软件制作ubuntu安装引导盘3、安装步骤安装ubuntu输密码时注意开启小键盘，建议开始输密码不要用小键盘 4、安装远程桌面sudo apt-get update sudo apt-get install xfce4 sudo apt-get in">
+<meta name="keywords" content="Ubuntu,Apache2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo安装教程">
-<meta property="og:url" content="http://yoursite.com/2017/10/21/article/index.html">
+<meta property="og:title" content="Ubuntu14.04配置Apache2服务器">
+<meta property="og:url" content="http://yoursite.com/2017/10/22/Ubuntu14-04配置Apache2服务器/index.html">
 <meta property="og:site_name" content="旅行的意义">
-<meta property="og:description" content="安装node.js，一路安装即可，在命令行输入node验证是否安装成功； 安装git，一路安装即可，安装完配置环境变量，在path中添加git所在的bin目录（D:\Program Files\Git\bin），打开命令行输入git验证安装； 申请github账号，在其中添加公钥，使用git bash命令行生成公钥，输入ssh-keygen命令，一路回车将公钥报存在默认路径，输入命令cat ~/">
+<meta property="og:description" content="ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）1、下载ubuntu14.04 iso镜像文件2、下载rufus软件制作ubuntu安装引导盘3、安装步骤安装ubuntu输密码时注意开启小键盘，建议开始输密码不要用小键盘 4、安装远程桌面sudo apt-get update sudo apt-get install xfce4 sudo apt-get in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/c4LdFXc.png">
-<meta property="og:image" content="https://i.imgur.com/WTFW7Vy.png">
-<meta property="og:updated_time" content="2017-10-22T12:41:15.582Z">
+<meta property="og:updated_time" content="2017-10-22T12:47:01.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo安装教程">
-<meta name="twitter:description" content="安装node.js，一路安装即可，在命令行输入node验证是否安装成功； 安装git，一路安装即可，安装完配置环境变量，在path中添加git所在的bin目录（D:\Program Files\Git\bin），打开命令行输入git验证安装； 申请github账号，在其中添加公钥，使用git bash命令行生成公钥，输入ssh-keygen命令，一路回车将公钥报存在默认路径，输入命令cat ~/">
-<meta name="twitter:image" content="https://i.imgur.com/c4LdFXc.png">
+<meta name="twitter:title" content="Ubuntu14.04配置Apache2服务器">
+<meta name="twitter:description" content="ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）1、下载ubuntu14.04 iso镜像文件2、下载rufus软件制作ubuntu安装引导盘3、安装步骤安装ubuntu输密码时注意开启小键盘，建议开始输密码不要用小键盘 4、安装远程桌面sudo apt-get update sudo apt-get install xfce4 sudo apt-get in">
 
 
 
@@ -125,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/21/article/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/22/Ubuntu14-04配置Apache2服务器/"/>
 
 
 
 
 
-  <title>hexo安装教程 | 旅行的意义</title>
+  <title>Ubuntu14.04配置Apache2服务器 | 旅行的意义</title>
   
 
 
@@ -278,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/21/article/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/22/Ubuntu14-04配置Apache2服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="旅行的意义">
@@ -295,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo安装教程</h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu14.04配置Apache2服务器</h1>
         
 
         <div class="post-meta">
@@ -307,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T00:04:20+08:00">
-                2017-10-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-22T20:07:57+08:00">
+                2017-10-22
               </time>
             
 
@@ -330,8 +327,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
                   </a>
                 </span>
 
@@ -367,30 +364,7 @@
       
 
       
-        <ol>
-<li>安装node.js，一路安装即可，在命令行输入node验证是否安装成功；</li>
-<li>安装git，一路安装即可，安装完配置环境变量，在path中添加git所在的bin目录（D:\Program Files\Git\bin），打开命令行输入git验证安装；</li>
-<li>申请github账号，在其中添加公钥，使用git bash命令行生成公钥，输入ssh-keygen命令，一路回车将公钥报存在默认路径，输入命令cat ~/.ssh/id_rsa.pub查看公钥，将看到的一长串字符串输入到github设置中；<br><img src="https://i.imgur.com/c4LdFXc.png" alt=" "></li>
-<li>在github上创建一个空的repository，命名必须是github账户名.github.io，然后使用gitclone到本地已创建好的空文件夹hexo下；</li>
-<li>安装hexo，打开git bash命令行切换到已创建好的空文件夹hexo下，依次输入命令npm install -g hexo，npm install hexo-deployer-git –save下载时间可能较长，安装好后输入hexo -v 验证安装；</li>
-<li>切换到clone的github账户名.github.io文件夹下，输入命令hexo init；</li>
-<li>配置_config.yml文件：     <pre><code>deploy:  
-  type: git  
-  repo: github上项目的git clone路径（git@github.com:luhu888/luhu888.github.io.git）      
-branch: master    
-</code></pre></li>
-<li>git上传文件部署项目，依次输入命令hexo clean，hexo generate，hexo deploy；</li>
-<li>部署成功，输入github账户名.github.io即可访问。</li>
-<li>常用命令：hexo new filename（新增博文）</li>
-</ol>
-<hr>
-<p>title: MySQL5.7解压版安装教程<br>date: 2017-10-22 20:13:04<br>tags: [MySQL, windows]</p>
-<h2 id="categories-MySQL"><a href="#categories-MySQL" class="headerlink" title="categories: MySQL"></a>categories: MySQL</h2><p><img src="https://i.imgur.com/WTFW7Vy.png" alt=""><br>中途需要将data文件夹普通用户赋予可写权限，否则无法成功初始化。</p>
-<hr>
-<p>title: Ubuntu14.04下安装git及同步代码<br>date: 2017-10-22 20:01:52<br>tags: [Ubuntu, git]</p>
-<h2 id="categories-git"><a href="#categories-git" class="headerlink" title="categories: git"></a>categories: git</h2><h2 id="Linux下安装git，并同步代码流程"><a href="#Linux下安装git，并同步代码流程" class="headerlink" title="Linux下安装git，并同步代码流程"></a>Linux下安装git，并同步代码流程</h2><h4 id="1-sudo-pip-install-git-安装git"><a href="#1-sudo-pip-install-git-安装git" class="headerlink" title="1. sudo pip install git  安装git"></a>1. sudo pip install git  安装git</h4><h4 id="2-ssh-key-C-‘你的邮箱地址’-t-rsa-创建验证的公钥"><a href="#2-ssh-key-C-‘你的邮箱地址’-t-rsa-创建验证的公钥" class="headerlink" title="2. ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥"></a>2. ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥</h4><h4 id="3-之后在输入完这个命令以后会有Enter-file-in-which-to-save-the-key（-home-haohao-ssh-id-rsa-这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件"><a href="#3-之后在输入完这个命令以后会有Enter-file-in-which-to-save-the-key（-home-haohao-ssh-id-rsa-这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件" class="headerlink" title="3. 之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件"></a>3. 之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件</h4><h4 id="4-cd-ssh"><a href="#4-cd-ssh" class="headerlink" title="4. cd ~/.ssh"></a>4. cd ~/.ssh</h4><h4 id="5-gedit-id-rsa-pub-在代码仓库创建新的ssh"><a href="#5-gedit-id-rsa-pub-在代码仓库创建新的ssh" class="headerlink" title="5. gedit id_rsa.pub, 在代码仓库创建新的ssh"></a>5. gedit id_rsa.pub, 在代码仓库创建新的ssh</h4><h4 id="6-首先在想要的位置创建一个空文件夹，使用命令sudo-git-clone-https-github-com-luhu888-SchoolMS-school-后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，"><a href="#6-首先在想要的位置创建一个空文件夹，使用命令sudo-git-clone-https-github-com-luhu888-SchoolMS-school-后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，" class="headerlink" title="6. 首先在想要的位置创建一个空文件夹，使用命令sudo git clone https://github.com/luhu888/SchoolMS /school 后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，"></a>6. 首先在想要的位置创建一个空文件夹，使用命令sudo git clone <a href="https://github.com/luhu888/SchoolMS" target="_blank" rel="external">https://github.com/luhu888/SchoolMS</a> /school 后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，</h4><h4 id="7-若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。"><a href="#7-若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。" class="headerlink" title="7. 若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。"></a>7. 若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。</h4><h4 id="8-在项目-git的同级目录（即项目文件所在的根目录）下输入命令git-pull-即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。"><a href="#8-在项目-git的同级目录（即项目文件所在的根目录）下输入命令git-pull-即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。" class="headerlink" title="8. 在项目.git的同级目录（即项目文件所在的根目录）下输入命令git pull 即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。"></a>8. 在项目.git的同级目录（即项目文件所在的根目录）下输入命令git pull 即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。</h4><hr>
-<p>title: Ubuntu14.04配置Apache2服务器<br>date: 2017-10-22 20:07:57<br>tags: [Ubuntu, Apache2]</p>
-<h2 id="categories-Ubuntu"><a href="#categories-Ubuntu" class="headerlink" title="categories: Ubuntu"></a>categories: Ubuntu</h2><h2 id="ubuntu安装以及服务器配置-（刚开始最好先使用虚拟机配置，谨慎使用sudo命令）"><a href="#ubuntu安装以及服务器配置-（刚开始最好先使用虚拟机配置，谨慎使用sudo命令）" class="headerlink" title="ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）"></a>ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）</h2><h3 id="1、下载ubuntu14-04-iso镜像文件"><a href="#1、下载ubuntu14-04-iso镜像文件" class="headerlink" title="1、下载ubuntu14.04 iso镜像文件"></a>1、下载ubuntu14.04 iso镜像文件</h3><h3 id="2、下载rufus软件制作ubuntu安装引导盘"><a href="#2、下载rufus软件制作ubuntu安装引导盘" class="headerlink" title="2、下载rufus软件制作ubuntu安装引导盘"></a>2、下载rufus软件制作ubuntu安装引导盘</h3><h3 id="3、安装步骤安装ubuntu"><a href="#3、安装步骤安装ubuntu" class="headerlink" title="3、安装步骤安装ubuntu"></a>3、安装步骤安装ubuntu</h3><pre><code>输密码时注意开启小键盘，建议开始输密码不要用小键盘
+        <h2 id="ubuntu安装以及服务器配置-（刚开始最好先使用虚拟机配置，谨慎使用sudo命令）"><a href="#ubuntu安装以及服务器配置-（刚开始最好先使用虚拟机配置，谨慎使用sudo命令）" class="headerlink" title="ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）"></a>ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）</h2><h3 id="1、下载ubuntu14-04-iso镜像文件"><a href="#1、下载ubuntu14-04-iso镜像文件" class="headerlink" title="1、下载ubuntu14.04 iso镜像文件"></a>1、下载ubuntu14.04 iso镜像文件</h3><h3 id="2、下载rufus软件制作ubuntu安装引导盘"><a href="#2、下载rufus软件制作ubuntu安装引导盘" class="headerlink" title="2、下载rufus软件制作ubuntu安装引导盘"></a>2、下载rufus软件制作ubuntu安装引导盘</h3><h3 id="3、安装步骤安装ubuntu"><a href="#3、安装步骤安装ubuntu" class="headerlink" title="3、安装步骤安装ubuntu"></a>3、安装步骤安装ubuntu</h3><pre><code>输密码时注意开启小键盘，建议开始输密码不要用小键盘
 </code></pre><h3 id="4、安装远程桌面"><a href="#4、安装远程桌面" class="headerlink" title="4、安装远程桌面"></a>4、安装远程桌面</h3><pre><code>sudo apt-get update
 sudo apt-get install xfce4
 sudo apt-get install xrdp vnc4server
@@ -628,9 +602,9 @@ settings.py  django 的设置，配置文件，比如debug的开关，静态文�
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
           
-            <a href="/tags/Github/" rel="tag"># Github</a>
+            <a href="/tags/Apache2/" rel="tag"># Apache2</a>
           
         </div>
       
@@ -639,6 +613,26 @@ settings.py  django 的设置，配置文件，比如debug的开关，静态文�
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/22/Ubuntu14-04下安装git及同步代码/" rel="next" title="Ubuntu14.04下安装git及同步代码">
+                <i class="fa fa-chevron-left"></i> Ubuntu14.04下安装git及同步代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/22/MySQL5-7解压版安装教程/" rel="prev" title="MySQL5.7解压版安装教程">
+                MySQL5.7解压版安装教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -716,7 +710,7 @@ settings.py  django 的设置，配置文件，比如debug的开关，静态文�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -727,7 +721,7 @@ settings.py  django 的设置，配置文件，比如debug的开关，静态文�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -738,7 +732,7 @@ settings.py  django 的设置，配置文件，比如debug的开关，静态文�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -787,7 +781,7 @@ settings.py  django 的设置，配置文件，比如debug的开关，静态文�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-MySQL"><span class="nav-number">1.</span> <span class="nav-text">categories: MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-git"><span class="nav-number">2.</span> <span class="nav-text">categories: git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下安装git，并同步代码流程"><span class="nav-number">3.</span> <span class="nav-text">Linux下安装git，并同步代码流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-sudo-pip-install-git-安装git"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. sudo pip install git  安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ssh-key-C-‘你的邮箱地址’-t-rsa-创建验证的公钥"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-之后在输入完这个命令以后会有Enter-file-in-which-to-save-the-key（-home-haohao-ssh-id-rsa-这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. 之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-cd-ssh"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. cd ~/.ssh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-gedit-id-rsa-pub-在代码仓库创建新的ssh"><span class="nav-number">3.0.5.</span> <span class="nav-text">5. gedit id_rsa.pub, 在代码仓库创建新的ssh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-首先在想要的位置创建一个空文件夹，使用命令sudo-git-clone-https-github-com-luhu888-SchoolMS-school-后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，"><span class="nav-number">3.0.6.</span> <span class="nav-text">6. 首先在想要的位置创建一个空文件夹，使用命令sudo git clone https://github.com/luhu888/SchoolMS /school 后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。"><span class="nav-number">3.0.7.</span> <span class="nav-text">7. 若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-在项目-git的同级目录（即项目文件所在的根目录）下输入命令git-pull-即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。"><span class="nav-number">3.0.8.</span> <span class="nav-text">8. 在项目.git的同级目录（即项目文件所在的根目录）下输入命令git pull 即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-Ubuntu"><span class="nav-number">4.</span> <span class="nav-text">categories: Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu安装以及服务器配置-（刚开始最好先使用虚拟机配置，谨慎使用sudo命令）"><span class="nav-number">5.</span> <span class="nav-text">ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、下载ubuntu14-04-iso镜像文件"><span class="nav-number">5.1.</span> <span class="nav-text">1、下载ubuntu14.04 iso镜像文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、下载rufus软件制作ubuntu安装引导盘"><span class="nav-number">5.2.</span> <span class="nav-text">2、下载rufus软件制作ubuntu安装引导盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、安装步骤安装ubuntu"><span class="nav-number">5.3.</span> <span class="nav-text">3、安装步骤安装ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、安装远程桌面"><span class="nav-number">5.4.</span> <span class="nav-text">4、安装远程桌面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、在window上开启远程连接"><span class="nav-number">5.5.</span> <span class="nav-text">5、在window上开启远程连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、ufw防火墙设置"><span class="nav-number">5.6.</span> <span class="nav-text">6、ufw防火墙设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、文件互传"><span class="nav-number">5.7.</span> <span class="nav-text">7、文件互传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、解压"><span class="nav-number">5.8.</span> <span class="nav-text">8、解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、pycharm安装及激活"><span class="nav-number">5.9.</span> <span class="nav-text">9、pycharm安装及激活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、mysql"><span class="nav-number">5.10.</span> <span class="nav-text">10、mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、tab无法自动补全"><span class="nav-number">5.11.</span> <span class="nav-text">11、tab无法自动补全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux部署Apache开发环境"><span class="nav-number">6.</span> <span class="nav-text">Linux部署Apache开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、ubuntu安装python3-5"><span class="nav-number">6.0.1.</span> <span class="nav-text">1、ubuntu安装python3.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、安装apache等必要模块"><span class="nav-number">6.1.</span> <span class="nav-text">2、安装apache等必要模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、配置apache2"><span class="nav-number">6.2.</span> <span class="nav-text">3、配置apache2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、MySql由Windows迁移至Ubuntu"><span class="nav-number">6.3.</span> <span class="nav-text">4、MySql由Windows迁移至Ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、Apache模块配置"><span class="nav-number">6.4.</span> <span class="nav-text">5、Apache模块配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、文件操作"><span class="nav-number">6.5.</span> <span class="nav-text">6、文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、配置项目"><span class="nav-number">6.6.</span> <span class="nav-text">7、配置项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、安装mysql5-7"><span class="nav-number">6.7.</span> <span class="nav-text">8、安装mysql5.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、-Windows上安装不同版本python"><span class="nav-number">6.8.</span> <span class="nav-text">9、 Windows上安装不同版本python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、Django常用命令"><span class="nav-number">6.9.</span> <span class="nav-text">10、Django常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、Django配置文件介绍"><span class="nav-number">6.10.</span> <span class="nav-text">11、Django配置文件介绍</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu安装以及服务器配置-（刚开始最好先使用虚拟机配置，谨慎使用sudo命令）"><span class="nav-number">1.</span> <span class="nav-text">ubuntu安装以及服务器配置  （刚开始最好先使用虚拟机配置，谨慎使用sudo命令）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、下载ubuntu14-04-iso镜像文件"><span class="nav-number">1.1.</span> <span class="nav-text">1、下载ubuntu14.04 iso镜像文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、下载rufus软件制作ubuntu安装引导盘"><span class="nav-number">1.2.</span> <span class="nav-text">2、下载rufus软件制作ubuntu安装引导盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、安装步骤安装ubuntu"><span class="nav-number">1.3.</span> <span class="nav-text">3、安装步骤安装ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、安装远程桌面"><span class="nav-number">1.4.</span> <span class="nav-text">4、安装远程桌面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、在window上开启远程连接"><span class="nav-number">1.5.</span> <span class="nav-text">5、在window上开启远程连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、ufw防火墙设置"><span class="nav-number">1.6.</span> <span class="nav-text">6、ufw防火墙设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、文件互传"><span class="nav-number">1.7.</span> <span class="nav-text">7、文件互传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、解压"><span class="nav-number">1.8.</span> <span class="nav-text">8、解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、pycharm安装及激活"><span class="nav-number">1.9.</span> <span class="nav-text">9、pycharm安装及激活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、mysql"><span class="nav-number">1.10.</span> <span class="nav-text">10、mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、tab无法自动补全"><span class="nav-number">1.11.</span> <span class="nav-text">11、tab无法自动补全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux部署Apache开发环境"><span class="nav-number">2.</span> <span class="nav-text">Linux部署Apache开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、ubuntu安装python3-5"><span class="nav-number">2.0.1.</span> <span class="nav-text">1、ubuntu安装python3.5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、安装apache等必要模块"><span class="nav-number">2.1.</span> <span class="nav-text">2、安装apache等必要模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、配置apache2"><span class="nav-number">2.2.</span> <span class="nav-text">3、配置apache2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、MySql由Windows迁移至Ubuntu"><span class="nav-number">2.3.</span> <span class="nav-text">4、MySql由Windows迁移至Ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、Apache模块配置"><span class="nav-number">2.4.</span> <span class="nav-text">5、Apache模块配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、文件操作"><span class="nav-number">2.5.</span> <span class="nav-text">6、文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、配置项目"><span class="nav-number">2.6.</span> <span class="nav-text">7、配置项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、安装mysql5-7"><span class="nav-number">2.7.</span> <span class="nav-text">8、安装mysql5.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、-Windows上安装不同版本python"><span class="nav-number">2.8.</span> <span class="nav-text">9、 Windows上安装不同版本python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、Django常用命令"><span class="nav-number">2.9.</span> <span class="nav-text">10、Django常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、Django配置文件介绍"><span class="nav-number">2.10.</span> <span class="nav-text">11、Django配置文件介绍</span></a></li></ol></li></ol></div>
             
 
           </div>
