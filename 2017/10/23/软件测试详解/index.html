@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type='text/javascript' src='//cdn.bootcss.com/cavas_nest.js/1.0.0/canvas-nest.min.js'></script>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="测试理论," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 软件测试的定义　　首先我们看一下什么是软件测试，也就是软件测试的定义。关于软件测试有很多的定义和说法，这里和大家分享的是笔者比较认可的一种。　　软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。对于刚参加工作的同学们，一进公司基本上都是执行测试用例发现Bug，也就是通过执行用例来发现缺陷，所以我觉得这个定义比较适合初学者。 2. 软件测试的目的通过上面的定义，很显然软件测试的">
+<meta name="keywords" content="测试理论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试详解">
+<meta property="og:url" content="http://yoursite.com/2017/10/23/软件测试详解/index.html">
+<meta property="og:site_name" content="旅行的意义">
+<meta property="og:description" content="1. 软件测试的定义　　首先我们看一下什么是软件测试，也就是软件测试的定义。关于软件测试有很多的定义和说法，这里和大家分享的是笔者比较认可的一种。　　软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。对于刚参加工作的同学们，一进公司基本上都是执行测试用例发现Bug，也就是通过执行用例来发现缺陷，所以我觉得这个定义比较适合初学者。 2. 软件测试的目的通过上面的定义，很显然软件测试的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/irHD1YR.jpg">
+<meta property="og:image" content="https://i.imgur.com/k47CwUo.jpg">
+<meta property="og:image" content="https://i.imgur.com/8yAhGa1.jpg">
+<meta property="og:image" content="https://i.imgur.com/jDjOb8D.jpg">
+<meta property="og:image" content="https://i.imgur.com/iptzilW.png">
+<meta property="og:image" content="https://i.imgur.com/VrIm23O.png">
+<meta property="og:image" content="https://i.imgur.com/qqVMeUi.png">
+<meta property="og:image" content="https://i.imgur.com/J5UKcyo.jpg">
+<meta property="og:image" content="https://i.imgur.com/2J05kRl.png">
+<meta property="og:image" content="https://i.imgur.com/X2vr1jK.png">
+<meta property="og:image" content="https://i.imgur.com/aauV50u.png">
+<meta property="og:image" content="https://i.imgur.com/13Kd8la.png">
+<meta property="og:image" content="https://i.imgur.com/dtpKSFy.png">
+<meta property="og:image" content="https://i.imgur.com/LmzwJZs.png">
+<meta property="og:image" content="https://i.imgur.com/qGiZzsP.png">
+<meta property="og:image" content="https://i.imgur.com/NQGOONk.png">
+<meta property="og:image" content="https://i.imgur.com/JyAd1rl.png">
+<meta property="og:image" content="https://i.imgur.com/ORy7Uwp.png">
+<meta property="og:image" content="https://i.imgur.com/SVB1ipU.png">
+<meta property="og:image" content="https://i.imgur.com/c6mMsSH.png">
+<meta property="og:image" content="https://i.imgur.com/mhtUMCz.png">
+<meta property="og:image" content="https://i.imgur.com/zWrAy8V.png">
+<meta property="og:image" content="https://i.imgur.com/NejcVkm.png">
+<meta property="og:image" content="https://i.imgur.com/HZajAvA.png">
+<meta property="og:image" content="https://i.imgur.com/nOlI3aF.png">
+<meta property="og:updated_time" content="2017-10-23T13:56:32.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件测试详解">
+<meta name="twitter:description" content="1. 软件测试的定义　　首先我们看一下什么是软件测试，也就是软件测试的定义。关于软件测试有很多的定义和说法，这里和大家分享的是笔者比较认可的一种。　　软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。对于刚参加工作的同学们，一进公司基本上都是执行测试用例发现Bug，也就是通过执行用例来发现缺陷，所以我觉得这个定义比较适合初学者。 2. 软件测试的目的通过上面的定义，很显然软件测试的">
+<meta name="twitter:image" content="https://i.imgur.com/irHD1YR.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/23/软件测试详解/"/>
+
+
+
+
+
+  <title>软件测试详解 | 旅行的意义</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅行的意义</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">--好记性不如烂笔头。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/软件测试详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅行的意义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅行的意义">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件测试详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T21:54:33+08:00">
+                2017-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试理论/" itemprop="url" rel="index">
+                    <span itemprop="name">测试理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-软件测试的定义"><a href="#1-软件测试的定义" class="headerlink" title="1. 软件测试的定义"></a>1. 软件测试的定义</h2><p>　　首先我们看一下什么是软件测试，也就是软件测试的定义。关于软件测试有很多的定义和说法，这里和大家分享的是笔者比较认可的一种。<br>　　软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。对于刚参加工作的同学们，一进公司基本上都是执行测试用例发现Bug，也就是通过执行用例来发现缺陷，所以我觉得这个定义比较适合初学者。</p>
+<h2 id="2-软件测试的目的"><a href="#2-软件测试的目的" class="headerlink" title="2. 软件测试的目的"></a>2. 软件测试的目的</h2><p>通过上面的定义，很显然软件测试的目的就是寻找缺陷，在以后的工作中我们也应该时刻记着：我们的目的是发现缺陷并且要尽快的提交，并保证他们被修改。<br>　　a)以最少的人力、物力和时间找出软件中潜在的各种错误和缺陷<br>　　b)通过修正各种错误和缺陷提高软件质量，避免软件发布后由于潜在的软件错误和缺陷造成的隐患所带来的商业风险<br>　　c)利用测试过程中得到的测试结果和测试信息，作为后续项目开发和测试过程改进的重要输入，避免在将来的项目开发和测试中重复同样的错误<br>　　d)采用更加高效的测试管理手段，提高软件测试的效率和软件产品的质量</p>
+<h2 id="3-软件测试的对象"><a href="#3-软件测试的对象" class="headerlink" title="3. 软件测试的对象"></a>3. 软件测试的对象</h2><p>　　软件测试的对象很显然是软件吗，但是要知道软件是包括程序、数据和文档的。我们的测试不能只是简单的程序，还应包括软件开发各个阶段的文档。</p>
+<h2 id="4-缺陷"><a href="#4-缺陷" class="headerlink" title="4. 缺陷"></a>4. 缺陷</h2><p>　　我们前面一直在说软件测试是为了发现缺陷，那么什么是缺陷呢？我们现在只需要记住“不满足需求的都是缺陷”就可以了，后面我们会详细的介绍缺陷。</p>
+<h2 id="5-软件质量"><a href="#5-软件质量" class="headerlink" title="5. 软件质量"></a>5. 软件质量</h2><p>　　软件质量的定义：一个实体的所有特性，基于这些特性可以满足明显的或隐含的需求。质量就是实体基于这些特性满足需求的程度。<br>　　怎么理解这个定义呢？比如说我们去买衣服吧，我们怎么评价这个衣服质量的好坏？一般都是看他的面料啊、做工啊、样式啊这些吧，如果都很好就会觉得他的质量好，对吧？那么怎么评价软件的质量呢？同样也可以找他的这些特性来描述啊，比如功能啊，运行的快慢啊，是否稳定啊这些。<br>　　我们现在就来看一下软件质量模型：<br>　　　　功能性：当软件在制定条件下使用时，软件产品提供满足明确和隐含需求的功能的能力。包括：适合性、准确性、互操作性、安全性等；<br>　　　　可靠性：当软件在制定条件下使用时，软件产品维持规定的性能级别的能力。包括成熟性、容错性、易恢复性等；<br>　　　　易用性：当软件在制定条件下使用时，软件产品被理解、学习、使用和吸引用户的能力。包括：易理解性、易学性、易操作性、吸引性等；<br>　　　　效率：在规定条件下，相对于所用资源的数量，软件产品可提供适当性能的能力，包括：时间特性、资源利用性等<br>　　　　维护性：软件产品可被修改的能力。修改可能包括修正、改进或软件对环境、需求和功能规格说明变化的适应。包括：易分析性、易改变性、稳定性、可测试性等<br>　　　　可移植性：软件产品从一种环境迁移到另外一种环境的能力。包括：适应性、易安装性、共存性、易替换性等</p>
+<h2 id="6-初级测试工程师的主要工作"><a href="#6-初级测试工程师的主要工作" class="headerlink" title="6. 初级测试工程师的主要工作"></a>6. 初级测试工程师的主要工作</h2><p>　　a、执行测试用例，发现缺陷并提交、跟踪缺陷<br>　　b、设计测试用例、书写测试计划和测试总结等</p>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. 总结</h2><p>　　首先我们介绍了什么事软件测试，也就是软件测试的概念，这个是一定要记住的，然后说了软件测试的目的、对象和软件质量。<br>　　下面是Grenford J.Myers就软件测试的目的提出观点：（请大家牢记）<br>　　　　1. 测试是程序的执行过程，目的在于发现错误；<br>　　　　2. 一个好的测试用例在于能发现至今未发现的错误；<br>　　　　3. 一个成功的测试用例就是发现了至今未发现的错误的测试。<br>　　下面是软件开发生命周期，主要介绍软件的生命周期和软件的设计模型。<br>　　　　<strong>国标（GB8566-88）中将软件生命周期分为8个阶段：可行性研究与计划、需求分析、概要设计、详细设计、实现（包括单元测试）、组装测试（集成测试）、确认测试、使用和维护。</strong><br>　　这里出现了一个面试经常出现的问题，就是测试阶段的问题，测试阶段：单元测试、集成测试、系统测试、验收测试。</p>
+<p><strong>软件测试模型汇总-V模型,W模型,X模型,H模型</strong></p>
+<h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p><img src="https://i.imgur.com/irHD1YR.jpg" alt=""><br>　　在软件测试方面，V模型是最广为人知的模型，尽管很多富有实际经验的测试人员还是不太熟悉V模型，或者其它的模型。V模型已存在了很长时间，和瀑布开发模型有着一些共同的特性，由此也和瀑布模型一样地受到了批评和质疑。V模型中的过程从左到右，描述了基本的开发 过程和测试行为。<br>　　V模型的价值在于它非常明确地标明了测试过程中存在的不同级别，并且清楚地描述了这些测试阶段和开发过程期间各阶段的对应关系。<br>　　局限性： 把测试作为编码之后的最后一个活动，需求分析等前期产生的错误直到后期的验收测试才能发现.</p>
+<h3 id="W模型"><a href="#W模型" class="headerlink" title="W模型"></a>W模型</h3><p><img src="https://i.imgur.com/k47CwUo.jpg" alt=""><br>　　V模型的局限性在于没有明确地说明早期的测试,无法体现“尽早地和不断地进行软件测试” 的原则。在V模型中增加软件各开发阶段应同步进行的测试，演化为W 模型（如下图）。在模型中不难看出，开发是“V”，测试是与此并行的“V”。基于“尽早地和不断地进行软件测试”的原则，在软件的需求和设计阶段的测试活 动应遵循IEEE1012-1998《软件验证与确认（V&amp;V）》的原则。<br>　　W模型由Evolutif公司提出，相对于V模型，W模型更科学。W模型是V模型的发展，强调的是测试伴随着整个软件开发周期，而且测试的对象不仅仅是程序，需求、功能和设计同样要测试。测试与开发是同步进行的，从而有利于尽早地发现问题。<br>　　W模型也有局限性。W模型和V模型都把软件的开发视为需求、设计、编码等一系列串行的活动，无法支持迭代、自发性以及变更调整。</p>
+<h3 id="X模型"><a href="#X模型" class="headerlink" title="X模型"></a>X模型</h3><p><img src="https://i.imgur.com/8yAhGa1.jpg" alt=""><br>　X模型也是对V模型的改进,X模型提出针对单独的程序片段进行相互分离的编码和测试,此后通过频繁的交接,通过集成最终合成为可执行的程序。<br>　X模型的左边描述的是针对单独程序片段所进行的相互分离的编码和测试，此后将进行频繁的交接，通过集成最终成为可执行的程序，然后再对这些可执行程序进行测试。己通过集成测试的成品可以进行封装并提交给用户，也可以作为更大规模和范围内集成的一部分。多根并行的曲线表示变更可以在各个部分发生。由图中可见，X模型还定位了探索性测试，这是不进行事先计划的特殊类型的测试，这一方式往往能帮助有经验的测试人员在测试计划之外发现更多的软件错误。但这样可能对测试造成人力、物力和财力的浪费，对测试员的熟练程度要求比较高。</p>
+<h3 id="H模型"><a href="#H模型" class="headerlink" title="H模型"></a>H模型</h3><p><img src="https://i.imgur.com/jDjOb8D.jpg" alt=""><br>　　H模型中, 软件测试过程活动完全独立,贯穿于整个产品的周期,与其他流程并发地进行,某个测试点准备就绪时,就可以从测试准备阶段进行到测试执行阶段。软件测试可以尽早的进行,并且可以根据被测物的不同而分层次进行。<br>　　这个示意图演示了在整个生产周期中某个层次上的一次测试“微循环”。图中标注的其它流程可以是任意的开发流程,例如设计流程或者编码流程。也就是说, 只要测试条件成熟了,测试准备活动完成了,测试执行活动就可以进行了。<br>　　H模型揭示了一个原理:软件测试是一个独立的流程,贯穿产品整个生命周期,与其他流程并发地进行。H模型指出软件测试要尽早准备, 尽早执行。不同的测试活动可以是按照某个次序先后进行的,但也可能是反复的,只要某个测试达到准备就绪点,测试执行活动就可以开展。</p>
+<p>1.软件测试过程模型－V模型是软件开发瀑布模型的变种，主要反映测试活动与分析和设计的关系；<br>局限性：把测试作为编码之后的最后一个活动，需求分析等前期产生的错误直到后期的验收测试才能发现</p>
+<p>2.软件测试过程模型－W模型<br>在V模型的基础上，增加千开发阶段的同步测试，形成W模型；测试与开发同步进行，有利用尽早的发现问题<br>局限性：仍把开发活动看成是从需求开始到编码结束的串行活动，只有上一阶段完成后，才可以开始下一阶段的活动，不能支持迭代，自发性以及变更调整</p>
+<p>3.软件测试过程模型－H模型<br>在H模型中，软件测试过程活动完全独立，贯穿于整个产品的周期，与其他流程并发地进行，某个测试点准备就绪时，就可以从测试准备阶段进行到测试执行阶段；软件测试可以进行尽早的进行；软件测试可以根据被测物的不同而分层次进行。</p>
+<p>4.V模型: 强调了在整个软件项目开发中需要经历的若干个测试级别，并与每一个开发级别对应；忽略了测试的对象不应该仅仅包括程序，没有明确指出对需求、设计的测试。</p>
+<p>5.W模型: 补充了V模型中忽略的内容，强调了测试计划等工作的先行和对系统需求和系统设计的测试；与V模型相同，没有对软件测试的流程进行说明。</p>
+<p>6.H模型: 强调测试是独立的，只要测试准备完成，就可以执行测试。<br>　　<strong>软件设计模型：瀑布模型、快速原型开发、增量与递归模型、螺旋模型。</strong><br>　　　　1） 瀑布模型：1970年由W.Royce提出，其开发过程依照固定顺序进行，各阶段的任务与工作结果。该模型严格规定了各阶段的任务，上一阶段的输出作为下一阶段的输入。此模型适用于用户需求明确、开发技术比较成熟、工程管理严格的场合使用。缺点是由于任务顺序固定，软件研制周期长，前一阶段工作中造成的差错越到后期越大，纠正的代价也就越高。<br><img src="https://i.imgur.com/iptzilW.png" alt=""><br>　　　　2） 快速原型就是先用相对少的成本，较短的周期开发一个简单的、但可以运行的系统原型向用户演示或让用户试用，以便及早澄清并检验一些主要设计策略，在此基础上再开发实际的软件系统。<br>　　　　快速原型模型主要有三种类型：探索型原型、实验型原型和演化型原型。探索型主要用于开发需求的阶段，目的是弄清用户的原型。实验型原型主要用于设计阶段，目的是考核实现方案是否合适，能否实现。演化型模型主要用于及早的向用户提交一个原型，得到用户认可后不断的修改演化成最终的软件系统。<br>　　　　快速原型的开发步骤：先快速分析需求，然后构造原型，之后是运行原型和评价原型，最后就是修改原型。<br>　　　　3） 迭代模型：所有的阶段都能够细分为迭代，每一次的迭代都会产生一个能够发布的产品，这个产品是最终产品的一个子集。<br><img src="https://i.imgur.com/VrIm23O.png" alt=""><br>　　　　4） 螺旋模型：特别适合于大型复杂的系统。<br><img src="https://i.imgur.com/qqVMeUi.png" alt=""><br>　　螺旋模型沿着螺线进行若干次的迭代，图中的四个象限代表了一下活动：<br>　　　　1.制定计划<br>　　　　2.风险分析<br>　　　　3.实施工程<br>　　　　4.客户评估<br>　　上述的开发模型有一些都是适合大型复杂系统的，我们平时基本不接触的。所以只需掌握瀑布模型和快速原型模型就可以了。<br>　关于开发模型的部分如果想了解更多的话，可以参考一下相关的软件工程的教材。本次的重点是掌握软件的生命周期和测试阶段。<br>英语单词：<br>Beta 测试：beta testing   大爆炸测试：big-bang testing   黑盒测试：black-box testing<br>边界值测试：boundary value testing<br>　　今天说的是测试的策略与方法，首先看一下什么事策略和方法，这个就有点像军事上的战略和战术，一个是宏观的，一个是微观的。<br>　　由此来看，软件测试策略就是在一定的软件测试标准、测试规范的指导下，依据测试项目的特定环境约束而规定的软件测试的原则、方式、方法的集合。这个测试原则、方式、方法的集合可以帮助我们对测试进行全局的分析。<br>　　当我们拿到一个软件准备测试时，首先要从宏观上把握。宏观上基本就是我们常说的5个W：when、where、who、what、how。When就是把握测试的进度，where就是测试的场地，who就是团队建设，what就是要测什么，how就是怎么测。我们的策略应该就是how，怎么测。</p>
+<h3 id="以下是测试策略的种类："><a href="#以下是测试策略的种类：" class="headerlink" title="以下是测试策略的种类："></a>以下是测试策略的种类：</h3><h3 id="1、白盒测试、灰盒测试和黑盒测试"><a href="#1、白盒测试、灰盒测试和黑盒测试" class="headerlink" title="1、白盒测试、灰盒测试和黑盒测试"></a>1、白盒测试、灰盒测试和黑盒测试</h3><p>　　黑盒测试：又称为功能测试、数据驱动测试或者基于规格说明书的测试，注重测试软件的功能需求。测试人员不关心程序具体如何实现，根据软件的规格对软件进行各种输入，观察软件的各种输出结果，发现软件的缺陷。因为这类测试不考虑软件的内部运作原理，因此软件对用户来说就像一个黑盒子。例如计算器程序，输入2+2只要结果是4，那么就说明功能是正确的，而不必去关心内部是2*2还是2+2，只注重它的输出结果是不是我们的预期结果。<br>　　白盒测试：又称结构测试、逻辑驱动测试或基于程序代码的测试。根据软件内部的工作原理分析来进行测试，测试人员通过阅读程序代码或者通过使用开发工具中的单步调试来判断软件的质量。这种测试就要关心它的内部实现了，还是我们的计算器，计算2+2，我们就要看它的内部实现了应该是2+2，而不是2*2。<br>　　灰盒测试：是介于黑盒测试与白盒测试之间的测试方法，在执行白盒测试的时候考虑使用黑盒测试的方法。</p>
+<h3 id="2、手工测试与自动化测试"><a href="#2、手工测试与自动化测试" class="headerlink" title="2、手工测试与自动化测试"></a>2、手工测试与自动化测试</h3><p>　　手工测试：顾名思义就是手工执行软件来发现缺陷而不依赖于其他自动化工具。<br>　　自动化测试就是依赖自动化工具来辅助测试，常见的自动化工具比如QTP、LoadRunner、Robot等。</p>
+<h3 id="3、静态测试与动态测试"><a href="#3、静态测试与动态测试" class="headerlink" title="3、静态测试与动态测试"></a>3、静态测试与动态测试</h3><p> 　　静态测试是不运行被测程序本身而寻找程序中可能存在的错误或评估程序代码的过程。主要是检查代码文档这些。静态测试既可以手工检查也可以使用自动化工具，如检查代码的Jtest、C++ Test等。动态测试就是执行程序来检查是否存在缺陷。</p>
+<h3 id="4、功能测试与性能测试"><a href="#4、功能测试与性能测试" class="headerlink" title="4、功能测试与性能测试"></a>4、功能测试与性能测试</h3><p>　　功能测试：根据产品特征、操作描述和用户方案，测试一个产品的特性和可操作行为以确定它们满足设计需求。<br>　　性能测试：评价一个产品或组件与性能需求是否符合的测试。包括负载测试、强度测试、数据库容量测试、基准测试等类型。</p>
+<h3 id="5、冒烟测试"><a href="#5、冒烟测试" class="headerlink" title="5、冒烟测试"></a>5、冒烟测试</h3><p>　　冒烟测试又称为版本验证测试。主要是验证软件的基本功能是否正常。当我们拿到一个软件时首先要进行的是冒烟测试，如果冒烟测试不通过那么下面就可以不用测了。比如我们测试搜狗输入法时，它不能正确地安装，那么接下来的功能就可以不用测了。</p>
+<h3 id="6、回归测试"><a href="#6、回归测试" class="headerlink" title="6、回归测试"></a>6、回归测试</h3><p>　　回归测试是指修改了旧代码后，重新进行测试以确认修改没有引入新的错误或导致其他代码产生错误。自动回归测试将大幅降低系统测试、维护升级等阶段的成本。回归测试作为软件生命周期的一个组成部分，在整个软件测试过程中占有很大的工作量比重，软件开发的各个阶段都会进行多次回归测试。在渐进和快速迭代开发中，新版本的连续发布使回归测试进行的更加频繁，而在极端编程方法中，更是要求每天都进行若干次回归测试。因此，通过选择正确的回归测试策略来改进回归测试的效率和有效性是很有意义的。 </p>
+<h3 id="7、随机测试"><a href="#7、随机测试" class="headerlink" title="7、随机测试"></a>7、随机测试</h3><p>　　又称为猴子测试，就是没有指定的用例，完全根据测试员的经验来测试。</p>
+<p>　　英语单词：<br>　　　　因果图：cause-effect graph 代码覆盖：code coverage<br>　　　　条件测试：condition testing 配置管理：configuration management　<br>　　　　功能测试主要检查实际软件的功能是否符合用户需求。一般分为逻辑功能测试、界面测试、易用性测试、安装测试、兼容性测试。</p>
+<h3 id="8、安装测试-卸载测试"><a href="#8、安装测试-卸载测试" class="headerlink" title="8、安装测试/卸载测试"></a>8、安装测试/卸载测试</h3><p>　　安装测试就是确保软件在正常情况和异常情况下，如首次安装、升级、重安装等都能进行安装。安装卸载测试需要注意一下几点：<br>　　　　a、安装/卸载测试前最好备份系统的注册表（安装/卸载后对比注册表）。<br>　　　　b、常见的安装类型：典型安装、完全安装、自定义安装、网络安装。<br>　　　　c、安装之后一定要核实软件是否正常运行。<br>　　　　d、异常情况包括磁盘空间不足、缺少目录创建权限等。<br>　　　　e、安装卸载后，核实是否正常重安装。<br>　　　　f、安装过程可以按界面检查，包括：检查界面、热键、Tab键这些。<br>　　　　g、卸载的方法一般有三种：程序自带的、控制面板、直接运行uninstall.exe。</p>
+<h3 id="9、配置测试"><a href="#9、配置测试" class="headerlink" title="9、配置测试"></a>9、配置测试</h3><p>　　主要检查计算机系统内各个设备或各个资源之间的相互连接和功能分配中的错误。主要包括：验证全部配置命令的可操作性，软件配置，硬件配置，利用手动或自动方式进行配置状态间的转换。</p>
+<h3 id="10、兼容性测试"><a href="#10、兼容性测试" class="headerlink" title="10、兼容性测试"></a>10、兼容性测试</h3><p>　　一般从硬件、操作系统和数据兼容三方面考虑，web系统还要考虑浏览器兼容。硬件主要是考虑CPU，选择不同架构的CPU。操作系统就是选择常见的系统了。数据兼容就是考虑向前和向后兼容，比如word2003创建的文档在word2010里是否可以正常打开。如何选择这些系统、浏览器后面介绍正交试验设计时会介绍。</p>
+<h3 id="11、安全性测试"><a href="#11、安全性测试" class="headerlink" title="11、安全性测试"></a>11、安全性测试</h3><p>　　这个是一个比较大的话题，这里就简单的说一下了。安全主要是指网络安全、数据安全和系统安全。网络安全这个大家应该比较了解了。数据安全就是对保存的数据是否可以加密啊这些。系统安全就是操作系统的漏洞对软件的影响。还有常说的就是软件安全，这个通常是帐户权限的问题，还有模块的安全问题。安全性测试范围比较大，这里只是简单的说一下便于理解，可能有些地方说的不准确、不对，还请大家原谅。</p>
+<h3 id="12、易用性测试"><a href="#12、易用性测试" class="headerlink" title="12、易用性测试"></a>12、易用性测试</h3><p>　　这个就是从客户的角度出发检查软件是否易于使用，是否和合理、方便。</p>
+<h3 id="13、界面测试"><a href="#13、界面测试" class="headerlink" title="13、界面测试"></a>13、界面测试</h3><p>　　界面测试就是常说的UI测试。主要检查用户界面是否美观，布局是否合理。</p>
+<h3 id="14、可移植性"><a href="#14、可移植性" class="headerlink" title="14、可移植性"></a>14、可移植性</h3><p>　　测试软件是否可以移植到指定的硬件平台或软件平台。</p>
+<h3 id="15、文档测试"><a href="#15、文档测试" class="headerlink" title="15、文档测试"></a>15、文档测试</h3><p>　　检查文档的正确性、完备性和可理解性。</p>
+<h3 id="16、通过测试"><a href="#16、通过测试" class="headerlink" title="16、通过测试"></a>16、通过测试</h3><p>　　即正向测试，主要验证软件是否满足需求，功能是否实现。</p>
+<h3 id="17、失败测试"><a href="#17、失败测试" class="headerlink" title="17、失败测试"></a>17、失败测试</h3><p>　　即逆向测试，使用不满足需求的数据测试系统。关于正向和逆向，拿到一款产品应该先进行正向测试，后进行逆向测试。比如测试计算器，我们应该先测试是否可以计算1+1，而不是先测试计算a+b。</p>
+<h3 id="18、探索性测试"><a href="#18、探索性测试" class="headerlink" title="18、探索性测试"></a>18、探索性测试</h3><p>　　就是根据测试员的经验设计一些用例，通过执行这些用例和在测试中得到的信息来设计更好的用例。</p>
+<h3 id="19、维护测试"><a href="#19、维护测试" class="headerlink" title="19、维护测试"></a>19、维护测试</h3><p>　　针对运行系统的更改，或者对新的环境对运行系统的影响而进行的测试。</p>
+<h2 id="软件性能测试的方法："><a href="#软件性能测试的方法：" class="headerlink" title="软件性能测试的方法："></a>软件性能测试的方法：</h2><p>1、容量测试<br>　　核实测试对象对于大量数据的处理能力<br>2、负载测试<br>　　测试系统在其能够承受的负载范围之内连续运行，来测试系统的稳定性<br>3、压力测试<br>　　持续不断的给被测系统增加压力，直到被测系统崩溃，来测试系统能承受的最大压力<br>4、恢复测试<br>　　通过人为的让软件或硬件出现故障来检测系统是否正确的恢复<br>5、可靠性测试<br>　　软件产品在一定条件下（时间或操作次数等），执行其必须功能的能力<br>6、强力测试<br>　　验证软件的性能在各种极端环境和系统条件下的承受能力<br>7、健壮性测试<br>　　对软件产品健壮性的测试。健壮性一般指软件的容错能力。性能这部分会在自动化里详细的讨论。<br>　　英语单词：<br>　　　　数据驱动测试： data driven testing          决策表：decision table         缺陷：defect<br>　　　　文档测试： documentation testing<br>　　测试阶段分为：单元测试、集成测试、系统测试和验收测试。很多人咨询关于确认测试的问题。关于确认测试是这样的，目前国内很多公司都是在系统测试里来做的确认测试，这点大家可以看一下测试过程模型，例如在V模型中，就只有单元测试、集成测试、系统测试和验收测试。在W模型中是单元测试、集成测试、确认测试与系统测试、验收测试。如果按照严格的标准来看，测试阶段应该分为：单元测试、集成测试、确认测试、系统测试和验收测试。</p>
+<h2 id="测试计划"><a href="#测试计划" class="headerlink" title="测试计划"></a>测试计划</h2><p>　　先来看一下测试计划的目的。IEEE关于软件测试文档的标准中对软件测试计划的目的的表达是：规定测试活动的范围、方法、资源和进度；明确正在测试的项目、要测试的特性、要执行的测试任务、每个任务的负责人以及与计划相关的风险。<br>　　下面是测试计划的主题：<br>　　　　1、高级期望：测试过程中第一个论题就是定义测试小组的高级期望，所谓高级期望就是测试小组全部承运必须达成一致的内容。例如测试的产品是什么，测试的目标等。<br>　　　　2、人、地点和事：这个就很好理解了就不过多解释了。<br>　　　　3、定义：这部分就是小组成员全部理解同意使用的定义，例如对缺陷的定义。<br>　　　　4、团队之间的责任：明确小组内所有人员的分工，每个人的责任，避免最好出现没人负责的情况。<br>　　　　5、测试范围：就是确定哪些要测试，哪些不要测试，有些模块可能由于时间的原因不需要测试，但是对不需要测试的一定要说明原因。<br>　　　　6、测试阶段：明确每一个预订的测试阶段。<br>　　　　7、测试策略：这部分大家应该很清楚了吧。<br>　　　　8、测试资源：测试过程中需要哪些资源，例如人力资源、设备、实验室等。<br>　　　　9、测试人员的任务分配：每个人测试那个模块，确保每个人都有任务。<br>　　　　10、测试进度：定义什么时开始、什么时结束。每个阶段的进入退出时间。<br>　　　　11、测试用例：这部分主要是当以测试用例的编号规范。<br>　　　　12、缺陷严重等级的定义：缺陷分成几个等级，一般是致命、严重、一般、警告、建议。<br>　　　　13、缺陷修复等级的定义：定义什么样的缺陷要优先解决。<br>　　　　14、度量和统计：每天执行的用例数等量化参数。<br>　　　　15、风险分析和问题：测试过程中会遇到哪些问题，如何降低这些风险。<br>　　这里给大家一个测试计划的模版，大家可以参考它来写测试计划。<a href="http://download.csdn.net/detail/xc5683/4687317" target="_blank" rel="external">http://download.csdn.net/detail/xc5683/4687317</a></p>
+<p>　　英语单词:<br>　　　　等价类： equivalence class<br>　　　　预期结果：expected result 入口准则：entry criteria<br>　　　　出口准则：exit criteria<br>　首先看一下QQ影音的测试计划的提纲。来看一下测试计划大致的结构。<br>　　　　1、引言（简介）<br>　　　　　　1.1、目标<br>　　　　　　1.2、背景<br>　　　　　　1.3、参考文档<br>　　　　　　1.4、预期读者<br>　　　　2、测试需求和范围（测试需求也可以单独一个文档）<br>　　　　3、测试策略和方法<br>　　　　　　3.1测试策略<br>　　　　　　3.2测试方法<br>　　　　4、资源调度<br>　　　　　　4.1硬件<br>　　　　　　4.2软件<br>　　　　　　4.3人力<br>　　　　　　4.4网络<br>　　　　　　4.5其他<br>　　　　5、测试进度和里程碑<br>　　　　6、人员分工<br>　　　　7、测试通过标准、暂停、重启、停止标准<br>　　　　8、缺陷严重程度和修复等级<br>　　　　9、测试用例编号和缺陷编号规范（未使用BUG和case管理软件）<br>　　　　10、评审会议安排<br>　　　　11、风险分析与防范<br>　　　　这个是一个大致的结构，你可以根据自己的实际情况添加和删除一些内容。</p>
+<p><strong>软件测试需要哪些知识</strong><br>　　我们要做的工作时软件测试，而不是硬件测试。那么这个就可以分为两部分了，一个是测试的知识，另一部分是软件的知识。先看一下测试的知识，这部分主要是对测试概念要了解，常见的测试策略和方法，发现缺陷后怎么处理等内容，当然这里的测试知识还是针对软件测试的。再看软件，首先软件是运行在一个操作系统中的（这里不是很准确），那么你就要对它运行的环境要了解，软件是编程语言开发的，所以也要对开发他的语言有一定的了解，现在的软件越来越多的都是基于网络的，所以还要对网络知识有一定的了解。<br><strong>软件测试需要掌握的知识:</strong><br>　　1、首先是软件测试的基础知识，包括软件测试的概念、过程，测试用例和缺陷等相关知识。<br>　　2、第二部分就是测试环境的知识（这放在第一位也是可以的），这主要就是对常见的操作系统要了解，会搭建测试环境，主要就是Windows、Linux和Mac OS.<br>　　3、就是要了解数据库的知识，现在大多软件都是要用数据库存储数据的。而且面试也会问很多关于数据库的内容。<br>　　4、就是要熟悉一门程序设计语言，常见的有Java、C、C++……<br>　　5、了解自动化测试的知识，主要是会使用自动化工具，像QTP、Loadrunner、QC这些。<br>　　6、就是白盒测试知识和白盒工具。<br>　　其中像自动化和白盒部分的内容对于零基础来说刚开始工作肯定是接触的很少的。那么只要你把前4部分掌握好。<br><strong>如何学习每门课程</strong><br>　　测试基础：这部分内容概念还是比较多的，也是最重要的部分，所以要重概念、重理解、重体会。重概念就是记住这些概念了，然后要理解它了，重体会就是在项目中要来体会它，有自己的见解。<br>　　数据库：数据库是一门实践性很强的课程，所以要重概念、重操作。对于基础的概念还是要理解的，只有理解了这些才能跟好的使用它。要熟练的使用的数据库，对重要的命令要牢记。多上机练习。<br>　　Java部分：这部分也是要重概念、重实践。学习程序设计的好办法就是多读代码，多写代码了。没有什么捷径。<br>　　自动化部分：这部分主要是介绍一些工具，所以还是要重概念、重操作。多去实践，熟练操作。<br>　　Linux部分：还是重概念、重实践啊，理解一些基本概念，多去实践，这样命令才能记住。<br>　　白盒部分：现阶段对它重概念就可以了，记住基本概念。</p>
+<h2 id="关于测试用例的基础知识和设计"><a href="#关于测试用例的基础知识和设计" class="headerlink" title="关于测试用例的基础知识和设计"></a>关于测试用例的基础知识和设计</h2><p><img src="https://i.imgur.com/J5UKcyo.jpg" alt=""><br>　　图中就是一条测试用例，由此我们直观的感觉就是一堆操作步骤的集合。你也许会说图上不是还有其他的东西吗，确实，只是操作步骤是最主要的，那预期结果不重要吗，当然也重要了，只是有些预期结果都包含在测试步骤中了。刚进公司的测试人员最主要的任务就是执行这些测试用例来检测软件。所以测试用例非常重要。或许你还有这种感觉，其实没有这些我也可以测试软件啊，诚然这样，但是那样你又怎样衡量你今天做了多少工作呢？所以测试用例也是量化测试工作的一种手段。那么怎么设计测试用例呢？<br>  测试用例的方法：等价类、边界值、因果图、判定表、正交试验法、场景法、状态迁移图法和一些其他的方法。<br>  一个测试用例的模版：<a href="http://download.csdn.net/detail/xc5683/4691294" target="_blank" rel="external">http://download.csdn.net/detail/xc5683/4691294</a></p>
+<p>　　当我们测试Windows的计算器加法时，如果全部测试应该是从1+1、1+2、1+3……有无穷多个，是无法完全测试的。当我们测试了1+1、1+2、1+3之后，还有必要测试1+4、1+5吗？能否放心地认为他们是正确的吗？我们感觉1+4、1+5和1+2、1+3没什么区别都是简单的加法。所以这里就引入的等价类划分这个办法，所谓等价类划分就是把程序的输入域划分成若干部分，然后从每部分选取少量的具有代表性的数据作为测试用例。通过划分等价类可以大幅度的减少测试工作量。<br>　　等价类的划分一般有两种情况：有效等价类和无效等价类。有效等价类就是指对于程序的规格说明来时是合理的、有意义的输入数据。例如计算器中的1+1就是有效等价类中的一个，a+b就是无效等价类中的一个。<br>　　那么现在我们来看一下如何划分等价类把，这里给大家6条确定等价类的原则：<br>　　　　1.在输入条件规定了输入值的范围或值的个数的情况下，可以确立一个有效等价类和两个无效等价类。<br>　　　　2.在输入条件规定了输入值的集合或者规定了“必须如何”的条件的情况下，可以确立一个有效等价类和一个无效等价类。<br>　　　　3.在输入条件是一个布尔量的时候，可确定一个有效等价类和一个无效等价类。<br>　　　　4.在规定了输入数据的一组值（n个），并且程序要对每个输入值分别处理的情况下，可以确定n个有效等价类和一个无效等价类。<br>　　　　5.在规定了输入数据必须遵守的规则的情况下，可以确立一个有效等价类（符合规则）和若干个无效等价类（从不同角度违反规则）。<br>　　　　6.在确知已划分的等价类中，各元素在程序中的处理方式不同的情况下，则应再将该等价类划分为更小的等价类。<br>　　在确立了等价类后，可以建立等价类表，然后就可以确定测试用例了，在确定测试用例时有个原则要注意：一条测试用例尽量覆盖所有的有效等价类，一个无效等价类对应一条测试用例。<br>　　我们来看一个常考的面试题来看一下如何使用等价类划分的方法来设计测试用例把。判断是否构成三角形的例子，一个程序接受3个数作为输入，并判断这三个数是否构成三角形，并说明这个三角形是不等边的，等腰的还是等边的。<br>   　　我们假设三条边是A、B、C。如果构成三角形应该满足下面的条件：　　<br>　　　　A&gt;0,B&gt;0,C&gt;0 并且A+B&gt;C,A+C&gt;B,B+C&gt;A<br>　　　　等腰的还要满足A=B或A=C或B+C<br>　　　　等边的要满足A=B且A=C且B=C<br>　　　　根据这些条件我们来列出等价类表<br><img src="https://i.imgur.com/2J05kRl.png" alt=""><br>　　根据这个表我们就可以确定测试用例了：<br><img src="https://i.imgur.com/X2vr1jK.png" alt=""><br><img src="https://i.imgur.com/aauV50u.png" alt=""><br>　　他的条件是“6到18个字符，可以使用字母、数字、下划线，需已字母开头”。那么有效等价类就应该是<br><img src="https://i.imgur.com/13Kd8la.png" alt=""><br>　　那么他的测试用例是：<br><img src="https://i.imgur.com/dtpKSFy.png" alt=""><br>　　下面介绍的是边界值分析的方法，这个比较简单。在人们大量的测试工作经验中总结出，大量的错误时发生在输入或输出范围的边界上，而不是在输入范围内部，为什么会这样呢？有一个原因就是对需求不明确造成的，比如需求上写着这个输入框的范围是5—10，这里就有一个问题了，包不包括5和10，这个范围是大于5小于10还是大于等于5小于10，大于5小于等于10还是大于等于5小于等于10。这就需要我们队边界值检查了。看一下我们昨天的作业，他的范围是6到18，那么应用边界值分析我们就可以加上5,6,7和17,18,19这六个边界值了。<br>　　现在我们看的边界值条件都是很容易找到的，他们都会在规格说明书中定义，或在软件使用过程中确定。实际上还有一些边界是在软件内部，最终用户看不到的，但是软件测试仍需要检查的，这些边界成为次边界条件或内部边界条件。那么我们就来看一下常见的次边界条件。<br>1、2的乘方<br><img src="https://i.imgur.com/LmzwJZs.png" alt=""><br>2、ASCII表<br><img src="https://i.imgur.com/qGiZzsP.png" alt=""><br>3、默认、空白、空值、零值和无<br>4、其他一些不正确非法的值<br>　　这些常见的次边界值也是需要我们在测试时注意的。最后我们来总结一下边界值的选择方法，边界值分析师补充等价划分测试用例设计技术，它并不是选择等价类的任意元素而是选择等价类边界的测试用例，这里给大家6个常用的原则：<br>　　（1）如果输入条件规定了值的范围，则应去刚刚到达这个范围的边界的值，以及刚刚超过这个范围边界的值作为测试输入数据。<br>　　（2）如果输入条件规定了值的个数，则用最大个数、最小个数、比最小个数少1、比最大个数多1的数作为测试数据。<br>　　（3）根据规格说明书说明的每个输出条件，使用1原则。<br>　　（4）根据规格说明书说明的每个输出条件，使用2原则。<br>　　（5）如果程序的规格说明给出了输入域或输出域是有序集合，则应选取集合的第一个元素和最后一个元素作位测试用例。<br>　　（6）如果程序中使用了一个内部数据结构，则应选择这个内部数据结构边界上的值作为测试用例。<br>　　<strong>因果图法</strong><br>   <img src="https://i.imgur.com/NQGOONk.png" alt=""><br>　　<strong>在前面的等价类和边界值中，我们都重视的是输入条件，但是在实际测试中，许多操作时具有相互联系的，只有执行A动作才会产生B结果，像这种测试我们就需要使用今天的因果图了。还是用一个例子说明一下吧。</strong><br>　　现在地铁一卡通充值，窗口越来越少了，都推荐自动充值机充值了，我们把它简化一下，只能投入50和100的人民币，相应的也只能充值50和100元。我们来分析一下他的流程吧：<br>　　1、投入50元，点充值50元，应该提示充值成功。<br>　　2、投入50元，点充值100元，应该提示金额不足，退回50元。<br>　　3、投入100元，点充值100元，应该提示充值成功。<br>　　4、投入100元，点充值50元，应该提示充值成功，并找零50元。<br>　　5、投入纸币后，没有选充值，应提示超时信息，并退还纸币。<br>　　这里假设不投币就无法选择充值。<br>　　首先我们先要分析因果关系，确定相互制约关系。因果图中的“因”就是各种输入条件，“果”就是输出结果：<br>　　1、确定所有的输入条件<br>　　输入应该只有4种吧，(1)投入50元、(2)投入100元、(3)充值50元、(4)充值100元<br>　　2、明确所有的输出结果<br>　　输出结果呢，(a)提示充值成功、(b)提示金额不足、(c)退50、(d)提示超时信息<br>　　3、明确所有条件之间的制约关系以及组合关系<br>　　一次只能投50或100吧，所以条件1和条件2不能同时出现，同理条件3和条件4也不能同时出现；哪些可以同时出现呢？1和3、1和4、2和3、2和4也可以组合吧，1和2可以单独出现吧<br>　　4、明确所有输出之间的制约关系以及组合关系<br>现在同样看输出之间的关系，输出a和d不能同时出现吧，b和d也不能同时出现，c和d也不行吧；a和c可以组合吧，b和c也可以组合吧。<br>　　5、找出什么样的输入条件组合会产生哪种输出结果<br>　　1和3—&gt;a<br>　　1和4—&gt;b和c<br>　　1—&gt;d<br>　　2和3—&gt;a和c<br>　　2和4—&gt;a<br>　　2—&gt;d<br>　　6、根据因果图，写出判定表<br>　　因果图就是左边画出条件，右边画出结果，用线的连接来表示他们的关系，这里就不画了，我会在附件里给大家详细的内容，因为有点多了。这里就直接给出判定表了<br><img src="https://i.imgur.com/JyAd1rl.png" alt=""><br>　　T表示条件为真，就是执行这个输入，当然了你也可以用1和0或Y和N来表示，F就是不执行了，X代表这个结果会出现。<br>　　7、根据判定表设计测试用例<br>判定表出来了，用例也就出来了吧。<br><img src="https://i.imgur.com/ORy7Uwp.png" alt=""><br>　下面就来看一下判定表的方法吧，刚才的案例里已经绘制了判定表了，他们是一样的了。判定表法就是略过因果图的绘制，直接列出所有组合进行筛选。先来看一下关于判定表的一些术语吧：<br><img src="https://i.imgur.com/SVB1ipU.png" alt=""><br>　　条件桩：就是所有的输入了。动作桩：就是所有的输出结果了。条件项：就是针对条件桩的取值。动作项就是每列条件项产生的及结果了。还有一个术语就是规则，每一列就是一个规则了。<br>　　那就看一下怎么建立判定表吧:<br>　　确定规则的个数。假如有n个条件，每个条件有两个取值(0，1)，故有2的n次幂种规则›列出所有的条件桩和动作桩›填入条件项、填入动作项、制定初始判定表›简化、合并相似规则或者相同动作。<br>　　这里给大家说一下简化合并的原则：如果筛选出不可能项后，如果条件项的数量小于2的5次幂，则可以不合并。合并时一次仅合并两列，并且这两列只有一个条件项值不同。<br>　　最后总结一下，因果图适用于各种逻辑条件，像控制类软件和游戏。对于判定表Beizer指出了适合使用判定表设计测试用例的条件：<br>　　　（1）规格说明以判定表的形式给出，或很容易转换成判定表。<br>　　　（2）条件的排列顺序不影响执行哪些操作。<br>　　　（3）规则的排列顺序不影响执行哪些操作。<br>　　　（4）当某一规则的条件已经满足，并确定要执行的操作后，不必检验别的规则。<br>　　　（5）如果某一规则要执行多个操作，这些操作的执行顺序无关紧要。<br>　　<strong>下面介绍的是正交试验法，正交试验法主要针对的是多个组合的情况。</strong>我们看一个案例说明一下。有一款打印软件，打印范围分为全部、当前幻灯片、给定范围，共三种情况；打印内容分为幻灯片、讲义、备注页、大纲视图，共四种方式；打印颜色/灰度分为颜色、灰度、黑白，共三种设置；打印效果分为幻灯片加框和幻灯片不加框两种方式。如果要将这些情况全部都覆盖测试，应该是3<em>4</em>3<em>2=7</em>2种情况。这些用例太多，全部测试任务量太多。<br>　　这种情况我们就可以使用正交试验法来减少测试用例数。首先看一下关于正交试验的一些基本概念和术语。因素：凡欲考察的变量称为因素，这里就是4个，打印范围、打印内容、打印颜色/灰度、打印效果。水平就是变量的取值，这里打印范围的水平是3（有3种情况），打印内容是4种，打印颜色/灰度是3种，打印效果是2种。接下来我们就需要找适合的正交表。这里最大的水平是4，因素是4，所以4的4次幂的正交表就符合我们的要求。我们先看一个正交表：<br><img src="https://i.imgur.com/c6mMsSH.png" alt=""><br>　　行数(Runs)：正交表中的行的个数，即试验的次数，也是我们通过正交实验法设计的测试用例的个数。<br>　　因素数(Factors) ：正交表中列的个数，即我们要测试的功能点。<br>　　水平数(Levels)：任何单个因素能够取得的值的最大个数。正交表中的包含的值为从0到数“水平数-1”或从1到“水平数” 。即要测试功能点的输入条件。<br><img src="https://i.imgur.com/mhtUMCz.png" alt=""><br>　　这里会给大家一个常用的正交表文件，这里有很多正交表，大家根据自己的需要找到合适的就可以了，当然也可以通过工具产生用例，我经常使用allpairs，这个我也会给大家的。<br>　　经过查表，我发现只有4的5次幂的正交表，所以我们就用这个了，把最后一列删掉就可以了。<br><img src="https://i.imgur.com/zWrAy8V.png" alt=""><br>　　将这些数字代表的取值填入表中就可以了，但是这里有一个问题，打印范围共有3种可能，3那栏要怎么填呢，这个就可以用循环填表，就是第一个3用0代替，第二个3用1……，打印效果里的2和3呢？就是2用0代替，1用3代替。<br>　　这样测试用例就出来了，当然了这个表还是要检查一下，因为这里有些组合还是不合理的，需要我们自己修改一下，而且有些常用的组合可能没出现在这个表里，还需要我们自己添加的。<br>　　正交实验法主要适用于一些配置功能的界面和兼容性测试，其他需要组合的界面。正交实验法也是针对有效等价类的。<br><strong>场景法和状态迁移法</strong><br>　　在实际测试中，经常有这种情况，像安装程序向导，它是由多个界面组成的，并且他们之间彼此有联系，而且他们之间是有流程顺序的，在面对这种测试时，我们就可以使用今天介绍的场景法了。照例还是先看一下基本概念，基本流就是按照正确的事件流来实现的流程。备选流就是出现故障或缺陷的过程。场景就是若干事件流首尾拼接构成一个测试场景。来看一个场景图：<br><img src="https://i.imgur.com/NejcVkm.png" alt=""><br>　　这里共有一个基本流和四个备选流，那么我们来确定一下场景：<br>　　　　场景1：基本流<br>　　　　场景2：基本流     备选流1<br>　　　　场景3：基本流     备选流1        备选流2<br>　　　　场景4：基本流     备选流3<br>　　　　场景5：基本流     备选流3        备选流1<br>　　　　场景6：基本流     备选流3        备选流1        备选流2<br>　　　　场景7：基本流     备选流4<br>　　　　场景8：基本流     备选流3        备选流4<br>　　备选流覆盖准则：(1)覆盖每个备选流(2)覆盖一个循环，这两种方法可以看自己的情况选择。到这基本测试用例就出来了，每个场景对应一个测试用例，对每个用例进行评审，删掉重复的就可以了。场景法最主要的就是能够分析出基本流和备选流。场景法主要适用于安装程序、向导类功能和多界面切换完成的功能。<br>下面来看一下状态迁移图法设计测试用例。在实际测试过程中有这么一种情况，就是被测系统的功能依赖于数据的状态，像常见的工作流系统（OA），对于这类软件状态迁移法就在合适不过了。所谓状态迁移法就是首先要找出所有的状态，然后再分析各个状态之间的转换，条件这些。根据这些来建立测试用例。还是用一个简单的例子来说明一下吧。</p>
+<p>　　案例研究1：某航空公司的订票系统<br>　　客户提供机票信息，订票系统根据这些信息订票，将订单状态标记为Made<br>　　同时订票系统启动计时器，要求客户在指定时间内必须付费<br>　　计时器超时前，客户付费，订单状态标记为Paid<br>　　客户可以打印处于Paid状态的订单机票，订单系统将为用户出票，订单状态标记为Ticketed<br>　　客户使用机票登机后，订单状态标记为Used（结束订单）<br>　　订票系统计时器超时后客户未付费，订票系统将取消本次机票预订，订单状态为CanceledNonPay<br>　　若在计时器超时之前，客户要求取消本次订票，订票系统将取消本次机票预订，订单状态为CanceledByCustomer<br>　　若客户在付费后取消订票，订单状态标记为CanceledByCustomer，但需要将相关的机票款项按规定退还给客户<br>　　若客户在拿到机票后取消订票，订单状态标记为CanceledByCustomer，客户需要将机票退回航空公司，航空公司收到退票后将相关的机票款项按规定退还给客户</p>
+<p>电子机票的状态 　　　　　　　　　　 　事件<br>Made初始创建　　　　　　　　　　　　提交订单<br>Paid已付费　　　　　　　　　　　　　客户付费<br>Ticketed已出票　　　　　　　　　　　打印机票<br>Used已使用　　　　　　　　　　　　　登机使用<br>CanceledNonPay超时取消　　　　　　计时器超时未付费<br>CanceledByCustomer用户取消　　　　客户取消<br>客户已付费取消　　　　　　　　　　　拿到机票后取消<br>将这些状态和事件状态图表示：<br><img src="https://i.imgur.com/HZajAvA.png" alt=""><br>　　这样就形成测试用例了，在形成测试用例的时候有几个准则：<br>　　　　(1)至少覆盖所有状态一次啊<br>　　　　(2)至少覆盖所有事件一次<br>　　　　(3)至少覆盖所有转换一次<br>　　　　(4)至少覆盖所有路径一次<br>　　　我们介绍了等价类划分法、边界值分析法、因果图和判定表、正交试验法还有场景法和状态迁移突法，这些里面等价类划分是基础，是必须要掌握的。边界值也是经常使用的。其他的都是针对有效等价类的，针对特殊的软件和功能的。这里给大家总结一下什么时候用什么方法：<br>　　　　1、首先进行等价类划分，包括输入条件和输出条件的等价类划分，这是提高工作效率减少测试量最有效的办法。<br>　　　　2、在任何情况下都要使用边界值分析，边界值的地方是最容易出现缺陷的。<br>　　　　3、可以用错误猜测法增加一些测试用例，就是根据测试工程师的经验增加一些容易出现缺陷的case。<br>　　　　4、如果程序的功能说明中含有输入条件组合的情况，这可以选用因果图和判定表。<br>　　　　5、对于参数配置类软件，使用正交试验选择组合较少的情况来达到最佳效果。<br>　　　　6、如果功能的执行依赖于数据的状态，则用状态迁移图贯穿测试过程。<br>　　　　7、对测试用例进行评审，来保证测试用例的全面。</p>
+<h2 id="缺陷报告"><a href="#缺陷报告" class="headerlink" title="缺陷报告"></a>缺陷报告</h2><p>  下面介绍的是缺陷报告的内容，缺陷的基本属性，缺陷的处理过程和如何书写缺陷报告。<br><strong>什么是缺陷</strong><br>　　一切不满足用户需求的都是缺陷。佩腾在《软件测试》一书中说符合下面5个规则的就可以成为软件缺陷：<br>　　1、软件未达到产品说明书标明的功能。<br>　　2、软件出现了产品说明书中指明不会出现的错误。<br>　　3、软件功能超出了产品说明书指明的范围。<br>　　4、软件未达到产品说明书中虽未指出但应达到的目标。<br>　　5、软件测试员认为软件难以理解、不易使用、运行速度缓慢，或最终用户认为不好。<br>知道了什么是缺陷，我们就再来看看怎么去描述一个缺陷吧，看看缺陷都有哪些属性。<br><strong>缺陷的属性</strong><br>　　(1)缺陷标识：就是缺陷的编号了，每个缺陷有一个唯一的编号。<br>　　(2)缺陷类型：这是一个功能性还是性能的bug，是文档的还是界面的bug，还是本地化的bug。<br>　　(3)缺陷的严重程度：<br>　　　　a、致命Fatal：系统崩溃、数据丢失、数据毁坏。无法进行后续的测试。<br>　　　　b、严重Critical：操作性错误、功能遗漏、影响用户使用。<br>　　　　c、一般Major：UI方面的，一些小的错误，不影响使用。<br>　　　　d、较小Minor：建议性的问题，可以不做修改。<br>　　(4)缺陷的修复优先级：<br>　　　　a、立即修复：影响后续测试的问题。<br>　　　　b、高优先级：在产品发布前必须修复。<br>　　　　c、中优先级：严重程度一般的缺陷。<br>　　　　d、低优先级：有时间就要修复的。<br>　　(5)缺陷的状态<br>　　　　a、open：新提交的bug<br>　　　　b、fixed：已修复等待测试人员验证的bug<br>　　　　c、reopen：测试人员验证发现没有修复的bug<br>　　　　d、closed：测试人员验证已修复的bug<br>　　(6)缺陷的频率—是指缺陷出现的概率<br>　　　　a、总是：可以100%重现<br>　　　　b、通常：出现的概率为80%–90%<br>　　　　c、有时：出现的概率为30%–50%<br>　　　　d、较少：出现频率比较低，2%左右<br>　　这里要注意一下缺陷的严重程度和优先级并不是一回事，严重程度说明的是缺陷产生的后果，优先级是修复的优先级。通常严重程度和优先级是一一对应的，但不绝对是。缺陷的严重程度、频率、优先级、状态这些并不是只有这几种情况，每个公司都有自己的定义的。</p>
+<p><strong>bug处理的流程：</strong><br><img src="https://i.imgur.com/nOlI3aF.png" alt=""></p>
+<p><strong>缺陷报告</strong><br>　　下面的是一个缺陷报告的基本结构：<br>　　　　A、缺陷编号<br>　　　　B、OS、version、platform、projectname<br>　　　　C、缺陷类型<br>　　　　D、缺陷的严重程度<br>　　　　E、缺陷的频率<br>　　　　F、缺陷的优先级<br>　　　　H、缺陷的状态<br>　　　　I、Summary<br>　　　　J、ReproduceSteps<br>　　　　K、ActualResult<br>　　　　L、ExpectedResult<br>　　　　M、AdditionalInformation</p>
+<p>　　摘要要简明扼要，尽量用执行什么动作发生了什么来描述，比如It pops up an error dialog after clicking the “OK” button on XXX screen.<br>　　重现步骤要完整简明，不要包含不必要的信息，每步尽量以动词开头，例如Click XXX button to Go to XXX screen.<br>　　实际结果要如实的描述发生了什么，不要包含自己的猜想。如：The error dialog pops up about “……”。<br>　　期望结果尽量要有依据，比如是根据说明书啊，一般用should，例如：According to the spec page　120, It should ……。<br>　　注释可以加上不方便出现在重现步骤中的内容，也可以是图片，log等信息。</p>
+<p>　　写缺陷的一些忠告：<br>　　　　1、要多读优秀的缺陷报告，学习他们是怎么写的。<br>　　　　2、每个缺陷报告尽量的截取图片和log，来帮助开发人员快速定位问题。<br>　　　　3、对重现步骤自己要多执行几遍，确保开发人员可以再现缺陷。<br>　　　　4、缺陷报告要客观得体，不要包含自己的主观情绪</p>
+<p>　　最后是缺陷报告的5C准则：<br>　　　　–Correct（准确）<br>　　　　–Clear（清晰）<br>　　　　–Concise（简洁）<br>　　　　–Complete（完整）<br>　　　　–Consistent（一致）<br>　　当我们完成了一个测试项目时就要写测试总结了。那什么时候我们可以终止测试呢？软件测试结束的第一个必要条件是所有在测试计划中所列出的测试项和标准都通过测试。还有我们会根据经验总结的就是当找到并将解决的缺陷占总缺陷的比例达到85%时，可终止测试。<br>　　那么测试总结中最重要的是什么呢？最主要的就是测试结果及缺陷分析。这部分主要是用图表来展现，比如所有bug的状态图、bug的严重程度状态啊。这里主要有一些术语要和大家交待一下。<br>　　<strong>缺陷发现率=缺陷总数/执行测试用例数<br>　　用例密度=缺陷总数/测试用例总数x100%<br>　　缺陷密度=缺陷总数/功能点总数</strong>　　　（具体编写文档格式参见模板）</p>
+<p><strong>确认测试和系统测试</strong><br>　　首先来看确认测试，确认测试又称为有效性测试，他的任务是验证软件的功能和性能，以及验证其他是否与用户需求一致。那么什么时候开始进入确认测试呢？集成测试完成以后，分散开发的模块被连接起来，构成完整的程序。其中各模块之间的接口存在的问题都已消除，这时就进入了确认测试。在确认测试中最主要的就是进行有效性测试盒软件配置审查，有效测试就是在模拟的环境下，运用黑盒测试的方法，验证所测试软件是否满足需求规格说明书列出的需求。软件配置审查主要就是保证软件配置的所有成分都齐全，这部分一般都是列出要检查的清单，逐一验证。<br>　　系统测试是针对软件产品系统进行的测试，主要验证整机系统是否满足了系统需求规格的定义。系统测试是将通过确认测试的软件，作为整个基于计算机系统的一个元素，与计算机硬件、外设、某些支持软件、数据和人员等其他元素结合在一起，在实际运行的环境下，对计算机系统进行的测试。系统测试的种类一般有以下几种：<br>　　　　1）恢复测试：就是采取人工干预方式使软件出错，而不能正常工作，来检验系统的恢复能力。比如突然断电。<br>　　　　2）安全测试<br>　　　　3）强度测试<br>　　　　4）性能测试<br>　　　　5）其他的一些测试<br>　　确认测试和系统测试大多数公司都是一起进行的了，要说区别就是确认测试一般是在模拟环境下，一般是开发环境，系统测试是真实的环境。<br><strong>验收测试</strong><br>　　验收测试是产品发布前的最后的测试，只有通过验收测试产品才会发布。验收测试用来验证系统是否达到了用户需求规格说明书中的要求，保证系统或软件产品最终被用户接受。主要包括易用性测试、兼容性测试、安装测试、文档测试等。<br>　　1）对产品说明书的验证，验证系统是否和产品说明书中定义的一致，虽然前面的测试也验证的规格说明书，但是验收测试对产品说明书的验证时最严格的。如果软件有明确的用户，这时用户将会参与到验收测试中，按合同逐一检查。<br>　　2）用户界面和可用性测试，好的界面应符合这7个要素：符合标准和规范、直观性、一致性、灵活性、舒适性、正确性和实用性。<br>　　3）兼容性测试：主要是与硬件兼容、软件之间的兼容、数据之间的兼容。<br>　　4）可安装和可恢复测试<br>　　5）文档测试</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="\images\wechat-qcode.jpg" alt="旅行的意义 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旅行的意义 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="旅行的意义 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/测试理论/" rel="tag"><i class="fa fa-tag"></i> 测试理论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/23/测试分类/" rel="next" title="测试分类">
+                <i class="fa fa-chevron-left"></i> 测试分类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/23/githook自动化部署项目/" rel="prev" title="githook自动化部署项目">
+                githook自动化部署项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="旅行的意义" />
+            
+              <p class="site-author-name" itemprop="name">旅行的意义</p>
+              <p class="site-description motion-element" itemprop="description">技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/luhu888" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luhu0105@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-软件测试的定义"><span class="nav-number">1.</span> <span class="nav-text">1. 软件测试的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-软件测试的目的"><span class="nav-number">2.</span> <span class="nav-text">2. 软件测试的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-软件测试的对象"><span class="nav-number">3.</span> <span class="nav-text">3. 软件测试的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-缺陷"><span class="nav-number">4.</span> <span class="nav-text">4. 缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-软件质量"><span class="nav-number">5.</span> <span class="nav-text">5. 软件质量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-初级测试工程师的主要工作"><span class="nav-number">6.</span> <span class="nav-text">6. 初级测试工程师的主要工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-总结"><span class="nav-number">7.</span> <span class="nav-text">7. 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#V模型"><span class="nav-number">7.1.</span> <span class="nav-text">V模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W模型"><span class="nav-number">7.2.</span> <span class="nav-text">W模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#X模型"><span class="nav-number">7.3.</span> <span class="nav-text">X模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H模型"><span class="nav-number">7.4.</span> <span class="nav-text">H模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是测试策略的种类："><span class="nav-number">7.5.</span> <span class="nav-text">以下是测试策略的种类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、白盒测试、灰盒测试和黑盒测试"><span class="nav-number">7.6.</span> <span class="nav-text">1、白盒测试、灰盒测试和黑盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、手工测试与自动化测试"><span class="nav-number">7.7.</span> <span class="nav-text">2、手工测试与自动化测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、静态测试与动态测试"><span class="nav-number">7.8.</span> <span class="nav-text">3、静态测试与动态测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、功能测试与性能测试"><span class="nav-number">7.9.</span> <span class="nav-text">4、功能测试与性能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、冒烟测试"><span class="nav-number">7.10.</span> <span class="nav-text">5、冒烟测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、回归测试"><span class="nav-number">7.11.</span> <span class="nav-text">6、回归测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、随机测试"><span class="nav-number">7.12.</span> <span class="nav-text">7、随机测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、安装测试-卸载测试"><span class="nav-number">7.13.</span> <span class="nav-text">8、安装测试/卸载测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、配置测试"><span class="nav-number">7.14.</span> <span class="nav-text">9、配置测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、兼容性测试"><span class="nav-number">7.15.</span> <span class="nav-text">10、兼容性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、安全性测试"><span class="nav-number">7.16.</span> <span class="nav-text">11、安全性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、易用性测试"><span class="nav-number">7.17.</span> <span class="nav-text">12、易用性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、界面测试"><span class="nav-number">7.18.</span> <span class="nav-text">13、界面测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、可移植性"><span class="nav-number">7.19.</span> <span class="nav-text">14、可移植性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、文档测试"><span class="nav-number">7.20.</span> <span class="nav-text">15、文档测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16、通过测试"><span class="nav-number">7.21.</span> <span class="nav-text">16、通过测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17、失败测试"><span class="nav-number">7.22.</span> <span class="nav-text">17、失败测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18、探索性测试"><span class="nav-number">7.23.</span> <span class="nav-text">18、探索性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19、维护测试"><span class="nav-number">7.24.</span> <span class="nav-text">19、维护测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件性能测试的方法："><span class="nav-number">8.</span> <span class="nav-text">软件性能测试的方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试计划"><span class="nav-number">9.</span> <span class="nav-text">测试计划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于测试用例的基础知识和设计"><span class="nav-number">10.</span> <span class="nav-text">关于测试用例的基础知识和设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷报告"><span class="nav-number">11.</span> <span class="nav-text">缺陷报告</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旅行的意义</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io"></a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

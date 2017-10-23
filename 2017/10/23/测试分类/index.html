@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type='text/javascript' src='//cdn.bootcss.com/cavas_nest.js/1.0.0/canvas-nest.min.js'></script>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="测试理论," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="软件测试的概念软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。 测试划分静态测试静态测试是对被测程序进行特性分析的一些方法的总称，这种方法的主要特性是不利用计算机运行被测试的程序，而是采用其他手段达到检测的目的。静态方法是指不运行被测程序本身，仅通过分析或检查源程序的文法、结构、过程、接口等来检查程序的正确性。静态方法通过程序静态特性的分析，找出欠缺和可疑之处。它在项目开发的早期">
+<meta name="keywords" content="测试理论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试分类">
+<meta property="og:url" content="http://yoursite.com/2017/10/23/测试分类/index.html">
+<meta property="og:site_name" content="旅行的意义">
+<meta property="og:description" content="软件测试的概念软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。 测试划分静态测试静态测试是对被测程序进行特性分析的一些方法的总称，这种方法的主要特性是不利用计算机运行被测试的程序，而是采用其他手段达到检测的目的。静态方法是指不运行被测程序本身，仅通过分析或检查源程序的文法、结构、过程、接口等来检查程序的正确性。静态方法通过程序静态特性的分析，找出欠缺和可疑之处。它在项目开发的早期">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-23T13:54:11.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="测试分类">
+<meta name="twitter:description" content="软件测试的概念软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。 测试划分静态测试静态测试是对被测程序进行特性分析的一些方法的总称，这种方法的主要特性是不利用计算机运行被测试的程序，而是采用其他手段达到检测的目的。静态方法是指不运行被测程序本身，仅通过分析或检查源程序的文法、结构、过程、接口等来检查程序的正确性。静态方法通过程序静态特性的分析，找出欠缺和可疑之处。它在项目开发的早期">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/23/测试分类/"/>
+
+
+
+
+
+  <title>测试分类 | 旅行的意义</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅行的意义</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">--好记性不如烂笔头。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/测试分类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅行的意义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅行的意义">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">测试分类</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T21:53:25+08:00">
+                2017-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试理论/" itemprop="url" rel="index">
+                    <span itemprop="name">测试理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="软件测试的概念"><a href="#软件测试的概念" class="headerlink" title="软件测试的概念"></a>软件测试的概念</h1><p>软件测试是通过手工或自动化手段来检测软件产品中的错误和缺陷的过程。</p>
+<h1 id="测试划分"><a href="#测试划分" class="headerlink" title="测试划分"></a>测试划分</h1><h3 id="静态测试"><a href="#静态测试" class="headerlink" title="静态测试"></a>静态测试</h3><p>静态测试是对被测程序进行特性分析的一些方法的总称，这种方法的主要特性是不利用计算机运行被测试的程序，而是采用其他手段达到检测的目的。<br>静态方法是指不运行被测程序本身，仅通过分析或检查源程序的文法、结构、过程、接口等来检查程序的正确性。静态方法通过程序静态特性的分析，找出欠缺和可疑之处。它在项目开发的早期和代码研发过程中就可以使用。静态测试结果可用于进一步的查错，并为测试用例选取提供指导。</p>
+<h3 id="动态测试"><a href="#动态测试" class="headerlink" title="动态测试"></a>动态测试</h3><p>动态测试是实际运行被测程序，输入相应的测试用例，判定执行结果是否符合要求，从而检验程序的正确性、可靠性和有效性。<br>动态测试的两种主要的方法是黑盒测试和白盒测试。动态方法是指通过运行被测程序，检查运行结果与预期结果的差异，并分析运行效率和健壮性等性能，这种方法由三部分组成：构造测试实例、执行程序、分析程序的输出结果。它适合在项目研发的中后期使用。<br>动态测试较静态测试要简单，高效，但是他介入测试较晚，所以不利于尽快发现缺陷。</p>
+<h3 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h3><p>白盒测试(white—box testing) ，也称为结构化测试、基于代码的测试，是一种测试用例设计方法，它从程序的控制结构导出测试用例。</p>
+<h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><p>黑盒测试(black—box testing)又称功能测试、数据驱动测试或基于规范的测试。用这种方法进行测试时，被测程序被当作看不见内部的黑盒。在完全不考虑程序内部结构和内部特性的情况下，测试者仅依据程序功能的需求规范考虑确定测试用例和推断测试结果的正确性。<br>白盒测试在测试的早期采用，而黑盒测试主要用于测试的后期。黑盒测试故意不考虑控制结构，而是注意信息域。</p>
+<h3 id="灰盒测试"><a href="#灰盒测试" class="headerlink" title="灰盒测试"></a>灰盒测试</h3><p>灰盒测试(gray—box testing) ，确实是介于白盒测试与黑盒测试之间的，可以这样理解，灰盒测试关注输出对于输入的正确性，同时也关注内部表现，但这种关注不象白盒那样详细、完整，只是通过一些表征性的现象、事件、标志来判断内部的运行状态，有时候输出是正确的，但内部其实已经错误了，这种情况非常多，如果每次都通过白盒测试来操作，效率会很低，因此需要采取这样的一种灰盒的方法。</p>
+<h3 id="冒烟测试"><a href="#冒烟测试" class="headerlink" title="冒烟测试"></a>冒烟测试</h3><p>简单的说，冒烟测试就是先保证系统能跑的起来，不至于让测试工作做到一半突然出现错误导致业务中断。目的就是先通过最基本的测试，如果最基本的测试都有问题，就直接打回开发部了，减少测试部门时间的浪费。</p>
+<h3 id="Web测试和负载测试"><a href="#Web测试和负载测试" class="headerlink" title="Web测试和负载测试"></a>Web测试和负载测试</h3><p>生成Web测试和负载测试时，在运行任何时间长、工作量大的测试之前运行冒烟测试是一种很好的做法。在Web测试和负载测试中，冒烟测试时间短，工作量也小。使用冒烟测试是为了在运行性能测试或压力测试之前，确保一切都已正确配置并可按预期运行</p>
+<h3 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h3><p>回归测试（regression test）是指修改了旧代码后，重新进行测试以确认修改没有引入新的错误或导致其他代码产生错误。</p>
+<h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><p>功能测试（Functional testing）：根据产品特征、操作描述和用户方案，测试一个产品的特性和可操作行为以确定它们满足设计需求。</p>
+<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><p>性能测试（Performance testing）：评价一个产品或组建与性能需求是否符合的测试。包括负载测试、强度测试、数据库容量测试、基准测试等类型。</p>
+<h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><p>压力测试：获取系统正确运行的极限，检查系统在瞬间峰值负荷下正确运行的能力，例如：对服务器做压力侧室时增加并发操作的用户数量，或者不停向服务器发送请求，或者一次性向服务器发送特别大的数据等。看服务器保持正常运行所能达到的最大状态。</p>
+<h3 id="负载测试"><a href="#负载测试" class="headerlink" title="负载测试"></a>负载测试</h3><p>负载测试：用于检查系统在使用大量数据的时候正确工作的能力，即检验系统的能力最高能达到什么程度，例如：对信息检索系统，让他的使用频率达到最大，或者对多个终端的分时系统，让所有的终端都开动，在使整个系统的全部资源达到“满负荷”的情况下，测试系统的承受能力。区别于压力测试的是，负载测试一般模仿用户真实环境，大量数据也不会取到实际不可能达到的数值。</p>
+<h3 id="易用性测试"><a href="#易用性测试" class="headerlink" title="易用性测试"></a>易用性测试</h3><p>易用性测试：从客户角度出发，从使用软件的合理性和方便性等角度对软件系统进行检查，发现人为因素或使用上的问题。</p>
+<h3 id="安装测试"><a href="#安装测试" class="headerlink" title="安装测试"></a>安装测试</h3><p>安装测试：确保软件在正常情况和异常情况的不同条件下，如首次安装、升级、完整或自定义安装等都能进行安装。异常情况包括磁盘空间不足、缺少目录创建权限等。核实软件在安装后可正常运行。安装测试还包括卸载测试。</p>
+<h3 id="界面测试"><a href="#界面测试" class="headerlink" title="界面测试"></a>界面测试</h3><p>界面测试：用户界面风格是否满足用户要求，文字是否正确，版面是否美观等。包括窗口测试，菜单和鼠标操作，数据项测试。</p>
+<h3 id="配置测试"><a href="#配置测试" class="headerlink" title="配置测试"></a>配置测试</h3><p>配置测试：主要检查计算机系统内各个设备或各种资源之间的相互连接和功能分配中的错误，包括验证全部配置命令的可操作性，软件配置，硬件配置，利用手动方式进行配置状态间的转换。</p>
+<h3 id="文档测试"><a href="#文档测试" class="headerlink" title="文档测试"></a>文档测试</h3><p>文档测试：检查文档的正确性、完备性和可理解性。</p>
+<h3 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h3><p>兼容性测试（企业内常称为“共存性”）：测试软件是否和系统的其它与之交互的元素之间兼容，如浏览器、操作系统、硬件等。</p>
+<h3 id="安全性测试"><a href="#安全性测试" class="headerlink" title="安全性测试"></a>安全性测试</h3><p>安全性测试（尤其B/S系统要求比较高）：检查系统对非法入侵的防范能力，检查系统中已存在的系统安全性、保密性措施是否发挥作用，有无漏洞。系统安全设计的准则是，使非法侵入的代价超过被保护信息的价值。</p>
+<h3 id="恢复测试"><a href="#恢复测试" class="headerlink" title="恢复测试"></a>恢复测试</h3><p>恢复测试（Recovery testing）：主要检查系统的容错能力。当系统出错时，能否在规定时间内修正错误并恢复正常。例如SQL的回滚机制。</p>
+<h3 id="可移植性测试"><a href="#可移植性测试" class="headerlink" title="可移植性测试"></a>可移植性测试</h3><p>可移植性测试：测试软件是否可以被成功移植到指定的硬件或软件平台上。</p>
+<h3 id="引导测试"><a href="#引导测试" class="headerlink" title="引导测试"></a>引导测试</h3><p>引导测试：软件开发中，验证系统在真实硬件和客户基础上处理典型操作的能力。在软件外包测试中，引导测试通常是客户检查软件测试公司测试能力的一种形式，只有通过了客户特定的引导测试，软件测试公司才能接受客户真实软件项目的软件测试。</p>
+<h3 id="随机测试"><a href="#随机测试" class="headerlink" title="随机测试"></a>随机测试</h3><p>随机测试：没有书面测试用例、记录期望结果、检查列表、脚本或指令的测试，主要是根据测试者的经验对软件进行功能和性能抽查。随机测试是根据测试说明书执行测试用例的重要补充手段，是保证测试覆盖完整性的有效方式和过程。</p>
+<h3 id="健全测试"><a href="#健全测试" class="headerlink" title="健全测试"></a>健全测试</h3><p>健全测试：软件主要功能成分的简单测试以保证它是否能进行基本的测试。</p>
+<h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><p>自动化测试：使用自动化测试工具进行测试，一般不需要人工过多干预，在GUI、性能测试中用得较多。</p>
+<h3 id="国际化测试"><a href="#国际化测试" class="headerlink" title="国际化测试"></a>国际化测试</h3><p>国际化测试：目的是测试软件的国际化支持能力，发现软件的国际化的潜在问题，保证软件在世界不同区域中都能正常运行。国际化测试使用每种可能的国际输入类型，针对任何区域性或区域设置检查产品的功能是否正常，软件国际化测试的重点在于执行国际字符串的输入/输出功能。</p>
+<h3 id="本地化能力测试"><a href="#本地化能力测试" class="headerlink" title="本地化能力测试"></a>本地化能力测试</h3><p>本地化能力测试：本地化能力是指不需要重新设计或修改代码，将程序的用户界面翻译成任何目标语言的能力。常在软件的伪本地化版本上进行。</p>
+<h3 id="本地化测试"><a href="#本地化测试" class="headerlink" title="本地化测试"></a>本地化测试</h3><p>本地化测试：对象是软件的本地化版本。本地化测试的目的是测试特定目标区域设置的软件本地化质量。本地化测试的环境是在本地化的操作系统上安装本地化的软件。</p>
+<h3 id="通过测试"><a href="#通过测试" class="headerlink" title="通过测试"></a>通过测试</h3><p>通过测试：即正面测试，使用满足需求的数据测试系统的过程。</p>
+<h3 id="失败测试"><a href="#失败测试" class="headerlink" title="失败测试"></a>失败测试</h3><p>失败测试：负面测试，使用不满足需求的数据测试系统。</p>
+<h3 id="错误猜测"><a href="#错误猜测" class="headerlink" title="错误猜测"></a>错误猜测</h3><p>错误猜测：是通过直觉发现程序中的错误和缺陷的能力。</p>
+<h3 id="验证测试"><a href="#验证测试" class="headerlink" title="验证测试"></a>验证测试</h3><p>验证测试（Verification）：组织开发工作产品的同行对工作产品进行系统性的检查，发现工作产品中的缺陷，并提出必要的修改意见，达到消除工作产品缺陷的目的。适用于所有立项开发的软件项目及产品。同行评审及测试是主要的验证方法，根据特定的需求选择工作产品，并选择有效的验证方法对工作产品进行验证。</p>
+<h3 id="确认测试"><a href="#确认测试" class="headerlink" title="确认测试"></a>确认测试</h3><p>确认测试（Validation）：确保产品或产品构件适合其预定的用途。确认主要是对中间及最终产品的检查与验收，表现形式为审批、签字确认、正式的验收报告等，确认与验证紧密结合，并采用验证的方法，如同行评审、检查、走查、测试等。适用于所有立项开发的软件项目与产品。</p>
+<p>#［软件测试分类一］比较全面详细</p>
+<h2 id="按照全生命周期的软件测试概念，测试对象应该包括软件设计开发的各个阶段的内容。"><a href="#按照全生命周期的软件测试概念，测试对象应该包括软件设计开发的各个阶段的内容。" class="headerlink" title="按照全生命周期的软件测试概念，测试对象应该包括软件设计开发的各个阶段的内容。"></a>按照全生命周期的软件测试概念，测试对象应该包括软件设计开发的各个阶段的内容。</h2><h3 id="按照开发阶段划分"><a href="#按照开发阶段划分" class="headerlink" title="按照开发阶段划分"></a>按照开发阶段划分</h3><h5 id="按照开发阶段划分软件测试可分为：单元测试、集成测试、系统测试、确认测试和验收测试。"><a href="#按照开发阶段划分软件测试可分为：单元测试、集成测试、系统测试、确认测试和验收测试。" class="headerlink" title="按照开发阶段划分软件测试可分为：单元测试、集成测试、系统测试、确认测试和验收测试。"></a>按照开发阶段划分软件测试可分为：单元测试、集成测试、系统测试、确认测试和验收测试。</h5><p>●单元测试</p>
+<p>单元测试又称模块测试，是针对软件设计的最小单位－－－程序模块进行正确性检验的测试工作。其目的在于检查每个程序单元能否正确实现详细设计说明中的模块功能、性能、接口和设计约束等要求，发现各模块内部可能存在的各种错误。单元测试需要从程序的内部结构出发设计测试用例。多个模块可以平行地独立进行单元测试。</p>
+<p>●集成测试</p>
+<p>集成测试也叫做组装测试。通常在单元测试的基础上，将所有的程序模块进行有序的、递增的测试。集成测试是检验程序单元或部件的接口关系，逐步集成为符合概要设计要求的程序部件或整个系统。</p>
+<p>软件集成的过程是一个持续的过程，会形成很多个临时版本，在不断的集成过程中，功能集成的稳定性是真正的的挑战。在每个版本提交时，都需要进行冒烟测试，即对程序主要功能进行验证。冒烟测试也叫版本验证测试、提交测试。</p>
+<p>●确认测试</p>
+<p>确认测试是通过检验和提供客观证据，证实软件是否满足特定预期用途的需求。确认测试是检测与证实软件是否满足软件需求说明书中规定的要求。</p>
+<p>●系统测试</p>
+<p>系统测试是为验证和确认系统是否达到其原始目标，而对集成的硬件和软件系统进行的测试。系统测试是在真实或模拟系统运行的环境下，检查完整的程序系统能否和系统(包括硬件、外设、网络和系统软件、支持平台等)正确配置、连接、并满足用户需求。</p>
+<p>●验收测试</p>
+<h4 id="按照项目任务书或合同、供需双方约定的验收依据文档进行的对整个系统的测试与评审，决定是否接收或拒收系统。"><a href="#按照项目任务书或合同、供需双方约定的验收依据文档进行的对整个系统的测试与评审，决定是否接收或拒收系统。" class="headerlink" title="按照项目任务书或合同、供需双方约定的验收依据文档进行的对整个系统的测试与评审，决定是否接收或拒收系统。"></a>按照项目任务书或合同、供需双方约定的验收依据文档进行的对整个系统的测试与评审，决定是否接收或拒收系统。</h4><h5 id="按照测试实施组织划分"><a href="#按照测试实施组织划分" class="headerlink" title="按照测试实施组织划分"></a>按照测试实施组织划分</h5><p>按照测试实施组织划分，软件测试可分为开发方测试、用户测试(β测试)、第三方测试。</p>
+<p>●开发方测试。</p>
+<p>通常也叫“验证测试”或“α测试”。开发方通过检测和提供客观证据，证实软件的实现是否满足规定的需求。验证测试是在软件开发环境下，由开发者检测与证实软件的实现是否满足软件设计说明或软件需求说明的要求。主要是指在软件开发完成以后，开发方对要提交的软件进行全面的自我检查与验证，可以和软件的“系统测试”一并进行。</p>
+<p>●用户测试。</p>
+<p>在用户的应用环境下，用户通过运行和使用软件，检测与核实软件实现是否符合自己预期的要求。通常情况用户测试不是指用户的“验收测试”，而是指用户的使用性测试，由用户找出软件的应用过程中发现的软件的缺陷与问题，并对使用质量进行评价。</p>
+<p>β测试通常被看成是一种“用户测试”。β测试主要是把软件产品有计划地免费分发到目标市场，让用户大量使用，并评价、检查软件。通过用户各种方式的大量使用，来发现软件存在的问题与错误，把信息反馈给开发者修改。β测试中厂商获取的信息，可以有助于软件产品的成功发布。</p>
+<p>●第三方测试。</p>
+<p>介于软件开发方和用户方之间的测试组织的测试。第三方测试也称为独立测试。软件质量工程强调开展独立验证和确认(IV&amp;V)活动。IV&amp;V是由在技术、管理和财务上与开发组织具有规定程度独立的组织执行验证和确认过程。软件第三方测试也就是由在技术、管理和财务上与开发方和用户方相对独立的组织进行的软件测试。一般情况下是在模拟用户真实应用环境下，进行软件确认测试。</p>
+<h4 id="按照测试技术划分"><a href="#按照测试技术划分" class="headerlink" title="按照测试技术划分"></a>按照测试技术划分</h4><p>按照测试技术划分：白盒测试、黑盒测试、灰盒测试。也可划分为静态测试和动态测试。静态测试是指不运行程序，通过人工对程序和文档进行分析与检查；静态测试技术又称为静态分析技术，静态测试实际上是对软件中的需求说明书、设计说明书、程序源代码等进行非运行的检查，静态测试包括：走查、符号执行、需求确认等。动态测试是指通过人工或使用工具运行程序进行检查、分析程序的执行状态和程序的外部表现。我们这里讨论的白盒测试、黑盒测试、灰盒测试，在实现测试方法上既包括了动态测试也包括了静态测试。</p>
+<p>●白盒测试</p>
+<p>通过对程序内部结构的分析、检测来寻找问题。白盒测试可以把程序看成装在一个透明的白盒子里，也就是清楚了解程序结构和处理过程，检查是否所有的结构及路径都是正确的，检查软件内部动作是否按照设计说明的规定正常进行。白盒测试又称结构测试。</p>
+<p>●黑盒测试</p>
+<p>通过软件的外部表现来发现其缺陷和错误。黑盒测试法把测试对象看成一个黑盒子，完全不考虑程序内部结构和处理过程。黑盒测试是在程序界面处进行测试，它只是检查程序是否按照需求规格说明书的规定正常实现。</p>
+<p>●灰盒测试</p>
+<p>介于白盒测试和黑盒测试之间的测试。灰盒测试关注输出对于输入的正确性；同时也关注内部表现，但这种关注不像白盒测试那样详细、完整，只是通过一些表征性的现象、事件、标志来判断内部的运行状态。</p>
+<p>灰盒测试结合了白盒测试和黑盒测试的要素。它考虑了用户端、特定的系统知识和操作环境。它在系统组件的协同性环境中评价应用软件的设计。</p>
+<p>软件测试方法和技术的分类与软件开发过程相关联，它贯穿了整个软件生命周期。走查、单元测试、集成测试、系统测试用于整个开发过程中的不同阶段。开发文档和源程序可以应用单元测试应用走查的方法；单元测试可应用白盒测试方法；集成测试应用近似灰盒测试方法；而系统测试和确认测试应用黑盒测试方法。</p>
+<h4 id="［软件测试分类二］比较简洁明了"><a href="#［软件测试分类二］比较简洁明了" class="headerlink" title="［软件测试分类二］比较简洁明了"></a>［软件测试分类二］比较简洁明了</h4><p>软件测试可以分别按测试范围、测试目的、测试对象、测试过程分类。     </p>
+<p>1.按测试范围分类</p>
+<p>1)单元测试（unit testing）<br>2)组件测试（component testing）<br>3)集成测试（integration testing）<br>4)系统测试（system testing）<br>5)验收测试<br>6)安装测试</p>
+<p>2.按照测试目的分类<br>1)正确性测试<br>    a)白盒测试<br>    b)黑盒测试</p>
+<p>2)性能测试</p>
+<p>3)可靠性测试<br>    a)强壮性测试<br>    b)异常处理测试<br>    c)负载测试</p>
+<p>4)安全性测试</p>
+<p>3.按测试对象分类<br>1)单元测试<br>2)组件测试<br>3)模块测试<br>4)程序测试<br>5)系统测试<br>6)文档测试</p>
+<p>4.按照测试过程分类<br>1)需求阶段的测试<br>2)设计阶段的测试<br>3)程序阶段的测试<br>4)测试结果的评估<br>5)安装测试<br>6)验收测试<br>7)测试变化：维护</p>
+<p>5.其他<br>测试技术和方法<br>1)回归测试：为保证软件中新的变化不会对原有功能是正常使用有影响而进行的测试。也就是说，已经满足用户需求的功能不应该出现任何问题。每当软件缺陷被修改之后、或者对原有功能进行一些调整和加强，或者是在原有版本基础上增加新功能的时候，都会采用回归测试方法，特别是到了开发周期的最后阶段。回归测试更适用于软件自动化测试工具。<br>2)压力测试：用来检查系统在大负荷条件下的运行情况。 在非正常的巨大负荷下，某些协作和输入大量重复，输入大数，对数据库进行非常复杂的查询等，以确定在什么情况下系统响应速度下降或是出现故障。也称为性能测试。<br>3)恢复测试：在系统崩溃、硬件故障，或者其他灾难发生之后，重新恢复系统和数据的能力测试。<br>4)安全测试：测试系统在应付非授权的内部/外部访问，故意损坏时系统的防护能力。<br>5)兼容性测试：测试在特殊的硬件/软件/操作系统/网络环境下的软件表现。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="\images\wechat-qcode.jpg" alt="旅行的意义 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旅行的意义 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="旅行的意义 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/测试理论/" rel="tag"><i class="fa fa-tag"></i> 测试理论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/23/负载压力性能测试的区别/" rel="next" title="负载压力性能测试的区别">
+                <i class="fa fa-chevron-left"></i> 负载压力性能测试的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/23/软件测试详解/" rel="prev" title="软件测试详解">
+                软件测试详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="旅行的意义" />
+            
+              <p class="site-author-name" itemprop="name">旅行的意义</p>
+              <p class="site-description motion-element" itemprop="description">技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/luhu888" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luhu0105@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试的概念"><span class="nav-number">1.</span> <span class="nav-text">软件测试的概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试划分"><span class="nav-number">2.</span> <span class="nav-text">测试划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态测试"><span class="nav-number">2.0.1.</span> <span class="nav-text">静态测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态测试"><span class="nav-number">2.0.2.</span> <span class="nav-text">动态测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#白盒测试"><span class="nav-number">2.0.3.</span> <span class="nav-text">白盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#黑盒测试"><span class="nav-number">2.0.4.</span> <span class="nav-text">黑盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灰盒测试"><span class="nav-number">2.0.5.</span> <span class="nav-text">灰盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒烟测试"><span class="nav-number">2.0.6.</span> <span class="nav-text">冒烟测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web测试和负载测试"><span class="nav-number">2.0.7.</span> <span class="nav-text">Web测试和负载测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回归测试"><span class="nav-number">2.0.8.</span> <span class="nav-text">回归测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能测试"><span class="nav-number">2.0.9.</span> <span class="nav-text">功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能测试"><span class="nav-number">2.0.10.</span> <span class="nav-text">性能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压力测试"><span class="nav-number">2.0.11.</span> <span class="nav-text">压力测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#负载测试"><span class="nav-number">2.0.12.</span> <span class="nav-text">负载测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#易用性测试"><span class="nav-number">2.0.13.</span> <span class="nav-text">易用性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装测试"><span class="nav-number">2.0.14.</span> <span class="nav-text">安装测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#界面测试"><span class="nav-number">2.0.15.</span> <span class="nav-text">界面测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置测试"><span class="nav-number">2.0.16.</span> <span class="nav-text">配置测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档测试"><span class="nav-number">2.0.17.</span> <span class="nav-text">文档测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性测试"><span class="nav-number">2.0.18.</span> <span class="nav-text">兼容性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性测试"><span class="nav-number">2.0.19.</span> <span class="nav-text">安全性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恢复测试"><span class="nav-number">2.0.20.</span> <span class="nav-text">恢复测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可移植性测试"><span class="nav-number">2.0.21.</span> <span class="nav-text">可移植性测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引导测试"><span class="nav-number">2.0.22.</span> <span class="nav-text">引导测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机测试"><span class="nav-number">2.0.23.</span> <span class="nav-text">随机测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#健全测试"><span class="nav-number">2.0.24.</span> <span class="nav-text">健全测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化测试"><span class="nav-number">2.0.25.</span> <span class="nav-text">自动化测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#国际化测试"><span class="nav-number">2.0.26.</span> <span class="nav-text">国际化测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地化能力测试"><span class="nav-number">2.0.27.</span> <span class="nav-text">本地化能力测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地化测试"><span class="nav-number">2.0.28.</span> <span class="nav-text">本地化测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过测试"><span class="nav-number">2.0.29.</span> <span class="nav-text">通过测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#失败测试"><span class="nav-number">2.0.30.</span> <span class="nav-text">失败测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误猜测"><span class="nav-number">2.0.31.</span> <span class="nav-text">错误猜测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证测试"><span class="nav-number">2.0.32.</span> <span class="nav-text">验证测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确认测试"><span class="nav-number">2.0.33.</span> <span class="nav-text">确认测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按照全生命周期的软件测试概念，测试对象应该包括软件设计开发的各个阶段的内容。"><span class="nav-number">2.1.</span> <span class="nav-text">按照全生命周期的软件测试概念，测试对象应该包括软件设计开发的各个阶段的内容。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#按照开发阶段划分"><span class="nav-number">2.1.1.</span> <span class="nav-text">按照开发阶段划分</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#按照开发阶段划分软件测试可分为：单元测试、集成测试、系统测试、确认测试和验收测试。"><span class="nav-number">2.1.1.0.1.</span> <span class="nav-text">按照开发阶段划分软件测试可分为：单元测试、集成测试、系统测试、确认测试和验收测试。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按照项目任务书或合同、供需双方约定的验收依据文档进行的对整个系统的测试与评审，决定是否接收或拒收系统。"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">按照项目任务书或合同、供需双方约定的验收依据文档进行的对整个系统的测试与评审，决定是否接收或拒收系统。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#按照测试实施组织划分"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">按照测试实施组织划分</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按照测试技术划分"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">按照测试技术划分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#［软件测试分类二］比较简洁明了"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">［软件测试分类二］比较简洁明了</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旅行的意义</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io"></a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type='text/javascript' src='//cdn.bootcss.com/cavas_nest.js/1.0.0/canvas-nest.min.js'></script>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="性能测试理论," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="性能测试常用指标事务　　事务是性能测试脚本的一个重要特性，要度量服务器的性能需要定义事务；在性能测试中是通过方法来实现事务的，即将业务操作或者代码放在方法里面，通过框架将函数置为事务。 TPS　　TPS(Transaction Per Second)每秒系统能够处理的交易或事务的数量，它是衡量系统处理能力的重要指标。 并发　　并发分为狭义和广义两类。　　狭义并发即所有的用户在同一时刻做同一件事情或">
+<meta name="keywords" content="性能测试理论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能测试指标详解">
+<meta property="og:url" content="http://yoursite.com/2017/10/23/性能测试指标详解/index.html">
+<meta property="og:site_name" content="旅行的意义">
+<meta property="og:description" content="性能测试常用指标事务　　事务是性能测试脚本的一个重要特性，要度量服务器的性能需要定义事务；在性能测试中是通过方法来实现事务的，即将业务操作或者代码放在方法里面，通过框架将函数置为事务。 TPS　　TPS(Transaction Per Second)每秒系统能够处理的交易或事务的数量，它是衡量系统处理能力的重要指标。 并发　　并发分为狭义和广义两类。　　狭义并发即所有的用户在同一时刻做同一件事情或">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-23T13:49:16.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="性能测试指标详解">
+<meta name="twitter:description" content="性能测试常用指标事务　　事务是性能测试脚本的一个重要特性，要度量服务器的性能需要定义事务；在性能测试中是通过方法来实现事务的，即将业务操作或者代码放在方法里面，通过框架将函数置为事务。 TPS　　TPS(Transaction Per Second)每秒系统能够处理的交易或事务的数量，它是衡量系统处理能力的重要指标。 并发　　并发分为狭义和广义两类。　　狭义并发即所有的用户在同一时刻做同一件事情或">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/23/性能测试指标详解/"/>
+
+
+
+
+
+  <title>性能测试指标详解 | 旅行的意义</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅行的意义</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">--好记性不如烂笔头。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/性能测试指标详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅行的意义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅行的意义">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">性能测试指标详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T21:48:19+08:00">
+                2017-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/性能测试理论/" itemprop="url" rel="index">
+                    <span itemprop="name">性能测试理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="性能测试常用指标"><a href="#性能测试常用指标" class="headerlink" title="性能测试常用指标"></a>性能测试常用指标</h2><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>　　事务是性能测试脚本的一个重要特性，要度量服务器的性能需要定义事务；在性能测试中是通过方法来实现事务的，即将业务操作或者代码放在方法里面，通过框架将函数置为事务。</p>
+<h3 id="TPS"><a href="#TPS" class="headerlink" title="TPS"></a>TPS</h3><p>　　TPS(Transaction Per Second)每秒系统能够处理的交易或事务的数量，它是衡量系统处理能力的重要指标。</p>
+<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>　　并发分为狭义和广义两类。<br>　　狭义并发即所有的用户在同一时刻做同一件事情或操作，这种操作一般针对同一类型的业务，或者所有用户进行完全一样的操作，目的是测试数据库和程序对并发操作的处理。<br>　　广义并发即多个用户对系统发出了请求或者进行了操作，但是这些请求或操作可以是不同的，但对整个系统而言，仍然是有很多用户在同时进行操作。<br>　　狭义并发强调对系统的请求操作是完全相同的，多适用于负载测试、压力测试；广义并发不限制对系统的请求操作，多适用于混合场景、稳定性测试。</p>
+<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>　　性能测试过程中为了模拟真实用户的业务处理过程，在系统中构建的基于事务、脚本、虚拟用户、运行设置等一系列动作的集合称之为性能测试场景。性能测试中场景包含了脚本、施压模式、用户数、日志级别、步调时间等。</p>
+<h3 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h3><p>　　响应时间是指从客户端发一个请求开始，到客户端接收到服务端返回的响应所经历的时间，响应时间由请求发送时间、网络传输时间和服务器处理时间三部分组成。<br>　　在性能测试结果分析中，性能场景中事务的响应时间可以通过监控得到，事务响应时间分为事务最小响应时间、事务平均响应时间、事务最大响应时间。</p>
+<h3 id="并发用户数"><a href="#并发用户数" class="headerlink" title="并发用户数"></a>并发用户数</h3><p>　　模拟真实业务逻辑步骤的虚拟用户，虚拟用户模拟的操作步骤都被记录在虚拟用户脚本里，脚本用于描述用户在场景中执行的操作。</p>
+<h3 id="请求状态"><a href="#请求状态" class="headerlink" title="请求状态"></a>请求状态</h3><p>　　请求状态反映了HTTP压测结果的HTTP状态码，状态码含义如下：<br>　　　　成功200：服务器已成功处理了请求并提供了请求的网页。<br>　　　　成功204：服务器成功处理了请求，但没有返回任何内容。<br>　　　　重定向3xx：需要客户端采取进一步的操作才能完成请求。<br>　　　　客户端错误4xx：表示请求可能出错，妨碍了服务器的处理。<br>　　　　服务器错误5xx：表示服务器在处理请求时发生内部错误，这些错误可能是服务器本身的错误而不是请求出错。</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>　　CPU资源是指性能测试场景运行的时间段内应用服务系统的CPU资源占用率，CPU资源是判断系统处理能力及应用运行是否稳定的重要参数。</p>
+<h3 id="Load"><a href="#Load" class="headerlink" title="Load"></a>Load</h3><p>　　系统平均负载指在特定时间间隔内运行队列中的平均进程数。如果一个进程满足以下条件就会位于运行队列中：<br>　　　　它没有在等待I/O操作的结果。<br>　　　　它没有主动进入等待状态，也就是没有调用“wait”。<br>　　　　没有被停止，例如等待终止。## 性能测试技术文档</p>
+<h3 id="1-编写目的"><a href="#1-编写目的" class="headerlink" title="1. 编写目的"></a>1. 编写目的</h3><p>　　制定性能测试实施指南，从技术角度制定性能测试实施过程中关键技术规范，更好的对系统进行性能测试，帮助客户更好地从技术上来规避系统上线后的风险。</p>
+<h3 id="2-系统环境"><a href="#2-系统环境" class="headerlink" title="2. 系统环境"></a>2. 系统环境</h3><h5 id="2-1-分析"><a href="#2-1-分析" class="headerlink" title="2.1 分析"></a>2.1 分析</h5><p>　　系统环境分为生产环境、测试环境等，做性能测试之前，肯定需要一套测试环境的，那么如何搭建、配置测试环境，在性能测试前需重点考虑。性能测试结果是要为生产系统服务的，那么理想中的性能测试关键最好就是生产环境，但是由于某种因素，不可能将生产环境完整的再搭建一套，有时必须进行”裁剪”。</p>
+<h4 id="2-2-风险"><a href="#2-2-风险" class="headerlink" title="2.2 风险"></a>2.2 风险</h4><p>　　测试环境的风险主要体现在跟生产差异太大，测试结果根本没有参考价值。对测试环境系统平台、中间件、数据库等不熟悉和了解，也会导致瓶颈不易分析、不易调优等。</p>
+<h4 id="2-3-规范"><a href="#2-3-规范" class="headerlink" title="2.3 规范"></a>2.3 规范</h4><h5 id="2-3-1-测试环境搭建"><a href="#2-3-1-测试环境搭建" class="headerlink" title="2.3.1 测试环境搭建"></a>2.3.1 测试环境搭建</h5><p>　　测试环境搭建需满足如下规范：<br>　　　　测试环境架构与生产环境架构完全相同。<br>　　　　测试环境机型与生产环境机型尽量相同。<br>　　　　测试环境软件版本与生产环境软件版本完全相同，版本主要包括：操作系统、中间件、数据库、应用等。<br>　　　　测试环境参数配置与生产环境完全相同，参数主要包括：操作系统参数、中间件参数、数据库参数、应用参数。<br>　　　　测试环境基础数据量与生产环境基础数据量需在同一个数量级上。<br>　　　　只能减少测试环境机器台数，并且需要同比例缩小，而不能只减少某一层的机器台数。<br>　　　　理想的测试环境配置是生产环境的1/2，1/4。</p>
+<h5 id="2-3-2-测试环境调研"><a href="#2-3-2-测试环境调研" class="headerlink" title="2.3.2 测试环境调研"></a>2.3.2 测试环境调研</h5><p>　　测试环境调研，需要调研如下内容：<br>　　　　系统架构：系统如何组成的，每一层功能是做什么的，与生产环境有多大差异，主要为后面进行瓶颈分析服务和生产环境性能评估。<br>　　　　操作系统平台：操作系统是哪种平台，进行工具监控。<br>　　　　中间件：哪种中间件，进行工具监控和瓶颈定位。<br>　　　　数据库：哪种数据库，进行工具监控和瓶颈定位。<br>　　　　应用：启动多少个实例，启动参数是多少，进行问题查找和瓶颈定位。</p>
+<h3 id="3-测试指标"><a href="#3-测试指标" class="headerlink" title="3. 测试指标"></a>3. 测试指标</h3><h4 id="3-1-分析"><a href="#3-1-分析" class="headerlink" title="3.1 分析"></a>3.1 分析</h4><p>　　测试指标一般分为业务指标、资源指标、应用指标、前端指标：业务指标：从业务人员的角度得出来的，例如：并发用户数、TPS、成功率、响应时间。资源指标：从运维人员的角度得出来的，例如：CPU资源利用率、内存利用率、I/O、内核参数(信号量、打开文件数)等。应用指标：从开发人员的角度得出来的，例如：空闲线程数、数据库连接数、GC/FULL GC次数、函数耗时等。前端指标：从测试人员和开发人员角度得出来的，例如：页面加载时间，网络时间（DNS，连接时间、传输时间等）。</p>
+<h4 id="3-2-风险"><a href="#3-2-风险" class="headerlink" title="3.2 风险"></a>3.2 风险</h4><p>　　不同用户对系统的指标类型和期望值是不一样的，需要提前针对不同角色的人员进行指标调研，设定阈值，测试出系统在阈值下的性能，瓶颈定位及调优。未提前关注测试指标，将会导致测试结果不是相关人员需要的，结果是无效的。</p>
+<h4 id="3-3-规范"><a href="#3-3-规范" class="headerlink" title="3.3 规范"></a>3.3 规范</h4><h5 id="3-3-1-业务指标"><a href="#3-3-1-业务指标" class="headerlink" title="3.3.1 业务指标"></a>3.3.1 业务指标</h5><p>　　业务响应时间(Response Time):这个指标所有相关人员都明白其含义，业务部门更需要此指标的具体值，一般情况下，不同系统的业务响应时间期望值是不同的，１秒以内最佳；像淘宝系统业务ＲＴ基本在几十毫秒以内。<br>业务处理能力（Transaction Per Second）:这个指标是衡量系统的处理能力的一个非常重要的指标，TPS可以参照同行业系统和结合具体业务，中小企业TPS值为50~1000笔/秒，银行TPS值为1000~10000笔/秒，淘宝TPS值为30000~100000笔/秒。成功率:这个指标是衡量系统处于压力下，业务的成功率，一般业界成功率要大于99.6%。</p>
+<h5 id="3-3-2-资源指标"><a href="#3-3-2-资源指标" class="headerlink" title="3.3.2 资源指标"></a>3.3.2 资源指标</h5><p>　　一般情况下，系统资源指标也不能超过瓶颈值，例如CPU资源利用率&lt;=75%,内存无SWAP,　磁盘和网络I/O不能自身处理能力。理想的情况下，当系统压力上不去的时候，资源成为瓶颈（正常情况下，非其他瓶颈情况下导致），这样的话加资源，系统处理能力还会上升的，但是遗憾的是，很多系统性能测试资源都没达到瓶颈的时候，压力就上不去了。</p>
+<h3 id="4-业务模型"><a href="#4-业务模型" class="headerlink" title="4 业务模型"></a>4 业务模型</h3><h4 id="4-1-分析"><a href="#4-1-分析" class="headerlink" title="4.1 分析"></a>4.1 分析</h4><p>　　系统有很多业务，每笔业务逻辑和业务量是不一样的，消耗系统的资源也是不一样的，因此业务种类、业务占比决定了系统的处理能力，业务模型在性能测试中起着关键性的作用。</p>
+<h4 id="4-2-风险"><a href="#4-2-风险" class="headerlink" title="4.2 风险"></a>4.2 风险</h4><p>　　业务模型中业务和占比选取不对，跟生产差异非常大，直接导致测试结果没有任何参考价值，并且容易误导对系统处理能力的判断。有些业务的业务量虽然占比很低，但一旦突变，对系统也是致命的，这些业务在性能测试中也需要关注。</p>
+<h4 id="4-3-规范"><a href="#4-3-规范" class="headerlink" title="4.3 规范"></a>4.3 规范</h4><p>　　系统中的典型业务如何选取一般情况下遵循的规则是选取业务量高的、经常使用的、有风险的、未来有增长趋势的业务作为系统的典型业务。已经上线的系统可以通过高峰时段历史业务量和生产问题性能来评估，对于即将上线的系统可以通过调研和单交易资源消耗的结果来评估。</p>
+<h5 id="4-3-1-已上线系统"><a href="#4-3-1-已上线系统" class="headerlink" title="4.3.1 已上线系统"></a>4.3.1 已上线系统</h5><p>　　搜集生产上不同高峰时间段的业务种类和业务量，每个时间段的业务种类和业务量是否有很大的差异，如有的话，必须有多个业务模型；差异不大的，可以只用一个业务模型。搜集生产上高峰时间段资源消耗和资源异常的时间点，从中捕获资源消耗高和异常的原因，可能是由于某种”不起眼”的业务导致。搜集生产问题，进行分析，如果是由于某种业务导致而且以前性能测试的时候忽略此笔业务，那么这笔业务的风险是非常大的，需要后续性能测试将此业务加入到业务模型中。</p>
+<h5 id="4-3-2-未上线系统"><a href="#4-3-2-未上线系统" class="headerlink" title="4.3.2 未上线系统"></a>4.3.2 未上线系统</h5><p>　　通过调研，确定业务种类和业务占比<br>　　通过调研，确定是否在业务促销等活动中，某些业务有突变的可能。<br>　　通过测试结果，确定每笔业务的资源消耗，如果某些业务虽然占比低，但资源消耗非常大，那么需要适当的调整此业务占比。</p>
+<h3 id="5-数据量"><a href="#5-数据量" class="headerlink" title="5 数据量"></a>5 数据量</h3><h4 id="5-1-分析"><a href="#5-1-分析" class="headerlink" title="5.1 分析"></a>5.1 分析</h4><p>　　数据量主要包括基础数据量（或者叫历史数据量、垫底数据量、数据库中已有的数据量）和参数化数据量，数据量在性能测试中起到非常重要的作用。对于在数据库中只有几条记录和有几亿条记录里面查询信息，那么结果肯定相差非常大的，随着业务量的增长，记录也越来越多，因此在性能测试过程中，需要保持跟生产上相同级别的数据量。生产系统中业务中使用不同的数据、那么我们在测试的时候需要考虑参数数据量的大小和数据分布的问题。</p>
+<h4 id="5-2-风险"><a href="#5-2-风险" class="headerlink" title="5.2 风险　"></a>5.2 风险　</h4><p>　　如果基础数据量跟生产环境的基础数据量不在同一个数量级上，将会导致相关指标例如响应时间比生产上快很多，不真实，甚至导致测试结果没有参考意义。如果参数化数据量过少、未考虑数据分布的情况，将会导致测试结果不真实，甚至测试结果没有参考意义。</p>
+<h4 id="5-3-规范"><a href="#5-3-规范" class="headerlink" title="5.3 规范"></a>5.3 规范</h4><h5 id="5-3-1-基础数据量"><a href="#5-3-1-基础数据量" class="headerlink" title="5.3.1 基础数据量"></a>5.3.1 基础数据量</h5><p>　　测试环境基础数据量需要跟生产环境基础数据量保持在同一个数据量级上，一般情况下需要考虑未来三年数据量增长趋势，如果增长过快需要在测试环境造非常多的数据。</p>
+<h5 id="5-3-2-参数化数据量"><a href="#5-3-2-参数化数据量" class="headerlink" title="5.3.2 参数化数据量"></a>5.3.2 参数化数据量</h5><p>　　参数化数据量尽可能的多，必要的情况下，可以清除缓存或者用写代码的方式提供参数化。<br>　　参数化数据分布，如果业务有明显的地域等分布的特征，需要考虑数据分布的情况。</p>
+<h3 id="6-测试模型"><a href="#6-测试模型" class="headerlink" title="6 测试模型"></a>6 测试模型</h3><h4 id="6-1-分析"><a href="#6-1-分析" class="headerlink" title="6.1 分析"></a>6.1 分析</h4><p>　　测试模型是在业务模型的基础上演变而来的，一般情况测试模型和业务模型是相同的，但是由于某种业务无法模拟或者安全原因，需要去掉此笔业务，重新计算占比得出。</p>
+<h4 id="6-2-风险"><a href="#6-2-风险" class="headerlink" title="6.2 风险"></a>6.2 风险</h4><p>　　参照５业务模型风险去掉的业务如果有风险，那么需评估此笔业务的风险，风险大的情况下，需采取其他解决方案。</p>
+<h4 id="6-3-规范"><a href="#6-3-规范" class="headerlink" title="6.3 规范"></a>6.3 规范</h4><p>　　参照５业务模型规范。</p>
+<h3 id="7-测试类型"><a href="#7-测试类型" class="headerlink" title="7 测试类型"></a>7 测试类型</h3><h4 id="7-1-分析"><a href="#7-1-分析" class="headerlink" title="7.1 分析"></a>7.1 分析</h4><p>　　测试类型主要分为负载测试、压力测试；其中单交易基准测试、负载测试、压力测试；混合交易负载测试（容量测试）、压力测试；业务突变测试；混合交易稳定性测试；混合交易可靠性测试；批量测试、批量测试对混合交易影响测试等是常见的测试类型。每种测试类型针对不同的目的，可以根据生产系统现实情况进行选择。</p>
+<h4 id="7-2-风险"><a href="#7-2-风险" class="headerlink" title="7.2 风险"></a>7.2 风险</h4><p>　　缺少某种测试类型，将会导致现实生产系统某种场景没有测到，发生风险，例如：系统崩溃、响应时间慢等。</p>
+<h4 id="7-3-规范"><a href="#7-3-规范" class="headerlink" title="7.3 规范"></a>7.3 规范</h4><p>　　如果时间充足，建议大部分测试类型都需要测试一下，也可以参考以下规范：<br>　　　　单交易基准测试：可选<br>　　　　单交易负载测试：可选，未上线系统建议做负载，看资源消耗<br>　　　　混合交易负载测试（容量测试）：必须<br>　　　　混合交易压力测试：可选<br>　　　　业务突变测试：可选<br>　　　　混合交易稳定性测试：必须<br>　　　　混合交易可靠性测试：可选<br>　　　　批量测试：可选<br>　　　　批量测试对混合交易影响测试：可选</p>
+<h3 id="8-脚本"><a href="#8-脚本" class="headerlink" title="8 脚本"></a>8 脚本</h3><h4 id="8-1-分析"><a href="#8-1-分析" class="headerlink" title="8.1 分析"></a>8.1 分析</h4><p>　　脚本是用来模拟生产环境系统的业务操作，脚本模拟的正确与否直接影响着系统的性能，模拟业务操作的时候，需要参数化数据，参数化数据分布及数据量在６数据量章节已经分析过了。</p>
+<h4 id="8-2-风险"><a href="#8-2-风险" class="headerlink" title="8.2 风险"></a>8.2 风险</h4><p>　　脚本“空转”（业务没有做成功）或业务逻辑与实际生产环境差距太大将会导致测试结果没有参考价值，甚至系统上线后，系统“宕机”的生产事故。</p>
+<h4 id="8-3-规范"><a href="#8-3-规范" class="headerlink" title="8.3 规范"></a>8.3 规范</h4><p>　　跟生产上业务规则一致编写脚本。<br>　　在关键地方校验服务器返回值。<br>　　数据尽量参数化、数据量尽可能的多。</p>
+<h3 id="9-场景"><a href="#9-场景" class="headerlink" title="9 场景"></a>9 场景</h3><h4 id="9-1-分析"><a href="#9-1-分析" class="headerlink" title="9.1 分析"></a>9.1 分析</h4><p>　　场景是模拟现实生产环境中业务场景的，包括并发用户数、加减压策略、运行时间等。场景模拟需要跟生产上场景相一致，特别是在一段时间内，测试出来的各业务TPS占比跟生产上高峰时候业务占比一致。</p>
+<h4 id="9-2-风险"><a href="#9-2-风险" class="headerlink" title="9.2 风险"></a>9.2 风险</h4><p>　　场景的风险主要体现在测试出来的业务TPS占比需跟生产上业务占比一致，在业务比例偏离严重的情况下，将会导致测试结果不真实或者无效，不能反映生产上的业务场景。</p>
+<h4 id="9-3-规范"><a href="#9-3-规范" class="headerlink" title="9.3 规范"></a>9.3 规范</h4><p>　　测试结果中各业务TPS占比需跟生产上业务占比（业务模型）相一致，如何才能保证一致呢？需要设置步调时间（PacingTime）：例如：A和B两笔业务，占比为1：4，响应时间分别为1ms,100ms,总的用户数为50，那么A和B按照业务比例并发用户数分别为10和40，测试出来的TPS分别为10000(10个用户/0.001秒)笔/秒和400笔/秒，那么TPS比例为25:1,跟<br>生产上差距非常大，严重偏离生产上业务模型，此时我们设置A和B的PacingTime都为200ms,那么测试出来的TPS分别为50（10个用户/0.2秒）笔/秒和200笔/秒，A和B业务TPS比例50:200=1:4,与生产上保持一致了，没有偏离生产上业务模型。</p>
+<h3 id="10-监控"><a href="#10-监控" class="headerlink" title="10 监控"></a>10 监控</h3><h4 id="10-1-分析"><a href="#10-1-分析" class="headerlink" title="10.1 分析"></a>10.1 分析</h4><p>　　监控的目的主要是为进行性能测试分析服务的，完善的对系统进行监控，针对瓶颈定位起到”事半功倍”的效果。一般来说，需要针对操作系统、中间件、数据库、应用等进行控，每种类型的监控尽量指标全面。</p>
+<h4 id="10-2-风险"><a href="#10-2-风险" class="headerlink" title="10.2 风险"></a>10.2 风险</h4><p>　　没有完善的系统监控，将会导致性能分析无从下手，定位不出系统瓶颈，根本不知道从哪进行调优。</p>
+<h4 id="10-3-规范"><a href="#10-3-规范" class="headerlink" title="10.3 规范"></a>10.3 规范</h4><p>　　操作系统：CPU(User,Sys,Wait,Idle)利用率，内存利用率(包括Swap),磁盘I/O,网络I/O，内核参数等<br>　　中间件：线程池、JDBC连接池、JVM（GC/FULL GC/堆大小）<br>　　数据库: 效率低下SQL、锁、缓存、会话、进程数等<br>　　应用：方法耗时、同步与异步、缓冲、缓存</p>
+<h3 id="11-瓶颈分析"><a href="#11-瓶颈分析" class="headerlink" title="11 瓶颈分析"></a>11 瓶颈分析</h3><h4 id="11-1-分析"><a href="#11-1-分析" class="headerlink" title="11.1 分析"></a>11.1 分析</h4><p>　　瓶颈定位的目的是对系统中存在的瓶颈点进行分析，为调优做准备，系统的性能瓶颈点主要分布在操作系统系统资源、中间件参数配置、数据库问题以及应用算法上，对于有针对性的进行调优，有利于系统性能的提升。</p>
+<h4 id="11-2-风险"><a href="#11-2-风险" class="headerlink" title="11.2 风险"></a>11.2 风险</h4><p>　　当系统的瓶颈点不能被分析出来以后，系统上线就存在风险，这种风险有可能导致业务高峰的时候，系统性能体验差，甚至“崩溃”。</p>
+<h4 id="11-3-规范"><a href="#11-3-规范" class="headerlink" title="11.3 规范"></a>11.3 规范</h4><p>　　分析系统的瓶颈点遵循的规则如下：<br>　　　　操作系统资源消耗：CPU、Memory、Disk I/O、Network I/O<br>　　　　中间件指标：线程池(Thread Pool)、数据库连接池(JDBC)、JVM(GC/FULL GC/堆大小)<br>　　　　数据库指标：效率低下SQL、锁等待/死锁、缓存命中率、会话、进程等<br>　　　　应用：方法耗时、算法、同步和异步、缓存、缓冲<br>　　　　压力机：压力机资源消耗，一般情况下，压力机成为瓶颈的可能性非常低。</p>
+<h3 id="12-调优"><a href="#12-调优" class="headerlink" title="12 调优"></a>12 调优</h3><h4 id="12-1-分析"><a href="#12-1-分析" class="headerlink" title="12.1 分析"></a>12.1 分析</h4><p>　　调优的目的是提升系统的性能，针对系统的“瓶颈点”对症“下药”,通过测试验证系统的性能有多大的提升。</p>
+<h4 id="12-2-风险"><a href="#12-2-风险" class="headerlink" title="12.2 风险"></a>12.2 风险</h4><p>　　未进行调优的系统，系统上线后，可能会出现客户体验差的效果，甚至导致系统“崩溃”的风险。</p>
+<h4 id="12-3-规范"><a href="#12-3-规范" class="headerlink" title="12.3 规范"></a>12.3 规范</h4><p>　　系统调优遵循的规则如下：<br>　　　　中间件调优：线程池、数据库连接池、JVM。<br>　　　　数据库调优：效率低下SQL、死锁和锁等待、缓存命中率，进程和会话参数。<br>　　　　应用调优：方法耗时、算法、同步和异步、缓存、缓冲。<br>　　　　系统资源：一般情况下，系统资源(CPU\大部分是由应用和参数设置不合理导致的，并非系统资源真的不够”用”。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="\images\wechat-qcode.jpg" alt="旅行的意义 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旅行的意义 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="旅行的意义 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能测试理论/" rel="tag"><i class="fa fa-tag"></i> 性能测试理论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/22/MySQL5-7解压版安装教程/" rel="next" title="MySQL5.7解压版安装教程">
+                <i class="fa fa-chevron-left"></i> MySQL5.7解压版安装教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/23/负载压力性能测试的区别/" rel="prev" title="负载压力性能测试的区别">
+                负载压力性能测试的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="旅行的意义" />
+            
+              <p class="site-author-name" itemprop="name">旅行的意义</p>
+              <p class="site-description motion-element" itemprop="description">技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/luhu888" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luhu0105@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能测试常用指标"><span class="nav-number">1.</span> <span class="nav-text">性能测试常用指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.1.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TPS"><span class="nav-number">1.2.</span> <span class="nav-text">TPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发"><span class="nav-number">1.3.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景"><span class="nav-number">1.4.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应时间"><span class="nav-number">1.5.</span> <span class="nav-text">响应时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并发用户数"><span class="nav-number">1.6.</span> <span class="nav-text">并发用户数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求状态"><span class="nav-number">1.7.</span> <span class="nav-text">请求状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-number">1.8.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Load"><span class="nav-number">1.9.</span> <span class="nav-text">Load</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编写目的"><span class="nav-number">1.10.</span> <span class="nav-text">1. 编写目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-系统环境"><span class="nav-number">1.11.</span> <span class="nav-text">2. 系统环境</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-分析"><span class="nav-number">1.11.0.1.</span> <span class="nav-text">2.1 分析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-风险"><span class="nav-number">1.11.1.</span> <span class="nav-text">2.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-规范"><span class="nav-number">1.11.2.</span> <span class="nav-text">2.3 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-测试环境搭建"><span class="nav-number">1.11.2.1.</span> <span class="nav-text">2.3.1 测试环境搭建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-2-测试环境调研"><span class="nav-number">1.11.2.2.</span> <span class="nav-text">2.3.2 测试环境调研</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试指标"><span class="nav-number">1.12.</span> <span class="nav-text">3. 测试指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-分析"><span class="nav-number">1.12.1.</span> <span class="nav-text">3.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-风险"><span class="nav-number">1.12.2.</span> <span class="nav-text">3.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-规范"><span class="nav-number">1.12.3.</span> <span class="nav-text">3.3 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-1-业务指标"><span class="nav-number">1.12.3.1.</span> <span class="nav-text">3.3.1 业务指标</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-2-资源指标"><span class="nav-number">1.12.3.2.</span> <span class="nav-text">3.3.2 资源指标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-业务模型"><span class="nav-number">1.13.</span> <span class="nav-text">4 业务模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-分析"><span class="nav-number">1.13.1.</span> <span class="nav-text">4.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-风险"><span class="nav-number">1.13.2.</span> <span class="nav-text">4.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-规范"><span class="nav-number">1.13.3.</span> <span class="nav-text">4.3 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-1-已上线系统"><span class="nav-number">1.13.3.1.</span> <span class="nav-text">4.3.1 已上线系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-2-未上线系统"><span class="nav-number">1.13.3.2.</span> <span class="nav-text">4.3.2 未上线系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-数据量"><span class="nav-number">1.14.</span> <span class="nav-text">5 数据量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-分析"><span class="nav-number">1.14.1.</span> <span class="nav-text">5.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-风险"><span class="nav-number">1.14.2.</span> <span class="nav-text">5.2 风险　</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-规范"><span class="nav-number">1.14.3.</span> <span class="nav-text">5.3 规范</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-1-基础数据量"><span class="nav-number">1.14.3.1.</span> <span class="nav-text">5.3.1 基础数据量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-2-参数化数据量"><span class="nav-number">1.14.3.2.</span> <span class="nav-text">5.3.2 参数化数据量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-测试模型"><span class="nav-number">1.15.</span> <span class="nav-text">6 测试模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-分析"><span class="nav-number">1.15.1.</span> <span class="nav-text">6.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-风险"><span class="nav-number">1.15.2.</span> <span class="nav-text">6.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-规范"><span class="nav-number">1.15.3.</span> <span class="nav-text">6.3 规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-测试类型"><span class="nav-number">1.16.</span> <span class="nav-text">7 测试类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-分析"><span class="nav-number">1.16.1.</span> <span class="nav-text">7.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-风险"><span class="nav-number">1.16.2.</span> <span class="nav-text">7.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-规范"><span class="nav-number">1.16.3.</span> <span class="nav-text">7.3 规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-脚本"><span class="nav-number">1.17.</span> <span class="nav-text">8 脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-分析"><span class="nav-number">1.17.1.</span> <span class="nav-text">8.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-风险"><span class="nav-number">1.17.2.</span> <span class="nav-text">8.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-规范"><span class="nav-number">1.17.3.</span> <span class="nav-text">8.3 规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-场景"><span class="nav-number">1.18.</span> <span class="nav-text">9 场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-分析"><span class="nav-number">1.18.1.</span> <span class="nav-text">9.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-风险"><span class="nav-number">1.18.2.</span> <span class="nav-text">9.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-规范"><span class="nav-number">1.18.3.</span> <span class="nav-text">9.3 规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-监控"><span class="nav-number">1.19.</span> <span class="nav-text">10 监控</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-1-分析"><span class="nav-number">1.19.1.</span> <span class="nav-text">10.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-风险"><span class="nav-number">1.19.2.</span> <span class="nav-text">10.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-规范"><span class="nav-number">1.19.3.</span> <span class="nav-text">10.3 规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-瓶颈分析"><span class="nav-number">1.20.</span> <span class="nav-text">11 瓶颈分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-1-分析"><span class="nav-number">1.20.1.</span> <span class="nav-text">11.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-2-风险"><span class="nav-number">1.20.2.</span> <span class="nav-text">11.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-3-规范"><span class="nav-number">1.20.3.</span> <span class="nav-text">11.3 规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-调优"><span class="nav-number">1.21.</span> <span class="nav-text">12 调优</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-1-分析"><span class="nav-number">1.21.1.</span> <span class="nav-text">12.1 分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-2-风险"><span class="nav-number">1.21.2.</span> <span class="nav-text">12.2 风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-3-规范"><span class="nav-number">1.21.3.</span> <span class="nav-text">12.3 规范</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旅行的意义</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io"></a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
