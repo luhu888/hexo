@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Ubuntu,git," />
+  <meta name="keywords" content="http协议," />
 
 
 
@@ -81,18 +81,22 @@
 
 
 
-<meta name="description" content="Linux下安装git，并同步代码流程 sudo pip install git  安装git ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥 之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建">
-<meta name="keywords" content="Ubuntu,git">
+<meta name="keywords" content="http协议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu14.04下安装git及同步代码">
-<meta property="og:url" content="http://yoursite.com/2017/10/22/Ubuntu14-04下安装git及同步代码/index.html">
+<meta property="og:title" content="http详解">
+<meta property="og:url" content="http://yoursite.com/2017/10/28/http详解/index.html">
 <meta property="og:site_name" content="旅行的意义">
-<meta property="og:description" content="Linux下安装git，并同步代码流程 sudo pip install git  安装git ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥 之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-23T13:58:51.980Z">
+<meta property="og:image" content="https://i.imgur.com/PfN98yj.png">
+<meta property="og:image" content="https://i.imgur.com/cZzzpbn.png">
+<meta property="og:image" content="https://i.imgur.com/E4zL46i.png">
+<meta property="og:image" content="https://i.imgur.com/s4r3WKl.png">
+<meta property="og:image" content="https://i.imgur.com/x2mjkC8.png">
+<meta property="og:image" content="https://i.imgur.com/OduwEK6.png">
+<meta property="og:updated_time" content="2017-10-28T14:08:35.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu14.04下安装git及同步代码">
-<meta name="twitter:description" content="Linux下安装git，并同步代码流程 sudo pip install git  安装git ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥 之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建">
+<meta name="twitter:title" content="http详解">
+<meta name="twitter:image" content="https://i.imgur.com/PfN98yj.png">
 
 
 
@@ -122,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/22/Ubuntu14-04下安装git及同步代码/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/28/http详解/"/>
 
 
 
 
 
-  <title>Ubuntu14.04下安装git及同步代码 | 旅行的意义</title>
+  <title>http详解 | 旅行的意义</title>
   
 
 
@@ -265,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/22/Ubuntu14-04下安装git及同步代码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/28/http详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="旅行的意义">
@@ -282,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu14.04下安装git及同步代码</h1>
+          <h1 class="post-title" itemprop="name headline">http详解</h1>
         
 
         <div class="post-meta">
@@ -294,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-22T20:01:52+08:00">
-                2017-10-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-28T22:07:28+08:00">
+                2017-10-28
               </time>
             
 
@@ -317,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
                   </a>
                 </span>
 
@@ -354,16 +358,7 @@
       
 
       
-        <h2 id="Linux下安装git，并同步代码流程"><a href="#Linux下安装git，并同步代码流程" class="headerlink" title="Linux下安装git，并同步代码流程"></a>Linux下安装git，并同步代码流程</h2><ol>
-<li>sudo pip install git  安装git</li>
-<li>ssh-key -C ‘你的邮箱地址’ -t rsa   创建验证的公钥</li>
-<li>之后在输入完这个命令以后会有Enter file in which to save the key（/home/haohao/.ssh/id_rsa)这个输入选项，并不用在意，这个是选择是否在默认地址创建文件还是在新输入的地方创建（新的文件名称），回车就好，就可以在默认的地址创建新的ssh文件</li>
-<li>cd ~/.ssh</li>
-<li>gedit id_rsa.pub, 在代码仓库创建新的ssh</li>
-<li>首先在想要的位置创建一个空文件夹，使用命令sudo git clone <a href="https://github.com/luhu888/SchoolMS" target="_blank" rel="external">https://github.com/luhu888/SchoolMS</a> /school 后面代表指定的空文件夹路径，或者开启命令行先进入指定的路径再进行clone操作，</li>
-<li>若没有创建公钥，或创建失败，直接使用该命令亦可，只不过clone的同时需要在命令行中输入用户名和密码。</li>
-<li>在项目.git的同级目录（即项目文件所在的根目录）下输入命令git pull 即可同步代码，注意clone的代码不能改动，否则只能删除重新clone，不能拉取更新代码。</li>
-</ol>
+        <p><img src="https://i.imgur.com/PfN98yj.png" alt=""><br><img src="https://i.imgur.com/cZzzpbn.png" alt=""><br><img src="https://i.imgur.com/E4zL46i.png" alt=""><br><img src="https://i.imgur.com/s4r3WKl.png" alt=""><br><img src="https://i.imgur.com/x2mjkC8.png" alt=""><br><img src="https://i.imgur.com/OduwEK6.png" alt=""></p>
 
       
     </div>
@@ -418,9 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
-          
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+            <a href="/tags/http协议/" rel="tag"><i class="fa fa-tag"></i> http协议</a>
           
         </div>
       
@@ -433,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/21/hexo安装教程/" rel="next" title="hexo安装教程">
-                <i class="fa fa-chevron-left"></i> hexo安装教程
+              <a href="/2017/10/28/测试常见面试题/" rel="next" title="测试常见面试题">
+                <i class="fa fa-chevron-left"></i> 测试常见面试题
               </a>
             
           </div>
@@ -442,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/22/Ubuntu14-04配置Apache2服务器/" rel="prev" title="Ubuntu14.04配置Apache2服务器">
-                Ubuntu14.04配置Apache2服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -497,17 +486,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -587,22 +567,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下安装git，并同步代码流程"><span class="nav-number">1.</span> <span class="nav-text">Linux下安装git，并同步代码流程</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
