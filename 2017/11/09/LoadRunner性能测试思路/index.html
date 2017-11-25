@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="如何寻找性能瓶颈：拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；项目性能主要看一下几个参数：QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间； 并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足响">
+<meta name="description" content="如何寻找性能瓶颈： 拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；项目性能主要看一下几个参数：QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间； 并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足">
 <meta name="keywords" content="LoadRunner">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LoadRunner性能测试思路">
 <meta property="og:url" content="http://yoursite.com/2017/11/09/LoadRunner性能测试思路/index.html">
 <meta property="og:site_name" content="旅行的意义">
-<meta property="og:description" content="如何寻找性能瓶颈：拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；项目性能主要看一下几个参数：QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间； 并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足响">
+<meta property="og:description" content="如何寻找性能瓶颈： 拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；项目性能主要看一下几个参数：QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间； 并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-09T16:03:12.490Z">
+<meta property="og:updated_time" content="2017-11-23T11:46:09.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LoadRunner性能测试思路">
-<meta name="twitter:description" content="如何寻找性能瓶颈：拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；项目性能主要看一下几个参数：QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间； 并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足响">
+<meta name="twitter:description" content="如何寻找性能瓶颈： 拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；项目性能主要看一下几个参数：QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间； 并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足">
 
 
 
@@ -354,7 +354,8 @@
       
 
       
-        <p>如何寻找性能瓶颈：<br>拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；<br>项目性能主要看一下几个参数：<br>QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间；</p>
+        <p>如何寻找性能瓶颈：</p>
+<p>拿到项目先评测一下项目，了解大致的性能指标，以及测试环境的软硬件参数，如服务器网速带宽，CPU性能，运行内存大小，硬盘内存大小，单个完成事务占用带宽峰值；<br>项目性能主要看一下几个参数：<br>QPS（TPS）：每秒钟request（事务）数量，这是一个相对值，计算方法为：并发数*每秒请求服务端总数/响应时间；</p>
 <p>并发数：系统同时处理的request（事务）数量；这个看具体项目的需求，在满足响应时间的前提下，并发数越多越好；</p>
 <p>响应时间： 一般取平均响应时间，普遍的标准是2/5/10秒原则，也就是说，在2秒之内给客户响应被用户认为是“非常有吸引力”的用户体验；在5秒之内响应客户被认为“比较不错”的用户体验；在10秒内给用户响应被认为“糟糕”的用户体验。如果超过10秒还没有得到响应，那么大多用户会认为这次请求是失败的。</p>
 <p>以下是几个QPS的分类：</p>
@@ -442,6 +443,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/11/25/个人总结/" rel="prev" title="个人总结">
+                个人总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -512,7 +517,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -523,7 +528,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -534,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
