@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  1 算法1.1 字符串1.1.1 正则表达式re【标准库】 提供基于正则的匹配和替换。 1.1.2 字符集chardetHome：[https://github.com/erikrose/chardet] ch">
+<meta name="description" content="本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  1 算法1.1 字符串1.1.1 正则表达式re【标准库】 提供基于正则的匹配和替换。 1.1.2 字符集chardetHome：(https://github.com/erikrose/chardet) ch">
 <meta name="keywords" content="python开源库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python开源库总结">
 <meta property="og:url" content="http://yoursite.com/2018/01/22/python开源库总结/index.html">
 <meta property="og:site_name" content="旅行的意义">
-<meta property="og:description" content="本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  1 算法1.1 字符串1.1.1 正则表达式re【标准库】 提供基于正则的匹配和替换。 1.1.2 字符集chardetHome：[https://github.com/erikrose/chardet] ch">
+<meta property="og:description" content="本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  1 算法1.1 字符串1.1.1 正则表达式re【标准库】 提供基于正则的匹配和替换。 1.1.2 字符集chardetHome：(https://github.com/erikrose/chardet) ch">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-22T14:14:09.248Z">
+<meta property="og:updated_time" content="2018-01-22T14:21:27.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python开源库总结">
-<meta name="twitter:description" content="本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  1 算法1.1 字符串1.1.1 正则表达式re【标准库】 提供基于正则的匹配和替换。 1.1.2 字符集chardetHome：[https://github.com/erikrose/chardet] ch">
+<meta name="twitter:description" content="本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  1 算法1.1 字符串1.1.1 正则表达式re【标准库】 提供基于正则的匹配和替换。 1.1.2 字符集chardetHome：(https://github.com/erikrose/chardet) ch">
 
 
 
@@ -337,11 +337,13 @@
 <hr>
 <h1 id="1-算法"><a href="#1-算法" class="headerlink" title="1 算法"></a>1 算法</h1><h2 id="1-1-字符串"><a href="#1-1-字符串" class="headerlink" title="1.1 字符串"></a>1.1 字符串</h2><h3 id="1-1-1-正则表达式"><a href="#1-1-1-正则表达式" class="headerlink" title="1.1.1 正则表达式"></a>1.1.1 正则表达式</h3><h4 id="re"><a href="#re" class="headerlink" title="re"></a>re</h4><p>【标准库】</p>
 <p>提供基于正则的匹配和替换。</p>
-<h3 id="1-1-2-字符集"><a href="#1-1-2-字符集" class="headerlink" title="1.1.2 字符集"></a>1.1.2 字符集</h3><h4 id="chardet"><a href="#chardet" class="headerlink" title="chardet"></a>chardet</h4><p>Home：[<a href="https://github.com/erikrose/chardet" target="_blank" rel="external">https://github.com/erikrose/chardet</a>]</p>
+<h3 id="1-1-2-字符集"><a href="#1-1-2-字符集" class="headerlink" title="1.1.2 字符集"></a>1.1.2 字符集</h3><h4 id="chardet"><a href="#chardet" class="headerlink" title="chardet"></a>chardet</h4><p>Home：(<a href="https://github.com/erikrose/chardet" target="_blank" rel="external">https://github.com/erikrose/chardet</a>)</p>
 <p>chardet 可以猜测任意一段文本的字符集编码。对于编码类型未知的文本，它会很有用。</p>
 <p>chardet 既可以作为模块来使用，也可以作为命令行工具来使用。</p>
-<p>代码示例<br>    import chardet<br>    print(chardet.detect(bytes))</p>
-<h3 id="1-1-3-（其它）"><a href="#1-1-3-（其它）" class="headerlink" title="1.1.3 （其它）"></a>1.1.3 （其它）</h3><h4>StringIO &amp; cStringIO</h4>
+<p>代码示例</p>
+<pre><code>import chardet
+print(chardet.detect(bytes))
+</code></pre><h3 id="1-1-3-（其它）"><a href="#1-1-3-（其它）" class="headerlink" title="1.1.3 （其它）"></a>1.1.3 （其它）</h3><h4>StringIO &amp; cStringIO</h4>
 
 <p>【标准库】</p>
 <p>以读写文件的方式来操作字符串（有点类似于内存文件）。</p>
@@ -374,8 +376,11 @@
 
 <p>【标准库】</p>
 <p>顾名思义，这个标准库是用来进行随机数生成滴。</p>
-<p>代码示例——生成 0-100 的随机数<br>    <source lang="python"><br>    import random<br>    random.seed()<br>    random.randint(0, 100)<br>    </p>
-<h4>fractions</h4>
+<p>代码示例——生成 0-100 的随机数</p>
+<pre><code>import random
+random.seed()
+random.randint(0, 100)
+</code></pre><h4>fractions</h4>
 
 <p>【标准库】</p>
 <p>封装了跟有理数（分数）相关的运算</p>
@@ -389,16 +394,18 @@
 
 <p>ctypes 在 Python 2.5 版本加入到标准库中。</p>
 <p>通过它，你可以很方便地调用 C/C++ 动态库导出的函数，可以在 Python 中使用各种 C/C++ 的数据类型（包括“指针”和“引用”）。</p>
-<p>代码示例——调用 Linux/Unix 系统的标准 C 函数，获取当前时间<br>    <source lang="python"><br>    from ctypes import *</p>
-<pre><code>libc = CDLL(&quot;libc.so.6&quot;)
+<p>代码示例——调用 Linux/Unix 系统的标准 C 函数，获取当前时间</p>
+<pre><code>from ctypes import *
+libc = CDLL(&quot;libc.so.6&quot;)
 time = libc.time(None)
-&lt;/source&gt;
-</code></pre><p>代码示例——调用 Windows 系统的 API，弹出消息提示框<br>    <source lang="python"><br>    from ctypes import c_int, WINFUNCTYPE, windll<br>    from ctypes.wintypes import HWND, LPCSTR, UINT</p>
-<pre><code>prototype = WINFUNCTYPE(c_int, HWND, LPCSTR, LPCSTR, UINT)
+</code></pre><p>代码示例——调用 Windows 系统的 API，弹出消息提示框</p>
+<pre><code>from ctypes import c_int, WINFUNCTYPE, windll
+from ctypes.wintypes import HWND, LPCSTR, UINT
+
+prototype = WINFUNCTYPE(c_int, HWND, LPCSTR, LPCSTR, UINT)
 paramflags = (1, &quot;hwnd&quot;, 0), (1, &quot;text&quot;, &quot;Hi&quot;), (1, &quot;caption&quot;, None), (1, &quot;flags&quot;, 0)
 MessageBox = prototype((&quot;MessageBoxA&quot;, windll.user32), paramflags)
 MessageBox(text=&quot;Hello, world&quot;, flags=2)
-&lt;/source&gt;
 </code></pre><h4>SWIG（Simplified Wrapper and Interface Generator）</h4>
 
 <p>Home：[<a href="http://swig.org/" target="_blank" rel="external">http://swig.org/</a>]</p>
@@ -411,7 +418,7 @@ MessageBox(text=&quot;Hello, world&quot;, flags=2)
 <p>用它编译出来的扩展模块，其性能跟 C/C++ 编写的扩展模块相当。</p>
 <h2 id="2-2-整合-JVM-平台"><a href="#2-2-整合-JVM-平台" class="headerlink" title="2.2 整合 JVM 平台"></a>2.2 整合 JVM 平台</h2><h4>Jython</h4>
 
-<p>Home：[<a href="http://www.jython.org/" target="_blank" rel="external">http://www.jython.org/</a>]</p>
+<p>Home：（<a href="http://www.jython.org/）" target="_blank" rel="external">http://www.jython.org/）</a></p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/Jython" target="_blank" rel="external">https://en.wikipedia.org/wiki/Jython</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/Jython" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Jython</a> 维基百科]</p>
 <p>通过 Jython 可以让 Python 代码运行在 JVM 上，并且可以调用其它的 JVM 语言的代码（比如 Java、Scala）</p>
 <h2 id="2-3-整合-dotNet-平台"><a href="#2-3-整合-dotNet-平台" class="headerlink" title="2.3 整合 dotNet 平台"></a>2.3 整合 dotNet 平台</h2><h4>IronPython</h4>
@@ -437,20 +444,28 @@ MessageBox(text=&quot;Hello, world&quot;, flags=2)
 
 <p>【标准库】</p>
 <p>相对于 os 而言，shutil 提供了一些比较高级的文件和目录操作（目录递归复制、目录递归删除、目录压缩打包…）</p>
-<p>代码示例——递归删除某个目录<br>    <source lang="python"><br>    import shutil<br>    shutil.rmtree(xxxx)<br>    </p>
-<h4>glob</h4>
+<p>代码示例——递归删除某个目录</p>
+<pre><code>import shutil
+shutil.rmtree(xxxx)
+</code></pre><h4>glob</h4>
 
 <p>【标准库】</p>
 <p>用于查找文件，【支持通配符】（* 和 ?）</p>
-<p>代码示例——获取当前目录所有 txt 文件<br>    <source lang="python"><br>    import glob<br>    for file in glob.glob(“./*.txt”) :<br>        print(file)<br>    </p>
-<pre><code>&lt;h4&gt;fnmatch&lt;/h4&gt;
+<p>代码示例——获取当前目录所有 txt 文件</p>
+<pre><code>import glob
+for file in glob.glob(&quot;./*.txt&quot;) :
+    print(file)
+
+
+&lt;h4&gt;fnmatch&lt;/h4&gt;
 </code></pre><p>【标准库】</p>
 <p>用于匹配文件名（支持通配符，类似上面的 glob）</p>
-<p>代码示例——列出当前目录所有 txt 文件<br>    <source lang="python"><br>    import os, fnmatch</p>
-<pre><code>for file in os.listdir(&quot;.&quot;) :
+<p>代码示例——列出当前目录所有 txt 文件</p>
+<pre><code>import os, fnmatch
+
+for file in os.listdir(&quot;.&quot;) :
     if fnmatch.fnmatch(file, &quot;*.txt&quot;) :
         print(file)
-&lt;/source&gt;
 </code></pre><h4>tempfile</h4>
 
 <p>【标准库】</p>
@@ -459,16 +474,22 @@ MessageBox(text=&quot;Hello, world&quot;, flags=2)
 
 <p>【标准库】</p>
 <p>提供了比较高层的线程封装 API。它本身包含了线程同步/互斥的机制。</p>
-<p>代码示例——基于“函数”的线程<br>    <source lang="python"><br>    import threading<br>    import time</p>
-<pre><code>def my_thread() :
+<p>代码示例——基于“函数”的线程</p>
+<pre><code>import threading
+import time
+
+def my_thread() :
     print(&quot;Thread started!&quot;)
     time.sleep(3)
     print(&quot;Thread finished!&quot;)
 
 threading.Thread(target=my_thread).start()
-&lt;/source&gt;
-</code></pre><p>代码示例——基于“类”的线程<br>    <source lang="python"><br>    import threading<br>    import time<br>    from &#95;&#95;future&#95;&#95; import print_function</p>
-<pre><code>class MyThread(threading.Thread) :
+</code></pre><p>代码示例——基于“类”的线程</p>
+<pre><code>import threading
+import time
+from &amp;#95;&amp;#95;future&amp;#95;&amp;#95; import print_function
+
+class MyThread(threading.Thread) :
     def run(self) :
         print(&quot;{} started!&quot;.format(self.getName()))
         time.sleep(3)
@@ -479,19 +500,23 @@ if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;
         mythread = MyThread(name = &quot;Thread-{}&quot;.format(n + 1))
         mythread.start()
         time.sleep(1)
-&lt;/source&gt;
 </code></pre><h2 id="3-3-进程"><a href="#3-3-进程" class="headerlink" title="3.3 进程"></a>3.3 进程</h2><h4>subprocess</h4>
 
 <p>【标准库】</p>
 <p>用于进程管理，可以启动子进程，通过标准输入输出跟子进程交互。</p>
-<p>代码示例——启动命令行进程，并获取该进程的标准输出<br>    <source lang="python"><br>    import subprocess<br>    output = subprocess.check_output([“dir”])  &#35; 获取当前目录的内容<br>    output = subprocess.check_output([“netstat”, “-an”])  &#35; 获取当前网络链接<br>    </p>
-<h4>multiprocessing</h4>
+<p>代码示例——启动命令行进程，并获取该进程的标准输出</p>
+<pre><code>import subprocess
+output = subprocess.check_output([&quot;dir&quot;])  &amp;#35; 获取当前目录的内容
+output = subprocess.check_output([&quot;netstat&quot;, &quot;-an&quot;])  &amp;#35; 获取当前网络链接
+</code></pre><h4>multiprocessing</h4>
 
 <p>【标准库】</p>
 <p>它是 2.6 版本加入到标准库的，其 API 接口的风格类似于 threading 模块。</p>
 <p>它本身包含了进程同步/互斥的机制。</p>
-<p>代码示例——利用其 Lock 机制，确保多个子进程的标准输出不会混杂（每次只有一个进程调用 print）。<br>    <source lang="python"><br>    from multiprocessing import Process, Lock</p>
-<pre><code>def f(lock, n) :
+<p>代码示例——利用其 Lock 机制，确保多个子进程的标准输出不会混杂（每次只有一个进程调用 print）。</p>
+<pre><code>from multiprocessing import Process, Lock
+
+def f(lock, n) :
     lock.acquire()
     print(&quot;hello world %d&quot; % n)
     lock.release()
@@ -500,13 +525,15 @@ if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;
     lock = Lock()
     for num in range(10):
         Process(target=f, args=(lock, num)).start()
-&lt;/source&gt;
 </code></pre><h2 id="3-4-本地进程间通信（IPC"><a href="#3-4-本地进程间通信（IPC" class="headerlink" title="3.4 本地进程间通信（IPC"></a>3.4 本地进程间通信（IPC</h2><h4>mmap</h4>
 
 <p>【标准库】</p>
 <p>提供了内存映射文件的支持。</p>
-<p>代码示例——利用 mmap 在父子进程间交换数据<br>    <source lang="python"><br>    import os<br>    import mmap</p>
-<pre><code>map = mmap.mmap(-1, 13)
+<p>代码示例——利用 mmap 在父子进程间交换数据</p>
+<pre><code>import os
+import mmap
+
+map = mmap.mmap(-1, 13)
 map.write(&quot;Hello, world&quot;)
 
 pid = os.fork()
@@ -514,7 +541,6 @@ if pid == 0 :  &amp;#35; 子进程
     map.seek(0)
     print(map.readline())
     map.close()
-&lt;/source&gt;
 </code></pre><h4>signal</h4>
 
 <p>【标准库】</p>
@@ -551,12 +577,16 @@ if pid == 0 :  &amp;#35; 子进程
 <p>【标准库】</p>
 <p>这几个库可以进行各种 HTTP 客户端请求（GET、POST、等）。</p>
 <p>Python2 的模块名是 httplib 和 httplib2；到 Python3，模块名改为 http.request 和 urllib.parse</p>
-<p>代码示例——读取指定 URL 的网页内容<br>    <source lang="python"><br>    import urllib<br>    handle = urllib.urlopen(“<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>“)<br>    page = handle.read()<br>    handle.close()<br>    </p>
-<h4>Requests</h4>
+<p>代码示例——读取指定 URL 的网页内容</p>
+<pre><code>import urllib
+handle = urllib.urlopen(&quot;http://www.google.com&quot;)
+page = handle.read()
+handle.close()
+</code></pre><h4>Requests</h4>
 
 <p>Home：[<a href="http://www.python-requests.org/" target="_blank" rel="external">http://www.python-requests.org/</a>]</p>
 <p>这是一个用起来很优雅的库，如其名，封装了 HTTP 请求的功能。</p>
-<p>代码示例<br>    <source lang="python"></p>
+<p>代码示例</p>
 <pre><code>&gt;&gt;&gt; r = requests.get(&apos;https://api.github.com/user&apos;, auth=(&apos;user&apos;, &apos;pass&apos;))
 &gt;&gt;&gt; r.status_code
 200
@@ -568,19 +598,20 @@ if pid == 0 :  &amp;#35; 子进程
 u&apos;{&quot;type&quot;:&quot;User&quot;...&apos;
 &gt;&gt;&gt; r.json()
 {u&apos;private_gists&apos;: 419, u&apos;total_private_repos&apos;: 77, ...}
-&lt;/source&gt;
 </code></pre><h2 id="4-2-HTTP-Server"><a href="#4-2-HTTP-Server" class="headerlink" title="4.2 HTTP Server"></a>4.2 HTTP Server</h2><h4>SimpleHTTPServer &amp; http.server</h4>
 
 <p>【标准库】</p>
 <p>提供轻量级 HTTP Server 的标准库。</p>
 <p>Python2 的模块名叫 SimpleHTTPServer；到 Python3 模块名改为 http.server</p>
-<p>代码示例——一个极简单的 HTTP 服务<br>    <source lang="python"><br>    import SocketServer<br>    import SimpleHTTPServer</p>
-<pre><code>PORT = 8080
+<p>代码示例——一个极简单的 HTTP 服务</p>
+<pre><code>import SocketServer
+import SimpleHTTPServer
+
+PORT = 8080
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 httpd = SocketServer.TCPServer((&quot;&quot;, PORT), Handler)
 print(&quot;serving at port %d&quot; % PORT)
 httpd.serve_forever()
-&lt;/source&gt;
 </code></pre><h2 id="4-3-Web-开发框架"><a href="#4-3-Web-开发框架" class="headerlink" title="4.3 Web 开发框架"></a>4.3 Web 开发框架</h2><p>（Python 的 Web 框架数不胜数，俺只挑选几个代表性的）</p>
 <h4>Django</h4>
 
@@ -600,22 +631,25 @@ httpd.serve_forever()
 <p>Home：[<a href="http://www.cherrypy.org/" target="_blank" rel="external">http://www.cherrypy.org/</a>]</p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/CherryPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/CherryPy</a> Wikipedia]</p>
 <p>轻量级的 Web 框架。某些 Web 框架（比如前面提到的 TurboGears）使用它作为底层。</p>
-<p>代码示例——Hello world<br>    <source lang="python"><br>    import cherrypy</p>
-<pre><code>class HelloWorld(object):
+<p>代码示例——Hello world</p>
+<pre><code>import cherrypy
+
+class HelloWorld(object):
     def index(self):
         return &quot;Hello World!&quot;
     index.exposed = True
 
 cherrypy.quickstart(HelloWorld())
-&lt;/source&gt;
 </code></pre><h4>web.py</h4>
 
 <p>Home：[<a href="http://webpy.org/" target="_blank" rel="external">http://webpy.org/</a>]</p>
 <p>与前两个（Django、TurboGears）不同，这是一个轻量级的框架。甚至被称为“It’s the anti-framework framework.”</p>
 <p>其作者是大名鼎鼎的黑客 [<a href="https://en.wikipedia.org/wiki/Aaron_Swartz" target="_blank" rel="external">https://en.wikipedia.org/wiki/Aaron_Swartz</a> Aaron Swartz]。（俺在[<a href="http://program-think.blogspot.nl/2013/01/weekly-share-37.html" target="_blank" rel="external">http://program-think.blogspot.nl/2013/01/weekly-share-37.html</a> 某篇博文]中悼念过他）。</p>
 <p>当年 Aaron Swartz 用 web.py 来搭建同样大名鼎鼎的网站 [<a href="https://en.wikipedia.org/wiki/Reddit" target="_blank" rel="external">https://en.wikipedia.org/wiki/Reddit</a> reddit]（该网站是 Web 2.0 的标杆）。</p>
-<p>代码示例——Hello world<br>    <source lang="python"><br>    import web</p>
-<pre><code>urls = (
+<p>代码示例——Hello world</p>
+<pre><code>import web
+
+urls = (
     &quot;/&quot;, &quot;index&quot;
 )
 
@@ -626,7 +660,6 @@ class index:
 if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
     app = web.application(urls, globals())
     app.run()
-&lt;/source&gt;
 </code></pre><h2 id="4-4-Web前端-amp-JS整合"><a href="#4-4-Web前端-amp-JS整合" class="headerlink" title="4.4 Web前端 &amp; JS整合"></a>4.4 Web前端 &amp; JS整合</h2><h4>Pyjamas &amp; pyjs</h4>
 
 <p>Home：[<a href="http://pyjs.org/" target="_blank" rel="external">http://pyjs.org/</a>]</p>
@@ -640,13 +673,17 @@ if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;
 
 <p>【标准库】</p>
 <p>操纵当前系统的默认浏览器，访问指定 URL 的页面。</p>
-<p>代码示例——用默认浏览器打开 Google 主页<br>    <source lang="python"><br>    import webbrowser<br>    webbrowser.open(“<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>“)<br>    </p>
-<h4>pyv8</h4>
+<p>代码示例——用默认浏览器打开 Google 主页</p>
+<pre><code>import webbrowser
+webbrowser.open(&quot;http://www.google.com&quot;)
+</code></pre><h4>pyv8</h4>
 
 <p>Home：[<a href="https://pypi.python.org/pypi/PyV8" target="_blank" rel="external">https://pypi.python.org/pypi/PyV8</a>]</p>
 <p>[<a href="https://developers.google.com/v8/" target="_blank" rel="external">https://developers.google.com/v8/</a> v8] 是 Google 开发的 JavaScript 解释引擎。这是对 v8 引擎的 Python 封装。</p>
-<p>代码示例<br>    <source lang="python"><br>    import PyV8</p>
-<pre><code>ctxt1 = PyV8.JSContext()
+<p>代码示例</p>
+<pre><code>import PyV8
+
+ctxt1 = PyV8.JSContext()
 ctxt1.enter()
 ctxt1.eval(&quot;1+2&quot;)  &amp;#35; 对 JS 表达式求值
 
@@ -657,7 +694,6 @@ class Global(PyV8.JSClass) :  &amp;#35; 定义一个兼容 JS 的类
 ctxt2 = PyV8.JSContext(Global())  &amp;#35; 创建一个 JS 上下文，传入 Global 类的对象
 ctxt2.enter()
 ctxt2.eval(&quot;hello()&quot;)  &amp;#35; 调用 hello() 函数
-&lt;/source&gt;
 </code></pre><h4>PyWebKitGtk</h4>
 
 <p>Home：[<a href="https://github.com/jmalonzo/pywebkitgtk" target="_blank" rel="external">https://github.com/jmalonzo/pywebkitgtk</a>]</p>
@@ -675,10 +711,12 @@ ctxt2.eval(&quot;hello()&quot;)  &amp;#35; 调用 hello() 函数
 <p>Links：[<a href="https://en.wikipedia.org/wiki/Scapy" target="_blank" rel="external">https://en.wikipedia.org/wiki/Scapy</a> Wikipedia]</p>
 <p>这是一个底层的网络库，可以在不同协议层次构造网络数据包（包括链路层、网络层、传输层），还支持 Sniffer 抓包。</p>
 <p>搞网络安全的网友应该会喜欢这个库。</p>
-<p>代码示例<br>    <source lang="python"><br>    &#35; 传统的 ping 扫描（网络层）<br>    ans,unans = sr(IP(dst=”192.168.1.1-254”)/ICMP())</p>
-<pre><code>&amp;#35; 局域网内的 ARP 扫描（链路层）
+<p>代码示例</p>
+<pre><code>&amp;#35; 传统的 ping 扫描（网络层）
+ans,unans = sr(IP(dst=&quot;192.168.1.1-254&quot;)/ICMP())
+
+&amp;#35; 局域网内的 ARP 扫描（链路层）
 ans,unans = srp(Ether(dst=&quot;ff:ff:ff:ff:ff:ff&quot;)/ARP(pdst=&quot;192.168.1.0/24&quot;), timeout=2)
-&lt;/source&gt;
 </code></pre><h2 id="5-2-传输层"><a href="#5-2-传输层" class="headerlink" title="5.2 传输层"></a>5.2 传输层</h2><h4>socket</h4>
 
 <p>Python 标准库很早就提供了对 socket 编程的支持。</p>
@@ -694,37 +732,44 @@ ans,unans = srp(Ether(dst=&quot;ff:ff:ff:ff:ff:ff&quot;)/ARP(pdst=&quot;192.168.
 <p>Home：[<a href="http://pycurl.sourceforge.net/" target="_blank" rel="external">http://pycurl.sourceforge.net/</a>]</p>
 <p>[<a href="https://en.wikipedia.org/wiki/Curl" target="_blank" rel="external">https://en.wikipedia.org/wiki/Curl</a> cURL] 是一个功能很强的网络库/网络工具，支持 N 多应用层协议。俺在前几年写过一篇博文推荐它（在“[<a href="https://program-think.blogspot.com/2009/03/opensource-review-curl-library.html" target="_blank" rel="external">https://program-think.blogspot.com/2009/03/opensource-review-curl-library.html</a> 这里]”）。</p>
 <p>看名称就能猜到——PycURL 是 cURL 的 Python 封装。</p>
-<p>代码示例——发起 HTTP GET 请求<br>    <source lang="python"><br>    import pycurl<br>    try :<br>        from io import BytesIO<br>    except ImportError :<br>        from StringIO import StringIO as BytesIO</p>
-<pre><code>buffer = BytesIO()
+<p>代码示例——发起 HTTP GET 请求</p>
+<pre><code>import pycurl
+try :
+    from io import BytesIO
+except ImportError :
+    from StringIO import StringIO as BytesIO
+
+buffer = BytesIO()
 curl = pycurl.Curl()
 curl.setopt(curl.URL, &quot;http://pycurl.sourceforge.net/&quot;)
 curl.setopt(curl.WRITEDATA, buffer)
 curl.perform()
 curl.close()
 body = buffer.getvalue()
-&lt;/source&gt;
 </code></pre><h3 id="5-3-2-HTTP"><a href="#5-3-2-HTTP" class="headerlink" title="5.3.2 HTTP"></a>5.3.2 HTTP</h3><p>（关于“HTTP 协议”，请参见另一个大类：“Web”）</p>
 <h3 id="5-3-3-文件传输"><a href="#5-3-3-文件传输" class="headerlink" title="5.3.3 文件传输"></a>5.3.3 文件传输</h3><h4>ftplib</h4>
 
 <p>【标准库】</p>
 <p>封装 FTP（File Transfer Protocol）协议</p>
-<p>代码示例——列出 FTP 服务器上某目录的内容<br>    <source lang="python"><br>    from ftplib import FTP</p>
-<pre><code>ftp = FTP(&quot;ftp.debian.org&quot;)  &amp;#35; 连接服务器（如果不指定端口号，则用默认端口号 21）
+<p>代码示例——列出 FTP 服务器上某目录的内容</p>
+<pre><code>from ftplib import FTP
+
+ftp = FTP(&quot;ftp.debian.org&quot;)  &amp;#35; 连接服务器（如果不指定端口号，则用默认端口号 21）
 ftp.login()                  &amp;#35; 登录（如果不指定用户名和密码，则用匿名登录）
 ftp.cwd(&quot;debian&quot;)            &amp;#35; 切换到 &quot;debian&quot; 目录
 ftp.retrlines(&quot;LIST&quot;)        &amp;#35; 列出当前目录的内容
 ftp.quit()
-&lt;/source&gt;
 </code></pre><h4>pysftp</h4>
 
 <p>Home：[<a href="https://bitbucket.org/dundeemt/pysftp" target="_blank" rel="external">https://bitbucket.org/dundeemt/pysftp</a>]</p>
 <p>封装 [<a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol" target="_blank" rel="external">https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol</a> SFTP] 协议，依赖于 ssh.py</p>
-<p>代码示例——简单的上传/下载<br>    <source lang="python"><br>    import pysftp</p>
-<pre><code>with pysftp.Connection(&quot;hostxxx&quot;, username=&quot;userxxx&quot;, password=&quot;xxxxxx&quot;) as sftp :
+<p>代码示例——简单的上传/下载</p>
+<pre><code>import pysftp
+
+with pysftp.Connection(&quot;hostxxx&quot;, username=&quot;userxxx&quot;, password=&quot;xxxxxx&quot;) as sftp :
     with sftp.cd(&quot;public&quot;)              &amp;#35; 服务端当前目录切换到 public
         sftp.put(&quot;/my/local/filename&quot;)  &amp;#35; 上传某个本地文件到服务端的 public 目录
     sftp.get_r(&quot;myfiles&quot;, &quot;/local&quot;)     &amp;#35; 递归复制某个服务端的目录到本地
-&lt;/source&gt;
 </code></pre><h3 id="5-3-4-电子邮件"><a href="#5-3-4-电子邮件" class="headerlink" title="5.3.4 电子邮件"></a>5.3.4 电子邮件</h3><h4>smtplib</h4>
 
 <p>【标准库】</p>
@@ -749,8 +794,11 @@ ftp.quit()
 
 <p>【标准库】</p>
 <p>封装 telnet 协议</p>
-<p>代码示例——使用 telnet 登录到某个主机并执行简单命令<br>    <source lang="python"><br>    import telnetlib<br>    import getpass</p>
-<pre><code>host = raw_input(&quot;Enter remote host: &quot;)
+<p>代码示例——使用 telnet 登录到某个主机并执行简单命令</p>
+<pre><code>import telnetlib
+import getpass
+
+host = raw_input(&quot;Enter remote host: &quot;)
 user = raw_input(&quot;Enter your remote account: &quot;)
 password = getpass.getpass()
 
@@ -767,7 +815,6 @@ tn.write(&quot;ls\n&quot;)
 tn.write(&quot;exit\n&quot;)
 
 print tn.read_all()
-&lt;/source&gt;
 </code></pre><h4>rdpy</h4>
 
 <p>Home：[<a href="https://github.com/citronneur/rdpy" target="_blank" rel="external">https://github.com/citronneur/rdpy</a>]</p>
@@ -796,8 +843,10 @@ print tn.read_all()
 <p>Links：[<a href="https://en.wikipedia.org/wiki/Twisted_%28software%29" target="_blank" rel="external">https://en.wikipedia.org/wiki/Twisted_%28software%29</a> Wikipedia]</p>
 <p>这是一个基于 Python 网络通讯开发框架，诞生于2002年，名气很大。</p>
 <p>它的某些设计类似于 C++ 的 [<a href="https://en.wikipedia.org/wiki/Adaptive_Communication_Environment" target="_blank" rel="external">https://en.wikipedia.org/wiki/Adaptive_Communication_Environment</a> ACE] 框架。除了能用来进行传输层（TCP UDP）的开发，还提供了若干应用层协议（HTTP、XMPP、SSH、IRC …）的支持。</p>
-<p>代码示例——实现一个简单的 Echo 服务，监听在 12345 端口<br>    <source lang="python"><br>    from twisted.internet import protocol, reactor</p>
-<pre><code>class Echo(protocol.Protocol) :
+<p>代码示例——实现一个简单的 Echo 服务，监听在 12345 端口</p>
+<pre><code>from twisted.internet import protocol, reactor
+
+class Echo(protocol.Protocol) :
     def dataReceived(self, data) :
         self.transport.write(data)
 
@@ -807,18 +856,19 @@ class EchoFactory(protocol.Factory) :
 
 reactor.listenTCP(12345, EchoFactory())
 reactor.run()
-&lt;/source&gt;
 </code></pre><h4>gevent</h4>
 
 <p>Home：[<a href="http://www.gevent.org/" target="_blank" rel="external">http://www.gevent.org/</a>]</p>
 <p>这是一个基于[<a href="https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B</a> 协程]的网络库，原先其底层依赖于 libevent，后来改为 libev。</p>
 <p>很多开源项目用到了 gevent，具体参见 [<a href="https://github.com/gevent/gevent/wiki/Projects" target="_blank" rel="external">https://github.com/gevent/gevent/wiki/Projects</a> gevent 官方的 wiki]。</p>
-<p>代码示例——并发执行网络请求<br>    <source lang="python"><br>    from gevent import socket<br>    import gevent</p>
-<pre><code>hosts = [&quot;google.com&quot;, &quot;github.com&quot;, &quot;program-think.blogspot.com&quot;]
+<p>代码示例——并发执行网络请求</p>
+<pre><code>from gevent import socket
+import gevent
+
+hosts = [&quot;google.com&quot;, &quot;github.com&quot;, &quot;program-think.blogspot.com&quot;]
 jobs = [gevent.spawn(socket.gethostbyname, host) for host in hosts]
 gevent.joinall(jobs, timeout=2)
 print([job.value for job in jobs])
-&lt;/source&gt;
 </code></pre><h4>PyZMQ</h4>
 
 <p>Home：[<a href="https://github.com/zeromq/pyzmq" target="_blank" rel="external">https://github.com/zeromq/pyzmq</a>]</p>
@@ -828,8 +878,11 @@ print([job.value for job in jobs])
 
 <p>Home：[<a href="https://github.com/tonysimpson/nanomsg-python" target="_blank" rel="external">https://github.com/tonysimpson/nanomsg-python</a>]</p>
 <p>这是 nanomsg 的 Python 封装库。同时支持 Python2 和 Python3。</p>
-<p>代码示例——Hello world<br>    <source lang="python"><br>    from &#95;&#95;future&#95;&#95; import print_function<br>    from nanomsg import Socket, PAIR, PUB</p>
-<pre><code>s1 = Socket(PAIR)
+<p>代码示例——Hello world</p>
+<pre><code>from &amp;#95;&amp;#95;future&amp;#95;&amp;#95; import print_function
+from nanomsg import Socket, PAIR, PUB
+
+s1 = Socket(PAIR)
 s2 = Socket(PAIR)
 s1.bind(&quot;inproc://test&quot;)
 s2.connect(&quot;inproc://test&quot;)
@@ -837,13 +890,15 @@ s1.send(b&quot;hello world&quot;)
 print(s2.recv())
 s1.close()
 s2.close()
-&lt;/source&gt;
 </code></pre><h2 id="5-6-云计算"><a href="#5-6-云计算" class="headerlink" title="5.6 云计算"></a>5.6 云计算</h2><h4>Apache Libcloud</h4>
 
 <p>Home：[<a href="https://libcloud.apache.org/" target="_blank" rel="external">https://libcloud.apache.org/</a>]</p>
 <p>如今云提供商越来越多。这个库提供了统一的 API 让你访问各大知名云提供商提供的各种服务。</p>
-<p>代码示例——创建 DNS 记录<br>    <source lang="python"><br>    from libcloud.dns.types import Provider, RecordType<br>    from libcloud.dns.providers import get_driver</p>
-<pre><code>cls = get_driver(Provider.ZERIGO)
+<p>代码示例——创建 DNS 记录</p>
+<pre><code>from libcloud.dns.types import Provider, RecordType
+from libcloud.dns.providers import get_driver
+
+cls = get_driver(Provider.ZERIGO)
 driver = cls(&quot;email&quot;, &quot;api key&quot;)
 
 zones = driver.list_zones()
@@ -851,7 +906,6 @@ zone = [zone for zone in zones if zone.domain == &quot;mydomain.com&quot;][0]
 
 record = zone.create_record(name=&quot;www&quot;, type=RecordType.A, data=&quot;127.0.0.1&quot;)
 print(record)
-&lt;/source&gt;
 </code></pre><hr>
 <h1 id="6-数据库"><a href="#6-数据库" class="headerlink" title="6 数据库"></a>6 数据库</h1><p>为了便于数据库开发，Python 社区制定了数据库的 API 规范（[<a href="https://www.python.org/dev/peps/pep-0249/" target="_blank" rel="external">https://www.python.org/dev/peps/pep-0249/</a> PEP 249]）。</p>
 <p>只要是涉及到数据库操作，标准库和大部分第三方库都会遵循该规范（请看如下几个模块的示例代码）。</p>
@@ -859,8 +913,10 @@ print(record)
 
 <p>Home：[<a href="https://github.com/mkleehammer/pyodbc" target="_blank" rel="external">https://github.com/mkleehammer/pyodbc</a>]</p>
 <p>pyODBC 封装了 ODBC API，通过它可以访问各种数据库（只要有 ODBC 驱动即可）。</p>
-<p>代码示例——查询某个 ODBC 数据源的某个表<br>    <source lang="python"><br>    import pyodbc</p>
-<pre><code>conn = pyodbc.connect(&quot;DSN=xxx;PWD=password&quot;)
+<p>代码示例——查询某个 ODBC 数据源的某个表</p>
+<pre><code>import pyodbc
+
+conn = pyodbc.connect(&quot;DSN=xxx;PWD=password&quot;)
 cursor = conn.cursor()
 cursor.execute(&quot;SELECT field1 FROM table1&quot;)
 
@@ -872,7 +928,6 @@ while True :
 
 cursor.close()
 conn.close()
-&lt;/source&gt;
 </code></pre><h4>ceODBC</h4>
 
 <p>Home：[<a href="http://ceodbc.sourceforge.net/" target="_blank" rel="external">http://ceodbc.sourceforge.net/</a>]</p>
@@ -890,8 +945,10 @@ conn.close()
 
 <p>Home：[<a href="http://mysql-python.sourceforge.net/" target="_blank" rel="external">http://mysql-python.sourceforge.net/</a>]</p>
 <p>操作 MySQL 的第三方库。</p>
-<p>代码示例——查询某个 MySQL 数据库的某个表<br>    <source lang="python"><br>    import MySQLdb</p>
-<pre><code>conn = MySQLdb.connect(db=&quot;test&quot;, passwd=&quot;password&quot;)
+<p>代码示例——查询某个 MySQL 数据库的某个表</p>
+<pre><code>import MySQLdb
+
+conn = MySQLdb.connect(db=&quot;test&quot;, passwd=&quot;password&quot;)
 cursor = conn.cursor()
 cursor.execute(&quot;SELECT field1 FROM table1&quot;)
 
@@ -903,7 +960,6 @@ while True :
 
 cursor.close()
 conn.close()
-&lt;/source&gt;
 </code></pre><h3 id="6-2-2-PostgreSQL"><a href="#6-2-2-PostgreSQL" class="headerlink" title="6.2.2 PostgreSQL"></a>6.2.2 PostgreSQL</h3><h4>psycopg</h4>
 
 <p>Home：[<a href="http://initd.org/psycopg/" target="_blank" rel="external">http://initd.org/psycopg/</a>]</p>
@@ -929,8 +985,15 @@ conn.close()
 <p>【标准库】</p>
 <p>sqlite3 从 Python 2.5 版本开始加入到标准库中。通过它，你可以很方便地操作 SQLite 数据库。</p>
 <p>[<a href="https://en.wikipedia.org/wiki/SQLite" target="_blank" rel="external">https://en.wikipedia.org/wiki/SQLite</a> SQLite] 是一个很优秀的轻量级数据库，俺前几年写过一篇博文推荐它（在“[<a href="https://program-think.blogspot.com/2009/04/how-to-use-sqlite.html" target="_blank" rel="external">https://program-think.blogspot.com/2009/04/how-to-use-sqlite.html</a> 这里]”）。</p>
-<p>代码示例——创建一个内存数据库，建表并插入记录<br>    <source lang="python"><br>    import sqlite3<br>    conn = sqlite3.connect(“:memory:”)  &#35; “:memory:” 表示这是一个内存数据库<br>    cursor = conn.cursor()<br>    cursor.execute(“CREATE TABLE person (name text, age int)”)<br>    cursor.execute(“INSERT INTO stocks VALUES (‘TOM’,20)”)<br>    conn.commit()<br>    conn.close()<br>    </p>
-<h3 id="6-2-7-MongoDB"><a href="#6-2-7-MongoDB" class="headerlink" title="6.2.7 MongoDB"></a>6.2.7 MongoDB</h3><h4>PyMongo</h4>
+<p>代码示例——创建一个内存数据库，建表并插入记录</p>
+<pre><code>import sqlite3
+conn = sqlite3.connect(&quot;:memory:&quot;)  &amp;#35; &quot;:memory:&quot; 表示这是一个内存数据库
+cursor = conn.cursor()
+cursor.execute(&quot;CREATE TABLE person (name text, age int)&quot;)
+cursor.execute(&quot;INSERT INTO stocks VALUES (&apos;TOM&apos;,20)&quot;)
+conn.commit()
+conn.close()
+</code></pre><h3 id="6-2-7-MongoDB"><a href="#6-2-7-MongoDB" class="headerlink" title="6.2.7 MongoDB"></a>6.2.7 MongoDB</h3><h4>PyMongo</h4>
 
 <p>Docs：[<a href="https://docs.mongodb.com/ecosystem/drivers/python/" target="_blank" rel="external">https://docs.mongodb.com/ecosystem/drivers/python/</a>]</p>
 <p>这是 MongoDB 官方提供的 Python 驱动。</p>
@@ -938,18 +1001,33 @@ conn.close()
 
 <p>Home：[<a href="https://github.com/wbolster/happybase" target="_blank" rel="external">https://github.com/wbolster/happybase</a>]</p>
 <p>操作 HBase 的 Python 库，基于 [<a href="https://en.wikipedia.org/wiki/Apache_Thrift" target="_blank" rel="external">https://en.wikipedia.org/wiki/Apache_Thrift</a> Thrift] 连接到 HBase。</p>
-<p>代码示例——简单的存取操作<br>    <source lang="python"><br>    import happybase<br>    connection = happybase.Connection(“hostname”)<br>    table = connection.table(“table-name”)<br>    table.put(b”row-key”, {b”test1”: b”data1”, b”test2”: b”data2”})<br>    row = table.row(b”row-key”)<br>    print(row[b”test1”])<br>    </p>
-<h3 id="6-2-9-Redis"><a href="#6-2-9-Redis" class="headerlink" title="6.2.9 Redis"></a>6.2.9 Redis</h3><h4>redis-py</h4>
+<p>代码示例——简单的存取操作</p>
+<pre><code>import happybase
+connection = happybase.Connection(&quot;hostname&quot;)
+table = connection.table(&quot;table-name&quot;)
+table.put(b&quot;row-key&quot;, {b&quot;test1&quot;: b&quot;data1&quot;, b&quot;test2&quot;: b&quot;data2&quot;})
+row = table.row(b&quot;row-key&quot;)
+print(row[b&quot;test1&quot;])
+</code></pre><h3 id="6-2-9-Redis"><a href="#6-2-9-Redis" class="headerlink" title="6.2.9 Redis"></a>6.2.9 Redis</h3><h4>redis-py</h4>
 
 <p>Home：[<a href="https://github.com/andymccurdy/redis-py" target="_blank" rel="external">https://github.com/andymccurdy/redis-py</a>]</p>
 <p>操作 Redis 的第三方 Python 客户端。</p>
-<p>代码示例——简单的存取操作<br>    <source lang="python"><br>    import redis<br>    r = redis.StrictRedis(host=”localhost”, port=6379, db=0)<br>    r.set(“foo”, “bar”)<br>    print(r.get(“foo”))<br>    </p>
-<h3 id="6-2-10-LevelDB"><a href="#6-2-10-LevelDB" class="headerlink" title="6.2.10 LevelDB"></a>6.2.10 LevelDB</h3><h4>Plyvel</h4>
+<p>代码示例——简单的存取操作</p>
+<pre><code>import redis
+r = redis.StrictRedis(host=&quot;localhost&quot;, port=6379, db=0)
+r.set(&quot;foo&quot;, &quot;bar&quot;)
+print(r.get(&quot;foo&quot;))
+</code></pre><h3 id="6-2-10-LevelDB"><a href="#6-2-10-LevelDB" class="headerlink" title="6.2.10 LevelDB"></a>6.2.10 LevelDB</h3><h4>Plyvel</h4>
 
 <p>Home：[<a href="https://github.com/wbolster/plyvel" target="_blank" rel="external">https://github.com/wbolster/plyvel</a>]</p>
 <p>操作 LevelDB 的 Python 库，速度快，同时兼容 Python2 和 Python3。</p>
-<p>代码示例——简单的存取操作<br>    <source lang="python"><br>    import plyvel<br>    db = plyvel.DB(“/tmp/testdb/“, create_if_missing=True)<br>    db.put(b”key”, b”value”)<br>    print(db.get(b”key”))<br>    db.close()<br>    </p>
-<h3 id="6-2-11-Berkeley-DB"><a href="#6-2-11-Berkeley-DB" class="headerlink" title="6.2.11 Berkeley DB"></a>6.2.11 Berkeley DB</h3><h4>PyBSDDB</h4>
+<p>代码示例——简单的存取操作</p>
+<pre><code>import plyvel
+db = plyvel.DB(&quot;/tmp/testdb/&quot;, create_if_missing=True)
+db.put(b&quot;key&quot;, b&quot;value&quot;)
+print(db.get(b&quot;key&quot;))
+db.close()
+</code></pre><h3 id="6-2-11-Berkeley-DB"><a href="#6-2-11-Berkeley-DB" class="headerlink" title="6.2.11 Berkeley DB"></a>6.2.11 Berkeley DB</h3><h4>PyBSDDB</h4>
 
 <p>Home：[<a href="http://www.jcea.es/programacion/pybsddb.htm" target="_blank" rel="external">http://www.jcea.es/programacion/pybsddb.htm</a>]</p>
 <p>操作 Berkeley DB 的第三方库。</p>
@@ -958,8 +1036,12 @@ conn.close()
 <p>Home：[<a href="http://www.sqlalchemy.org/" target="_blank" rel="external">http://www.sqlalchemy.org/</a>]</p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/SQLAlchemy" target="_blank" rel="external">https://en.wikipedia.org/wiki/SQLAlchemy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/SQLAlchemy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SQLAlchemy</a> 维基百科]</p>
 <p>SQLAlchemy 支持的数据库有：MySQL、PostgreSQL、Sqlite、Oracle、MS SQL Server、Firebird、Sybase SQL Server、Informix、等。</p>
-<p>代码示例——通过对象的方式创建两张依赖关系的表<br>    <source lang="python"><br>    from sqlalchemy import *<br>    from sqlalchemy.ext.declarative import declarative_base<br>    from sqlalchemy.orm import relation, sessionmaker</p>
-<pre><code>Base = declarative_base()
+<p>代码示例——通过对象的方式创建两张依赖关系的表</p>
+<pre><code>from sqlalchemy import *
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relation, sessionmaker
+
+Base = declarative_base()
 
 class Movie(Base) :
     &amp;#95;&amp;#95;tablename&amp;#95;&amp;#95; = &quot;movies&quot;
@@ -990,26 +1072,29 @@ class Director(Base) :
         return &quot;Director(%r)&quot; % (self.name)
 
 Base.metadata.create_all(create_engine(&quot;dbms://user:pwd@host/dbname&quot;))
-&lt;/source&gt;
 </code></pre><h4>SQLObject</h4>
 
 <p>Home：[<a href="http://sqlobject.org/" target="_blank" rel="external">http://sqlobject.org/</a>]</p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/SQLObject" target="_blank" rel="external">https://en.wikipedia.org/wiki/SQLObject</a> Wikipedia]</p>
 <p>SQLObject 支持的数据库有：MySQL、PostgreSQL、Sqlite、MS SQL Server、Firebird、Sybase SQL Server、SAP DB、等。</p>
-<p>代码示例——通过对象的方式创建表<br>    <source lang="python"><br>    from sqlobject import *<br>    sqlhub.processConnection = connectionForURI(“sqlite:/:memory:”)</p>
-<pre><code>class Person(SQLObject) :
+<p>代码示例——通过对象的方式创建表</p>
+<pre><code>from sqlobject import *
+sqlhub.processConnection = connectionForURI(&quot;sqlite:/:memory:&quot;)
+
+class Person(SQLObject) :
     first_name = StringCol()
     last_name = StringCol()
 
 Person.createTable()
-&lt;/source&gt;
 </code></pre><h4>Peewee</h4>
 
 <p>Home：[<a href="http://www.peewee-orm.com/" target="_blank" rel="external">http://www.peewee-orm.com/</a>]</p>
 <p>一个轻量级的 ORM，支持 SQLite、MySQL 和 PostgreSQL，通过插件机制支持更多数据库。</p>
 <p>同时支持 Python2 和 Python3。</p>
-<p>代码示例——通过对象的方式创建表<br>    <source lang="python"><br>    from peewee import *</p>
-<pre><code>db = SqliteDatabase(&quot;test.db&quot;)
+<p>代码示例——通过对象的方式创建表</p>
+<pre><code>from peewee import *
+
+db = SqliteDatabase(&quot;test.db&quot;)
 
 class Person(Model) :
     name = CharField()
@@ -1027,7 +1112,6 @@ class Pet(Model) :
 
 db.connect()
 db.create_tables([Person, Pet])
-&lt;/source&gt;
 </code></pre><hr>
 <h1 id="7-GUI"><a href="#7-GUI" class="headerlink" title="7 GUI"></a>7 GUI</h1><h2 id="7-1-GUI-框架"><a href="#7-1-GUI-框架" class="headerlink" title="7.1 GUI 框架"></a>7.1 GUI 框架</h2><h3 id="7-1-1-基于-Tk"><a href="#7-1-1-基于-Tk" class="headerlink" title="7.1.1 基于 Tk"></a>7.1.1 基于 Tk</h3><p>[<a href="https://en.wikipedia.org/wiki/Tk_(framework" target="_blank" rel="external">https://en.wikipedia.org/wiki/Tk_(framework</a>) Tk] 是一个跨平台的界面组件库。</p>
 <h4>Tkinter &amp; tkinter</h4>
@@ -1035,13 +1119,14 @@ db.create_tables([Person, Pet])
 <p>【标准库】</p>
 <p>这是 Python 内置的标准库，封装了 Tcl/Tk 界面库。</p>
 <p>Python2 的模块名叫 Tkinter，到 Python3 模块名改为 tkinter</p>
-<p>代码示例——用 Tkinter 写 Hello world<br>    <source lang="python"><br>    from Tkinter import *</p>
-<pre><code>if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
+<p>代码示例——用 Tkinter 写 Hello world</p>
+<pre><code>from Tkinter import *
+
+if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
     root = Tk()
     label = Label(root, text=&quot;Hello, world&quot;)
     label.pack()
     root.mainloop()
-&lt;/source&gt;
 </code></pre><h3 id="7-1-2-基于-wxWidgets"><a href="#7-1-2-基于-wxWidgets" class="headerlink" title="7.1.2 基于 wxWidgets"></a>7.1.2 基于 wxWidgets</h3><p>[<a href="https://en.wikipedia.org/wiki/WxWidgets" target="_blank" rel="external">https://en.wikipedia.org/wiki/WxWidgets</a> wxWidgets] 是 C++ 开发的跨平台框架（不仅包括 GUI，还有其它功能）。</p>
 <h4>wxPython</h4>
 
@@ -1049,8 +1134,10 @@ db.create_tables([Person, Pet])
 <p>Links：[<a href="https://en.wikipedia.org/wiki/WxPython" target="_blank" rel="external">https://en.wikipedia.org/wiki/WxPython</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/WxPython" target="_blank" rel="external">https://zh.wikipedia.org/wiki/WxPython</a> 维基百科]</p>
 <p>在所有的 wxWidgets 的 Python 封装库中，这个是名气最大的。</p>
 <p>[<a href="https://github.com/limodou/ulipad" target="_blank" rel="external">https://github.com/limodou/ulipad</a> Ulipad]（知名的国产的 Python IDE）就是基于 wxPython 开发的。</p>
-<p>代码示例——用 wxPython 写 Hello world<br>    <source lang="python"><br>    import wx</p>
-<pre><code>class Frame(wx.Frame) :
+<p>代码示例——用 wxPython 写 Hello world</p>
+<pre><code>import wx
+
+class Frame(wx.Frame) :
     pass
 
 class App(wx.App) :
@@ -1063,7 +1150,6 @@ class App(wx.App) :
 if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
     app = App()
     app.MainLoop()
-&lt;/source&gt;
 </code></pre><h4>PythonCard</h4>
 
 <p>Home：[<a href="http://pythoncard.sourceforge.net/" target="_blank" rel="external">http://pythoncard.sourceforge.net/</a>]</p>
@@ -1074,8 +1160,12 @@ if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;
 <p>Home：[<a href="http://www.pygtk.org/" target="_blank" rel="external">http://www.pygtk.org/</a>]</p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/PyGTK" target="_blank" rel="external">https://en.wikipedia.org/wiki/PyGTK</a> Wikipedia]</p>
 <p>它是 Python 对 GTK+2 的封装。</p>
-<p>代码示例——用 PyGTK 写 Hello world<br>    <source lang="python"><br>    import pygtk<br>    pygtk.require(“2.0”)<br>    import gtk</p>
-<pre><code>class HelloWorld :
+<p>代码示例——用 PyGTK 写 Hello world</p>
+<pre><code>import pygtk
+pygtk.require(&quot;2.0&quot;)
+import gtk
+
+class HelloWorld :
     def &amp;#95;&amp;#95;init&amp;#95;&amp;#95;(self) :
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.window.connect(&quot;delete_event&quot;, self.delete_event)
@@ -1106,13 +1196,14 @@ if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;
 if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
     hello = HelloWorld()
     hello.main()
-&lt;/source&gt;
 </code></pre><h4>PyGObject（PyGI）</h4>
 
 <p>Home：[<a href="https://live.gnome.org/PyGObject" target="_blank" rel="external">https://live.gnome.org/PyGObject</a>]</p>
 <p>它是 Python 对 GTK+3 的封装。PyGTK 的官网也推荐它。</p>
-<p>代码示例——用 PyGObject 写 Hello world<br>    <source lang="python"><br>    from gi.repository import Gtk</p>
-<pre><code>class MyWindow(Gtk.Window):
+<p>代码示例——用 PyGObject 写 Hello world</p>
+<pre><code>from gi.repository import Gtk
+
+class MyWindow(Gtk.Window):
     def &amp;#95;&amp;#95;init&amp;#95;&amp;#95;(self):
         Gtk.Window.&amp;#95;&amp;#95;init&amp;#95;&amp;#95;(self, title=&quot;Hello World&quot;)
 
@@ -1127,15 +1218,17 @@ win = MyWindow()
 win.connect(&quot;delete-event&quot;, Gtk.main_quit)
 win.show_all()
 Gtk.main()
-&lt;/source&gt;
 </code></pre><h3 id="7-1-4-基于-Qt"><a href="#7-1-4-基于-Qt" class="headerlink" title="7.1.4 基于 Qt"></a>7.1.4 基于 Qt</h3><p>[<a href="https://en.wikipedia.org/wiki/Qt_(toolkit" target="_blank" rel="external">https://en.wikipedia.org/wiki/Qt_(toolkit</a>) Qt] 是 C++ 开发的跨平台框架（不仅包括 GUI，还有其它功能）。</p>
 <h4>PyQt</h4>
 
 <p>Home：[<a href="http://www.riverbankcomputing.com/software/pyqt/" target="_blank" rel="external">http://www.riverbankcomputing.com/software/pyqt/</a>]</p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/PyQt" target="_blank" rel="external">https://en.wikipedia.org/wiki/PyQt</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/PyQt" target="_blank" rel="external">https://zh.wikipedia.org/wiki/PyQt</a> 维基百科]</p>
 <p>这是 Python 对 Qt 的封装。</p>
-<p>代码示例——用 pyQt 写 Hello world<br>    <source lang="python"><br>    import sys<br>    from PyQt4.QtGui import *</p>
-<pre><code>if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
+<p>代码示例——用 pyQt 写 Hello world</p>
+<pre><code>import sys
+from PyQt4.QtGui import *
+
+if &amp;#95;&amp;#95;name&amp;#95;&amp;#95; == &quot;&amp;#95;&amp;#95;main&amp;#95;&amp;#95;&quot; :
     app = QApplication(sys.argv)
     window = QWidget()
 
@@ -1143,7 +1236,6 @@ Gtk.main()
     window.setWindowTitle(&quot;Hello, world&quot;)
     window.show()
     sys.exit(app.exec_())
-&lt;/source&gt;
 </code></pre><h4>PySide</h4>
 
 <p>Home：[<a href="http://www.pyside.org/" target="_blank" rel="external">http://www.pyside.org/</a>]</p>
@@ -1208,8 +1300,12 @@ Gtk.main()
 <p>在 Python 2.5 版本加入到标准库中。通过它，你可以很方便地计算各种散列值。</p>
 <p>它支持的哈希算法有：MD5 SHA1 SHA224 SHA256 SHA384 SHA512</p>
 <p>关于散列算法，俺写过一篇扫盲（在“[<a href="https://program-think.blogspot.com/2013/02/file-integrity-check.html" target="_blank" rel="external">https://program-think.blogspot.com/2013/02/file-integrity-check.html</a> 这里]”）。</p>
-<p>代码示例——计算字符串的 SHA1 散列值<br>    <source lang="python"><br>    import hashlib<br>    sha1 = hashlib.sha1(“Hello, world”).hexdigest()<br>    </p>
-<pre><code>&lt;h4&gt;PyCrypto&lt;/h4&gt;
+<p>代码示例——计算字符串的 SHA1 散列值</p>
+<pre><code>import hashlib
+sha1 = hashlib.sha1(&quot;Hello, world&quot;).hexdigest()
+
+
+&lt;h4&gt;PyCrypto&lt;/h4&gt;
 </code></pre><p>Home：[<a href="http://www.dlitz.net/software/pycrypto/" target="_blank" rel="external">http://www.dlitz.net/software/pycrypto/</a>]</p>
 <p>这个库包含了常见的对称加密算法（DES、AES、IDEA 等）、公钥加密算法（RSA、DSA 等）、散列算法（MD5、SHA1、RIPEMD 等）。</p>
 <h4>pyOpenSSL</h4>
@@ -1236,8 +1332,10 @@ Gtk.main()
 
 <p>【标准库】</p>
 <p>提供 JSON 格式的编码和解码。</p>
-<p>代码示例——编码/解码 JSON 字符串<br>    <source lang="python"><br>    import json</p>
-<pre><code>json.dumps([&quot;foo&quot;, {&quot;bar&quot;: (&quot;baz&quot;, None, 1.0, 2)}])
+<p>代码示例——编码/解码 JSON 字符串</p>
+<pre><code>import json
+
+json.dumps([&quot;foo&quot;, {&quot;bar&quot;: (&quot;baz&quot;, None, 1.0, 2)}])
 &amp;#35; JSON 编码
 &amp;#35; 得到如下【字符串】
 &amp;#35; &quot;&quot;&quot;[&quot;foo&quot;, {&quot;bar&quot;: [&quot;baz&quot;, null, 1.0, 2]}]&quot;&quot;&quot;
@@ -1246,7 +1344,6 @@ json.loads(&quot;&quot;&quot;[&quot;foo&quot;, {&quot;bar&quot;:[&quot;baz&quot;
 &amp;#35; JSON 解码
 &amp;#35; 得到如下【对象】
 &amp;#35; [u&quot;foo&quot;, {u&quot;bar&quot;: [u&quot;baz&quot;, None, 1.0, 2]}]
-&lt;/source&gt;
 </code></pre><h3 id="9-1-3-YAML"><a href="#9-1-3-YAML" class="headerlink" title="9.1.3 YAML"></a>9.1.3 YAML</h3><p>[<a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="external">https://en.wikipedia.org/wiki/YAML</a> YAML] 是一种类似于 json 的结构化数据格式。它在确保可读性的基础上，提供了超越 json 的灵活性和扩展性。</p>
 <h4>PyYAML</h4>
 
@@ -1306,17 +1403,16 @@ json.loads(&quot;&quot;&quot;[&quot;foo&quot;, {&quot;bar&quot;:[&quot;baz&quot;
 <p>Home：[<a href="https://github.com/reingart/pyfpdf" target="_blank" rel="external">https://github.com/reingart/pyfpdf</a>]</p>
 <p>这是 [<a href="http://www.fpdf.org/" target="_blank" rel="external">http://www.fpdf.org/</a> FPDF] 的 Python 移植库，用来生成 PDF 文档。</p>
 <p>支持的功能比较全（嵌入字体、嵌入图片），文档也比较详细。</p>
-<p>代码示例——简单的 Hello World 示例<br>    <source lang="python"><br>    from fpdf import FPDF</p>
-<pre><code>pdf = FPDF()
+<p>代码示例——简单的 Hello World 示例</p>
+<pre><code>from fpdf import FPDF
+
+pdf = FPDF()
 pdf.add_page()
 pdf.set_font(&quot;Arial&quot;, &quot;B&quot;, 16)
 pdf.cell(40, 10, &quot;Hello, World&quot;)
 pdf.output(&quot;test.pdf&quot;, &quot;F&quot;)
-&lt;/source&gt;
-
-代码示例——支持写入 HTML 语法（目前支持几种常见的 HTML tag）
-&lt;source lang=&quot;python&quot;&gt;
-from pyfpdf import FPDF, HTMLMixin
+</code></pre><p> 代码示例——支持写入 HTML 语法（目前支持几种常见的 HTML tag）</p>
+<pre><code>from pyfpdf import FPDF, HTMLMixin
 
 class MyFPDF(FPDF, HTMLMixin) :
     pass
@@ -1325,7 +1421,6 @@ pdf = MyFPDF()
 pdf.add_page()
 pdf.write_html(html)
 pdf.output(&quot;test.pdf&quot;, &quot;F&quot;)
-&lt;/source&gt;
 </code></pre><h4>pyPdf &amp; PyPDF2</h4>
 
 <p>Home：[<a href="http://knowah.github.com/PyPDF2/" target="_blank" rel="external">http://knowah.github.com/PyPDF2/</a>]</p>
@@ -1375,29 +1470,31 @@ pdf.output(&quot;test.pdf&quot;, &quot;F&quot;)
 <p>Links：[<a href="https://en.wikipedia.org/wiki/Python_Imaging_Library" target="_blank" rel="external">https://en.wikipedia.org/wiki/Python_Imaging_Library</a> Wikipedia]</p>
 <p>这是一个很有名气的 Python 图像处理库，支持常见图像文件格式（BMP、JPG、GIF、PNG …）。</p>
 <p>它可以对图像进行各种常见的处理（旋转、缩放、剪切 …）。</p>
-<p>代码示例——为某个目录下所有 JPEG 创建缩略图<br>    <source lang="python"><br>    import os, glob<br>    from PIL import Image</p>
-<pre><code>size = 128, 128
+<p>代码示例——为某个目录下所有 JPEG 创建缩略图</p>
+<pre><code>import os, glob
+from PIL import Image
+
+size = 128, 128
 for file in glob.glob(&quot;*.jpg&quot;):
     name, ext = os.path.splitext(file)
     img = Image.open(file)
     img.thumbnail(size)
     img.save(name+&quot;.thumbnail&quot;, &quot;JPEG&quot;)
-&lt;/source&gt;
-
-代码示例——旋转某图片并显示
-&lt;source lang=&quot;python&quot;&gt;
-from PIL import Image
+</code></pre><p> 代码示例——旋转某图片并显示</p>
+<pre><code>from PIL import Image
 
 img = Image.open(&quot;xxx.jpg&quot;)
 img = img.rotate(90)
 img.show()
-&lt;/source&gt;
 </code></pre><h4>Wand</h4>
 
 <p>Home：[<a href="http://docs.wand-py.org/" target="_blank" rel="external">http://docs.wand-py.org/</a>]</p>
 <p>它通过前面提到 ctypes 实现了对 [<a href="https://en.wikipedia.org/wiki/ImageMagick" target="_blank" rel="external">https://en.wikipedia.org/wiki/ImageMagick</a> ImageMagick] 的封装（ImageMagick 是最强大的开源图片处理工具集）。</p>
-<p>代码示例——旋转并缩放某图片<br>    <source lang="python"><br>    from wand.image import Image<br>    from wand.display import display</p>
-<pre><code>with Image(filename=&quot;mona-lisa.png&quot;) as img :
+<p>代码示例——旋转并缩放某图片</p>
+<pre><code>from wand.image import Image
+from wand.display import display
+
+with Image(filename=&quot;mona-lisa.png&quot;) as img :
     print(img.size)
     for r in 1, 2, 3 :
         with img.clone() as new_img :
@@ -1405,7 +1502,6 @@ img.show()
             new_img.rotate(90 * r)
             new_img.save(filename=&quot;mona-lisa-{0}.png&quot;.format(r))
             display(new_img)
-&lt;/source&gt;
 </code></pre><h4>Pillow</h4>
 
 <p>Home：[<a href="http://python-pillow.org/" target="_blank" rel="external">http://python-pillow.org/</a>]</p>
@@ -1421,8 +1517,10 @@ img.show()
 <p>Home：[<a href="https://github.com/xflr6/graphviz" target="_blank" rel="external">https://github.com/xflr6/graphviz</a>]</p>
 <p>这个库与上一个类似，也提供了 Graphviz 的 Python 的封装。</p>
 <p>这两个库都在 GitHub 上。（可能是因为出现较晚）这个库的 Star 和 Fork 数都不如上一个，不过俺感觉文档比较全。</p>
-<p>代码示例——创建一个 DOT 图并加入若干节点和连线<br>    <source lang="python"><br>    from graphviz import Digraph</p>
-<pre><code>dot = Digraph(comment=&apos;The Round Table&apos;)
+<p>代码示例——创建一个 DOT 图并加入若干节点和连线</p>
+<pre><code>from graphviz import Digraph
+
+dot = Digraph(comment=&apos;The Round Table&apos;)
 &amp;#35; 添加节点
 dot.node(&apos;A&apos;, &apos;King Arthur&apos;)
 dot.node(&apos;B&apos;, &apos;Sir Bedevere the Wise&apos;)
@@ -1430,7 +1528,6 @@ dot.node(&apos;L&apos;, &apos;Sir Lancelot the Brave&apos;)
 &amp;#35; 添加连线
 dot.edges([&apos;AB&apos;, &apos;AL&apos;])
 dot.edge(&apos;B&apos;, &apos;L&apos;, constraint=&apos;false&apos;)
-&lt;/source&gt;
 </code></pre><h2 id="10-2-图像格式转换"><a href="#10-2-图像格式转换" class="headerlink" title="10.2 图像格式转换"></a>10.2 图像格式转换</h2><h4>Python Imaging Library（PIL）</h4>
 
 <p>PIL 前面已经介绍过。它支持常见图像文件格式（BMP、JPG、GIF、PNG …）之间的相互转换。</p>
@@ -1474,13 +1571,19 @@ dot.edge(&apos;B&apos;, &apos;L&apos;, constraint=&apos;false&apos;)
 <p>Home：[<a href="http://www.numpy.org/" target="_blank" rel="external">http://www.numpy.org/</a>]</p>
 <p>Links：[<a href="https://en.wikipedia.org/wiki/NumPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/NumPy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/NumPy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/NumPy</a> 维基百科]</p>
 <p>它提供了功能强大、性能很高的数值数组，可以用来进行各种数值计算（包括矩阵运算）。</p>
-<p>代码示例<br>    <source lang="python"><br>    &#35; 以下是传统 Python 写法，冗长且速度较慢<br>    a = range(10000000)<br>    b = range(10000000)<br>    c = []<br>    for i in range(len(a)) :<br>        c.append(a[i] + b[i])</p>
-<pre><code>&amp;#35; 以下是 NumPy 的写法，简洁且速度飞快
+<p>代码示例</p>
+<pre><code>&amp;#35; 以下是传统 Python 写法，冗长且速度较慢
+a = range(10000000)
+b = range(10000000)
+c = []
+for i in range(len(a)) :
+    c.append(a[i] + b[i])
+
+&amp;#35; 以下是 NumPy 的写法，简洁且速度飞快
 import numpy as np
 a = np.arange(10000000)
 b = np.arange(10000000)
 c = a + b
-&lt;/source&gt;
 </code></pre><h4>SciPy</h4>
 
 <p>Home：[<a href="http://www.scipy.org/" target="_blank" rel="external">http://www.scipy.org/</a>]</p>
