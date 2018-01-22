@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type='text/javascript' src='//cdn.bootcss.com/cavas_nest.js/1.0.0/canvas-nest.min.js'></script>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python 开源库及示例代码  = = = 说明 = 本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  = 1 算法 = == 1.1 字符串 == === 1.1.1 正则表达式 === re  【标准库】 提供基于正则的匹配和替换。 === 1.1.2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python开源库总结">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/python开源库总结/index.html">
+<meta property="og:site_name" content="旅行的意义">
+<meta property="og:description" content="Python 开源库及示例代码  = = = 说明 = 本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  = 1 算法 = == 1.1 字符串 == === 1.1.1 正则表达式 === re  【标准库】 提供基于正则的匹配和替换。 === 1.1.2">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-22T13:02:47.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python开源库总结">
+<meta name="twitter:description" content="Python 开源库及示例代码  = = = 说明 = 本页面汇总收集的各种 Python 代码库，不定期更新。 本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。  = 1 算法 = == 1.1 字符串 == === 1.1.1 正则表达式 === re  【标准库】 提供基于正则的匹配和替换。 === 1.1.2">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/22/python开源库总结/"/>
+
+
+
+
+
+  <title>python开源库总结 | 旅行的意义</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅行的意义</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">--好记性不如烂笔头。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/python开源库总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅行的意义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅行的意义">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python开源库总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T21:02:36+08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1>Python 开源库及示例代码</h1>
+
+<p>= =</p>
+<p>= 说明 =</p>
+<p>本页面汇总收集的各种 Python 代码库，不定期更新。</p>
+<p>本页面列出的各种 Python 库/模块，如果注明了官网的网址，说明这个库是第三方的；否则就是 Python 语言内置的标准库。</p>
+<hr>
+<p>= 1 算法 =</p>
+<p>== 1.1 字符串 ==</p>
+<p>=== 1.1.1 正则表达式 ===</p>
+<h4>re</h4>
+
+<p>【标准库】</p>
+<p>提供基于正则的匹配和替换。</p>
+<p>=== 1.1.2 字符集 ===</p>
+<h4>chardet</h4>
+
+<p>Home：[<a href="https://github.com/erikrose/chardet" target="_blank" rel="external">https://github.com/erikrose/chardet</a>]</p>
+<p>chardet 可以猜测任意一段文本的字符集编码。对于编码类型未知的文本，它会很有用。</p>
+<p>chardet 既可以作为模块来使用，也可以作为命令行工具来使用。</p>
+<p>代码示例</p>
+<source lang="python"><br>import chardet<br>print(chardet.detect(bytes))<br>
+
+<p>=== 1.1.3 （其它） ===</p>
+<h4>StringIO &amp; cStringIO</h4>
+
+<p>【标准库】</p>
+<p>以读写文件的方式来操作字符串（有点类似于内存文件）。</p>
+<p>cStringIO 是 C 语言实现的，性能更高；而 StringIO 是 Python 实现的，提供 Unicode 兼容性。</p>
+<h4>difflib</h4>
+
+<p>【标准库】</p>
+<p>可以对两个字符串进行“按行”比较，其功能类似于命令行的 diff。</p>
+<p>另外还支持“最佳匹配”功能——对给定的字符串 s 和字符串列表 l，在 l 里面找到最接近 s 的字符串。</p>
+<p>== 1.2 编码 &amp; 解码 ==</p>
+<p>=== 1.2.1 base64 ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="external">https://en.wikipedia.org/wiki/Base64</a> Base64] 是一组编码算法的总称。用于把二进制数据编码为文本。</p>
+<h4>base64</h4>
+
+<p>【标准库】</p>
+<p>提供 Base16、Base32、Base64 格式的编码和解码。</p>
+<p>=== 1.2.2 UUencode ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Uuencode" target="_blank" rel="external">https://en.wikipedia.org/wiki/Uuencode</a> UUencode] 出现于早期的 Unix 系统。用于把二进制编码为文本，以便通过邮件系统发送。</p>
+<h4>uu</h4>
+
+<p>【标准库】</p>
+<p>提供 UUencode 格式的编码和解码。</p>
+<p>=== 1.2.3 BinHex ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/BinHex" target="_blank" rel="external">https://en.wikipedia.org/wiki/BinHex</a> BinHex] 起先用于 Mac OS 系统，类似于 UUencode。</p>
+<h4>binhex</h4>
+
+<p>【标准库】</p>
+<p>提供 BinHex 格式的编码和解码。</p>
+<p>== 1.3 数学类 ==</p>
+<h4>math</h4>
+
+<p>【标准库】</p>
+<p>顾名思义，这个标准库封装了常用的数学函数（开方、指数、对数、三角函数……）。</p>
+<h4>random</h4>
+
+<p>【标准库】</p>
+<p>顾名思义，这个标准库是用来进行随机数生成滴。</p>
+<p>代码示例——生成 0-100 的随机数</p>
+<source lang="python"><br>import random<br>random.seed()<br>random.randint(0, 100)<br>
+
+<h4>fractions</h4>
+
+<p>【标准库】</p>
+<p>封装了跟有理数（分数）相关的运算</p>
+<p>== 1.4 容器 ==</p>
+<h4>pygtrie</h4>
+
+<p>Home：[<a href="https://github.com/google/pytrie" target="_blank" rel="external">https://github.com/google/pytrie</a>]</p>
+<p>这是 Google 实现的 [<a href="https://zh.wikipedia.org/wiki/Trie" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Trie</a> trie]（前缀树/字典树）封装库。</p>
+<hr>
+<p>= 2 跨语言编程 =</p>
+<p>Python 可以很容易地跟其它编程语言整合。整合之后，就可以在 Python 代码中使用其它编程语言的函数、模块、库，非常爽！<br>== 2.1 整合 C &amp; C++ ==</p>
+<h4>ctypes</h4>
+
+<p>ctypes 在 Python 2.5 版本加入到标准库中。</p>
+<p>通过它，你可以很方便地调用 C/C++ 动态库导出的函数，可以在 Python 中使用各种 C/C++ 的数据类型（包括“指针”和“引用”）。</p>
+<p>代码示例——调用 Linux/Unix 系统的标准 C 函数，获取当前时间</p>
+<source lang="python"><br>from ctypes import *<br><br>libc = CDLL(“libc.so.6”)<br>time = libc.time(None)<br>
+
+<p>代码示例——调用 Windows 系统的 API，弹出消息提示框</p>
+<source lang="python"><br>from ctypes import c_int, WINFUNCTYPE, windll<br>from ctypes.wintypes import HWND, LPCSTR, UINT<br><br>prototype = WINFUNCTYPE(c_int, HWND, LPCSTR, LPCSTR, UINT)<br>paramflags = (1, “hwnd”, 0), (1, “text”, “Hi”), (1, “caption”, None), (1, “flags”, 0)<br>MessageBox = prototype((“MessageBoxA”, windll.user32), paramflags)<br>MessageBox(text=”Hello, world”, flags=2)<br>
+
+<h4>SWIG（Simplified Wrapper and Interface Generator）</h4>
+
+<p>Home：[<a href="http://swig.org/" target="_blank" rel="external">http://swig.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/SWIG" target="_blank" rel="external">https://en.wikipedia.org/wiki/SWIG</a> Wikipedia]</p>
+<p>这是一个很老牌的、有名气的工具，它可以把多种语言（Java、Python、C#、Ruby、PHP、Perl、Lua、Go …）整合到 C/C++ 中。</p>
+<h4>Cython</h4>
+
+<p>Home：[<a href="http://cython.org/" target="_blank" rel="external">http://cython.org/</a>]</p>
+<p>这个工具可以让你用 Python 的语法写扩展模块的代码，然后它帮你把 Python 代码编译为本地动态库（机器码）。</p>
+<p>用它编译出来的扩展模块，其性能跟 C/C++ 编写的扩展模块相当。</p>
+<p>== 2.2 整合 JVM 平台 ==</p>
+<h4>Jython</h4>
+
+<p>Home：[<a href="http://www.jython.org/" target="_blank" rel="external">http://www.jython.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Jython" target="_blank" rel="external">https://en.wikipedia.org/wiki/Jython</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/Jython" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Jython</a> 维基百科]</p>
+<p>通过 Jython 可以让 Python 代码运行在 JVM 上，并且可以调用其它的 JVM 语言的代码（比如 Java、Scala）</p>
+<p>== 2.3 整合 dotNet 平台 ==</p>
+<h4>IronPython</h4>
+
+<p>Home：[<a href="http://ironpython.net/" target="_blank" rel="external">http://ironpython.net/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/IronPython" target="_blank" rel="external">https://en.wikipedia.org/wiki/IronPython</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/IronPython" target="_blank" rel="external">https://zh.wikipedia.org/wiki/IronPython</a> 维基百科]</p>
+<p>通过 IronPython 可以让 Python 代码运行在 dotNET 平台上，并且可以调用其它的 dotNET 语言的代码（C#、F#、VB.Net …）</p>
+<p>== 2.4 整合 Go ==</p>
+<h4>gopy</h4>
+
+<p>Home：[<a href="https://github.com/go-python/gopy" target="_blank" rel="external">https://github.com/go-python/gopy</a>]</p>
+<p>gopy 可以把 Go 源代码编译为 Python 的一个 module。</p>
+<p>它提供了两种方式（命令行、Python 库）来实现：Go 源码编译为 Python 模块。</p>
+<p>== 2.5 整合 Objective-C ==</p>
+<h4>PyObjC</h4>
+
+<p>Home：[<a href="http://pyobjc.sourceforge.net/" target="_blank" rel="external">http://pyobjc.sourceforge.net/</a>]</p>
+<p>这是用 Python 封装 Mac OS X 上的 Objective-C 库。</p>
+<hr>
+<p>= 3 操作系统 =</p>
+<p>== 3.1 文件和目录操作 ==</p>
+<h4>os</h4>
+
+<p>【标准库】</p>
+<p>这是非常基本的标准库，提供了常见的操作系统相关功能，很多功能是针对文件系统。</p>
+<h4>shutil</h4>
+
+<p>【标准库】</p>
+<p>相对于 os 而言，shutil 提供了一些比较高级的文件和目录操作（目录递归复制、目录递归删除、目录压缩打包…）</p>
+<p>代码示例——递归删除某个目录</p>
+<source lang="python"><br>import shutil<br>shutil.rmtree(xxxx)<br>
+
+<h4>glob</h4>
+
+<p>【标准库】</p>
+<p>用于查找文件，【支持通配符】（* 和 ?）</p>
+<p>代码示例——获取当前目录所有 txt 文件</p>
+<source lang="python"><br>import glob<br>for file in glob.glob(“./*.txt”) :<br>    print(file)<br>
+
+<h4>fnmatch</h4>
+
+<p>【标准库】</p>
+<p>用于匹配文件名（支持通配符，类似上面的 glob）</p>
+<p>代码示例——列出当前目录所有 txt 文件</p>
+<source lang="python"><br>import os, fnmatch<br><br>for file in os.listdir(“.”) :<br>    if fnmatch.fnmatch(file, “*.txt”) :<br>        print(file)<br>
+
+<h4>tempfile</h4>
+
+<p>【标准库】</p>
+<p>使用它可以安全地生成临时文件或临时目录。</p>
+<p>== 3.2 线程 ==</p>
+<h4>threading</h4>
+
+<p>【标准库】</p>
+<p>提供了比较高层的线程封装 API。它本身包含了线程同步/互斥的机制。</p>
+<p>代码示例——基于“函数”的线程</p>
+<source lang="python"><br>import threading<br>import time<br><br>def my_thread() :<br>    print(“Thread started!”)<br>    time.sleep(3)<br>    print(“Thread finished!”)<br><br>threading.Thread(target=my_thread).start()<br>
+
+<p>代码示例——基于“类”的线程</p>
+<source lang="python"><br>import threading<br>import time<br>from &#95;&#95;future&#95;&#95; import print_function<br><br>class MyThread(threading.Thread) :<br>    def run(self) :<br>        print(“{} started!”.format(self.getName()))<br>        time.sleep(3)<br>        print(“{} finished!”.format(self.getName()))<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    for n in range(10) :<br>        mythread = MyThread(name = “Thread-{}”.format(n + 1))<br>        mythread.start()<br>        time.sleep(1)<br>
+
+<p>== 3.3 进程 ==</p>
+<h4>subprocess</h4>
+
+<p>【标准库】</p>
+<p>用于进程管理，可以启动子进程，通过标准输入输出跟子进程交互。</p>
+<p>代码示例——启动命令行进程，并获取该进程的标准输出</p>
+<source lang="python"><br>import subprocess<br>output = subprocess.check_output([“dir”])  &#35; 获取当前目录的内容<br>output = subprocess.check_output([“netstat”, “-an”])  &#35; 获取当前网络链接<br>
+
+<h4>multiprocessing</h4>
+
+<p>【标准库】</p>
+<p>它是 2.6 版本加入到标准库的，其 API 接口的风格类似于 threading 模块。</p>
+<p>它本身包含了进程同步/互斥的机制。</p>
+<p>代码示例——利用其 Lock 机制，确保多个子进程的标准输出不会混杂（每次只有一个进程调用 print）。</p>
+<source lang="python"><br>from multiprocessing import Process, Lock<br><br>def f(lock, n) :<br>    lock.acquire()<br>    print(“hello world %d” % n)<br>    lock.release()<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    lock = Lock()<br>    for num in range(10):<br>        Process(target=f, args=(lock, num)).start()<br>
+
+<p>== 3.4 本地进程间通信（IPC） ==</p>
+<h4>mmap</h4>
+
+<p>【标准库】</p>
+<p>提供了内存映射文件的支持。</p>
+<p>代码示例——利用 mmap 在父子进程间交换数据</p>
+<source lang="python"><br>import os<br>import mmap<br><br>map = mmap.mmap(-1, 13)<br>map.write(“Hello, world”)<br><br>pid = os.fork()<br>if pid == 0 :  &#35; 子进程<br>    map.seek(0)<br>    print(map.readline())<br>    map.close()<br>
+
+<h4>signal</h4>
+
+<p>【标准库】</p>
+<p>用于进程信号处理的标准库（主要用于 Linux &amp; UNIX 系统）。</p>
+<p>== 3.5 Linux &amp; Unix 系统相关 ==</p>
+<h4>syslog</h4>
+
+<p>【标准库】</p>
+<p>通过它可以很方便地跟 POSIX 的 syslog 服务进行交互。</p>
+<p>== 3.6 Windows 系统相关 ==</p>
+<h4>PyWin32</h4>
+
+<p>Home：[<a href="http://python.net/crew/mhammond/win32/" target="_blank" rel="external">http://python.net/crew/mhammond/win32/</a>]</p>
+<p>这个第三方库封装了 Windows API 及 COM API。通过它可以方便地用 Python 进行 Windows 编程（调用 COM 组件、编写 Windows 服务、等）。</p>
+<p>== 3.7 程序打包 ==</p>
+<h4>PyInstaller</h4>
+
+<p>Home：[<a href="http://www.pyinstaller.org/" target="_blank" rel="external">http://www.pyinstaller.org/</a>]</p>
+<p>PyInstaller 可以把你的 Python 代码制作成独立运行的程序（不依赖 Python 环境就可以运行）。</p>
+<p>该工具支持多种操作系统，包括：Windows、Linux、Mac OS X、Solaris、AIX、等。</p>
+<h4>py2exe</h4>
+
+<p>Home：[<a href="http://www.py2exe.org/" target="_blank" rel="external">http://www.py2exe.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Py2exe" target="_blank" rel="external">https://en.wikipedia.org/wiki/Py2exe</a> Wikipedia]</p>
+<p>py2exe 的功能类似 PyInstaller，但只支持 Windows 平台。</p>
+<h4>py2app</h4>
+
+<p>Home：[<a href="https://bitbucket.org/ronaldoussoren/py2app" target="_blank" rel="external">https://bitbucket.org/ronaldoussoren/py2app</a>]</p>
+<p>它很类似于 [<a href="http://www.py2exe.org/" target="_blank" rel="external">http://www.py2exe.org/</a> py2exe]，差别在于 [<a href="http://www.py2exe.org/" target="_blank" rel="external">http://www.py2exe.org/</a> py2exe] 支持 Windows 平台，而 [<a href="https://bitbucket.org/ronaldoussoren/py2app" target="_blank" rel="external">https://bitbucket.org/ronaldoussoren/py2app</a> py2app] 支持 Mac OS X 平台。</p>
+<h4>EasyInstall &amp; Setuptools</h4>
+
+<p>Home：[<a href="https://pypi.python.org/pypi/setuptools" target="_blank" rel="external">https://pypi.python.org/pypi/setuptools</a>]</p>
+<p>这套工具可以帮助你进行第三方库的管理（下载、编译、安装、升级、卸载）</p>
+<hr>
+<p>= 4 Web =</p>
+<p>== 4.1 HTTP Client ==</p>
+<h4>httplib &amp; httplib2 &amp; http.request &amp; urllib.parse</h4>
+
+<p>【标准库】</p>
+<p>这几个库可以进行各种 HTTP 客户端请求（GET、POST、等）。</p>
+<p>Python2 的模块名是 httplib 和 httplib2；到 Python3，模块名改为 http.request 和 urllib.parse</p>
+<p>代码示例——读取指定 URL 的网页内容</p>
+<source lang="python"><br>import urllib<br>handle = urllib.urlopen(“<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>“)<br>page = handle.read()<br>handle.close()<br>
+
+<h4>Requests</h4>
+
+<p>Home：[<a href="http://www.python-requests.org/" target="_blank" rel="external">http://www.python-requests.org/</a>]</p>
+<p>这是一个用起来很优雅的库，如其名，封装了 HTTP 请求的功能。</p>
+<p>代码示例</p>
+<source lang="python"><br>&gt;&gt;&gt; r = requests.get(‘<a href="https://api.github.com/user" target="_blank" rel="external">https://api.github.com/user</a>‘, auth=(‘user’, ‘pass’))<br>&gt;&gt;&gt; r.status_code<br>200<br>&gt;&gt;&gt; r.headers[‘content-type’]<br>‘application/json; charset=utf8’<br>&gt;&gt;&gt; r.encoding<br>‘utf-8’<br>&gt;&gt;&gt; r.text<br>u’{“type”:”User”…’<br>&gt;&gt;&gt; r.json()<br>{u’private_gists’: 419, u’total_private_repos’: 77, …}<br>
+
+<p>== 4.2 HTTP Server ==</p>
+<h4>SimpleHTTPServer &amp; http.server</h4>
+
+<p>【标准库】</p>
+<p>提供轻量级 HTTP Server 的标准库。</p>
+<p>Python2 的模块名叫 SimpleHTTPServer；到 Python3 模块名改为 http.server</p>
+<p>代码示例——一个极简单的 HTTP 服务</p>
+<source lang="python"><br>import SocketServer<br>import SimpleHTTPServer<br><br>PORT = 8080<br>Handler = SimpleHTTPServer.SimpleHTTPRequestHandler<br>httpd = SocketServer.TCPServer((“”, PORT), Handler)<br>print(“serving at port %d” % PORT)<br>httpd.serve_forever()<br>
+
+<p>== 4.3 Web 开发框架 ==</p>
+<p>（Python 的 Web 框架数不胜数，俺只挑选几个代表性的）</p>
+<h4>Django</h4>
+
+<p>Home：[<a href="https://www.djangoproject.com/" target="_blank" rel="external">https://www.djangoproject.com/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Django_(web_framework" target="_blank" rel="external">https://en.wikipedia.org/wiki/Django_(web_framework</a>) Wikipedia] [<a href="https://zh.wikipedia.org/wiki/Django" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Django</a> 维基百科]</p>
+<p>在 Python 社区，Django 是目前最有影响力的 Web 开发框架。该框架很重型，内置了 Web 服务端开发常用的组件（比如：ORM、用户管理）。</p>
+<p>Django 应用范围很广，比如 Google 的 Web 开发平台 GAE 就支持它。</p>
+<p>而且它完全支持前面提到的 Jython 运行环境，可以运行在任何 J2EE 服务器上。</p>
+<h4>TurboGears</h4>
+
+<p>Home：[<a href="http://www.turbogears.org/" target="_blank" rel="external">http://www.turbogears.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/TurboGears" target="_blank" rel="external">https://en.wikipedia.org/wiki/TurboGears</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/TurboGears" target="_blank" rel="external">https://zh.wikipedia.org/wiki/TurboGears</a> 维基百科]</p>
+<p>又一个重型的 Web 开发框架，名气仅次于 Django。</p>
+<p>它跟 Django 一样，都是“Full-Stack Frameworks”。</p>
+<h4>CherryPy</h4>
+
+<p>Home：[<a href="http://www.cherrypy.org/" target="_blank" rel="external">http://www.cherrypy.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/CherryPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/CherryPy</a> Wikipedia]</p>
+<p>轻量级的 Web 框架。某些 Web 框架（比如前面提到的 TurboGears）使用它作为底层。</p>
+<p>代码示例——Hello world</p>
+<source lang="python"><br>import cherrypy<br><br>class HelloWorld(object):<br>    def index(self):<br>        return “Hello World!”<br>    index.exposed = True<br><br>cherrypy.quickstart(HelloWorld())<br>
+
+<h4>web.py</h4>
+
+<p>Home：[<a href="http://webpy.org/" target="_blank" rel="external">http://webpy.org/</a>]</p>
+<p>与前两个（Django、TurboGears）不同，这是一个轻量级的框架。甚至被称为“It’s the anti-framework framework.”</p>
+<p>其作者是大名鼎鼎的黑客 [<a href="https://en.wikipedia.org/wiki/Aaron_Swartz" target="_blank" rel="external">https://en.wikipedia.org/wiki/Aaron_Swartz</a> Aaron Swartz]。（俺在[<a href="http://program-think.blogspot.nl/2013/01/weekly-share-37.html" target="_blank" rel="external">http://program-think.blogspot.nl/2013/01/weekly-share-37.html</a> 某篇博文]中悼念过他）。</p>
+<p>当年 Aaron Swartz 用 web.py 来搭建同样大名鼎鼎的网站 [<a href="https://en.wikipedia.org/wiki/Reddit" target="_blank" rel="external">https://en.wikipedia.org/wiki/Reddit</a> reddit]（该网站是 Web 2.0 的标杆）。</p>
+<p>代码示例——Hello world</p>
+<source lang="python"><br>import web<br><br>urls = (<br>    “/“, “index”<br>)<br><br>class index:<br>    def GET(self):<br>        return “Hello, world!”<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    app = web.application(urls, globals())<br>    app.run()<br>
+
+<p>== 4.4 Web前端 &amp; JS整合 ==</p>
+<h4>Pyjamas &amp; pyjs</h4>
+
+<p>Home：[<a href="http://pyjs.org/" target="_blank" rel="external">http://pyjs.org/</a>]</p>
+<p>这是从 GWT（Google Web Toolkit）移植的第三方库。提供了 Python 到 JS 的编译，AJAX 框架等功能。</p>
+<p>Pyjamas 甚至能用来开发桌面 GUI 应用。</p>
+<h4>pyjaco</h4>
+
+<p>Home：[<a href="https://github.com/chrivers/pyjaco" target="_blank" rel="external">https://github.com/chrivers/pyjaco</a>]</p>
+<p>这也是一个 Python 到 JavaScript 的编译工具。</p>
+<p>== 4.5 浏览器整合 ==</p>
+<h4>webbrowser</h4>
+
+<p>【标准库】</p>
+<p>操纵当前系统的默认浏览器，访问指定 URL 的页面。</p>
+<p>代码示例——用默认浏览器打开 Google 主页</p>
+<source lang="python"><br>import webbrowser<br>webbrowser.open(“<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>“)<br>
+
+<h4>pyv8</h4>
+
+<p>Home：[<a href="https://pypi.python.org/pypi/PyV8" target="_blank" rel="external">https://pypi.python.org/pypi/PyV8</a>]</p>
+<p>[<a href="https://developers.google.com/v8/" target="_blank" rel="external">https://developers.google.com/v8/</a> v8] 是 Google 开发的 JavaScript 解释引擎。这是对 v8 引擎的 Python 封装。</p>
+<p>代码示例</p>
+<source lang="python"><br>import PyV8<br><br>ctxt1 = PyV8.JSContext()<br>ctxt1.enter()<br>ctxt1.eval(“1+2”)  &#35; 对 JS 表达式求值<br><br>class Global(PyV8.JSClass) :  &#35; 定义一个兼容 JS 的类<br>    def hello(self) :<br>        print(“Hello, world”)<br><br>ctxt2 = PyV8.JSContext(Global())  &#35; 创建一个 JS 上下文，传入 Global 类的对象<br>ctxt2.enter()<br>ctxt2.eval(“hello()”)  &#35; 调用 hello() 函数<br>
+
+<h4>PyWebKitGtk</h4>
+
+<p>Home：[<a href="https://github.com/jmalonzo/pywebkitgtk" target="_blank" rel="external">https://github.com/jmalonzo/pywebkitgtk</a>]</p>
+<p>[<a href="http://webkitgtk.org/" target="_blank" rel="external">http://webkitgtk.org/</a> WebKitGtk] 是一个基于 WebKit 的 Web 渲染引擎。</p>
+<p>PyWebKitGtk 则提供了对 WebKitGtk 的 Python 封装。</p>
+<p>== 4.6 （其它） ==</p>
+<h4>pywebsocket</h4>
+
+<p>Home：[<a href="https://github.com/google/pywebsocket" target="_blank" rel="external">https://github.com/google/pywebsocket</a>]</p>
+<p>这是 Google 提供的 [<a href="https://zh.wikipedia.org/wiki/WebSocket" target="_blank" rel="external">https://zh.wikipedia.org/wiki/WebSocket</a> WebSocket] 服务端。</p>
+<p>该项目包含一个可独立运行的 server 以及一个 Apache 扩展模块（mod_pywebsocket）。</p>
+<hr>
+<p>= 5 网络 =</p>
+<p>== 5.1 链路层 &amp; 网络层 ==</p>
+<h4>Scapy</h4>
+
+<p>Home：[<a href="http://www.secdev.org/projects/scapy/" target="_blank" rel="external">http://www.secdev.org/projects/scapy/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Scapy" target="_blank" rel="external">https://en.wikipedia.org/wiki/Scapy</a> Wikipedia]</p>
+<p>这是一个底层的网络库，可以在不同协议层次构造网络数据包（包括链路层、网络层、传输层），还支持 Sniffer 抓包。</p>
+<p>搞网络安全的网友应该会喜欢这个库。</p>
+<p>代码示例</p>
+<source lang="python"><br>&#35; 传统的 ping 扫描（网络层）<br>ans,unans = sr(IP(dst=”192.168.1.1-254”)/ICMP())<br><br>&#35; 局域网内的 ARP 扫描（链路层）<br>ans,unans = srp(Ether(dst=”ff:ff:ff:ff:ff:ff”)/ARP(pdst=”192.168.1.0/24”), timeout=2)<br>
+
+<p>== 5.2 传输层 ==</p>
+<h4>socket</h4>
+
+<p>Python 标准库很早就提供了对 socket 编程的支持。</p>
+<p>这个标准库是对伯克利套接字进行简单的封装，其 API 基本上跟 BSD SOCKET 一一对应。</p>
+<h4>asyncore</h4>
+
+<p>这个标准库提供了异步 SOCKET 的支持。</p>
+<h4>asynchat</h4>
+
+<p>这个标准库基于上述的 asyncore，提供更高层的 API，简化异步通讯编程。</p>
+<p>== 5.3 标准的应用层 ==</p>
+<p>=== 5.3.1 综合性的库 ===</p>
+<h4>PycURL</h4>
+
+<p>Home：[<a href="http://pycurl.sourceforge.net/" target="_blank" rel="external">http://pycurl.sourceforge.net/</a>]</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Curl" target="_blank" rel="external">https://en.wikipedia.org/wiki/Curl</a> cURL] 是一个功能很强的网络库/网络工具，支持 N 多应用层协议。俺在前几年写过一篇博文推荐它（在“[<a href="https://program-think.blogspot.com/2009/03/opensource-review-curl-library.html" target="_blank" rel="external">https://program-think.blogspot.com/2009/03/opensource-review-curl-library.html</a> 这里]”）。</p>
+<p>看名称就能猜到——PycURL 是 cURL 的 Python 封装。</p>
+<p>代码示例——发起 HTTP GET 请求</p>
+<source lang="python"><br>import pycurl<br>try :<br>    from io import BytesIO<br>except ImportError :<br>    from StringIO import StringIO as BytesIO<br><br>buffer = BytesIO()<br>curl = pycurl.Curl()<br>curl.setopt(curl.URL, “<a href="http://pycurl.sourceforge.net/" target="_blank" rel="external">http://pycurl.sourceforge.net/</a>“)<br>curl.setopt(curl.WRITEDATA, buffer)<br>curl.perform()<br>curl.close()<br>body = buffer.getvalue()<br>
+
+<p>=== 5.3.2 HTTP ===</p>
+<p>（关于“HTTP 协议”，请参见另一个大类：“Web”）</p>
+<p>=== 5.3.3 文件传输 ===</p>
+<h4>ftplib</h4>
+
+<p>【标准库】</p>
+<p>封装 FTP（File Transfer Protocol）协议</p>
+<p>代码示例——列出 FTP 服务器上某目录的内容</p>
+<source lang="python"><br>from ftplib import FTP<br><br>ftp = FTP(“ftp.debian.org”)  &#35; 连接服务器（如果不指定端口号，则用默认端口号 21）<br>ftp.login()                  &#35; 登录（如果不指定用户名和密码，则用匿名登录）<br>ftp.cwd(“debian”)            &#35; 切换到 “debian” 目录<br>ftp.retrlines(“LIST”)        &#35; 列出当前目录的内容<br>ftp.quit()<br>
+
+<h4>pysftp</h4>
+
+<p>Home：[<a href="https://bitbucket.org/dundeemt/pysftp" target="_blank" rel="external">https://bitbucket.org/dundeemt/pysftp</a>]</p>
+<p>封装 [<a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol" target="_blank" rel="external">https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol</a> SFTP] 协议，依赖于 ssh.py</p>
+<p>代码示例——简单的上传/下载</p>
+<source lang="python"><br>import pysftp<br><br>with pysftp.Connection(“hostxxx”, username=”userxxx”, password=”xxxxxx”) as sftp :<br>    with sftp.cd(“public”)              &#35; 服务端当前目录切换到 public<br>        sftp.put(“/my/local/filename”)  &#35; 上传某个本地文件到服务端的 public 目录<br>    sftp.get_r(“myfiles”, “/local”)     &#35; 递归复制某个服务端的目录到本地<br>
+
+<p>=== 5.3.4 电子邮件 ===</p>
+<h4>smtplib</h4>
+
+<p>【标准库】</p>
+<p>封装 SMTP（Simple Mail Transfer Protocol）协议</p>
+<h4>imaplib</h4>
+
+<p>【标准库】</p>
+<p>封装 IMAP（Internet Message Access Protocol）协议</p>
+<h4>poplib</h4>
+
+<p>【标准库】</p>
+<p>封装 POP3（Post Office Protocol v3）协议</p>
+<p>=== 5.3.5 即时通讯 ===</p>
+<h4>jabber.py</h4>
+
+<p>Home：[<a href="http://jabberpy.sourceforge.net/" target="_blank" rel="external">http://jabberpy.sourceforge.net/</a>]</p>
+<p>Jabber（又称 XMPP）是IM（即时通信）协议的标准。这是用 Python 封装的第三方库。</p>
+<h4>irclib</h4>
+
+<p>Home：[<a href="https://bitbucket.org/jaraco/irc" target="_blank" rel="external">https://bitbucket.org/jaraco/irc</a>]</p>
+<p>IRC 是 Internet Relay Chat 的缩写。这是用 Python 封装的第三方库。</p>
+<p>=== 5.3.6 远程控制 ===</p>
+<h4>telnetlib</h4>
+
+<p>【标准库】</p>
+<p>封装 telnet 协议</p>
+<p>代码示例——使用 telnet 登录到某个主机并执行简单命令</p>
+<source lang="python"><br>import telnetlib<br>import getpass<br><br>host = raw_input(“Enter remote host: “)<br>user = raw_input(“Enter your remote account: “)<br>password = getpass.getpass()<br><br>tn = telnetlib.Telnet(host)<br><br>tn.read_until(“login: “)<br>tn.write(user + “\n”)<br><br>if password :<br>    tn.read_until(“Password: “)<br>    tn.write(password + “\n”)<br><br>tn.write(“ls\n”)<br>tn.write(“exit\n”)<br><br>print tn.read_all()<br>
+
+<h4>rdpy</h4>
+
+<p>Home：[<a href="https://github.com/citronneur/rdpy" target="_blank" rel="external">https://github.com/citronneur/rdpy</a>]</p>
+<p>纯 Python 实现的 RDP（[<a href="https://en.wikipedia.org/wiki/Remote_Desktop_Protocol" target="_blank" rel="external">https://en.wikipedia.org/wiki/Remote_Desktop_Protocol</a> 微软远程桌面协议]）和 VNC（[<a href="https://en.wikipedia.org/wiki/Virtual_Network_Computing" target="_blank" rel="external">https://en.wikipedia.org/wiki/Virtual_Network_Computing</a> Virtual Network Computing]）客户端，依赖于 Twisted 库</p>
+<p>=== 5.3.7 （其它） ===</p>
+<h4>urlparse</h4>
+
+<p>【标准库】</p>
+<p>用于解析 URL，提取各个部分的内容。从 Python 2.5 版本开始加入到标准库中，从 Python 2.7 开始支持包含 IPv6 的 URL</p>
+<p>== 5.4 自定义的应用层 ==</p>
+<h4>Protocol Buffers</h4>
+
+<p>Home：[<a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="external">https://developers.google.com/protocol-buffers/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Protocol_Buffers" target="_blank" rel="external">https://en.wikipedia.org/wiki/Protocol_Buffers</a> Wikipedia]</p>
+<p>这是 Google 开发的一个跨语言的库，用于网络传输业务数据时的“编码/解码”。</p>
+<p>其优点是：跨多种语言、高性能、向前兼容、向后兼容。俺前几年写过一篇博文推荐 protobuf（在“[<a href="https://program-think.blogspot.com/2009/05/opensource-review-protocol-buffers.html" target="_blank" rel="external">https://program-think.blogspot.com/2009/05/opensource-review-protocol-buffers.html</a> 这里]”）。</p>
+<p>作为 Protocol Buffers 的发明者，Google 默认实现了三种编程语言（C++、Java、Python）对它的支持。</p>
+<h4>Apache Thrift</h4>
+
+<p>Home：[<a href="https://thrift.apache.org/" target="_blank" rel="external">https://thrift.apache.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Apache_Thrift" target="_blank" rel="external">https://en.wikipedia.org/wiki/Apache_Thrift</a> Wikipedia]</p>
+<p>来自于 Apache 社区，提供了一种跨语言的通讯机制。</p>
+<p>程序员通过 Thrift 的“接口定义语言”定义通讯协议格式，然后 Thrift 根据协议格式自动帮你生成服务端和客户端代码。</p>
+<p>（在这个方面，它有点类似于 Google 的 Protocol Buffers）</p>
+<p>== 5.5 网络库、框架、中间件 ==</p>
+<h4>Twisted</h4>
+
+<p>Home：[<a href="http://twistedmatrix.com/" target="_blank" rel="external">http://twistedmatrix.com/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Twisted_%28software%29" target="_blank" rel="external">https://en.wikipedia.org/wiki/Twisted_%28software%29</a> Wikipedia]</p>
+<p>这是一个基于 Python 网络通讯开发框架，诞生于2002年，名气很大。</p>
+<p>它的某些设计类似于 C++ 的 [<a href="https://en.wikipedia.org/wiki/Adaptive_Communication_Environment" target="_blank" rel="external">https://en.wikipedia.org/wiki/Adaptive_Communication_Environment</a> ACE] 框架。除了能用来进行传输层（TCP UDP）的开发，还提供了若干应用层协议（HTTP、XMPP、SSH、IRC …）的支持。</p>
+<p>代码示例——实现一个简单的 Echo 服务，监听在 12345 端口</p>
+<source lang="python"><br>from twisted.internet import protocol, reactor<br><br>class Echo(protocol.Protocol) :<br>    def dataReceived(self, data) :<br>        self.transport.write(data)<br><br>class EchoFactory(protocol.Factory) :<br>    def buildProtocol(self, addr) :<br>        return Echo()<br><br>reactor.listenTCP(12345, EchoFactory())<br>reactor.run()<br>
+
+<h4>gevent</h4>
+
+<p>Home：[<a href="http://www.gevent.org/" target="_blank" rel="external">http://www.gevent.org/</a>]</p>
+<p>这是一个基于[<a href="https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B</a> 协程]的网络库，原先其底层依赖于 libevent，后来改为 libev。</p>
+<p>很多开源项目用到了 gevent，具体参见 [<a href="https://github.com/gevent/gevent/wiki/Projects" target="_blank" rel="external">https://github.com/gevent/gevent/wiki/Projects</a> gevent 官方的 wiki]。</p>
+<p>代码示例——并发执行网络请求</p>
+<source lang="python"><br>from gevent import socket<br>import gevent<br><br>hosts = [“google.com”, “github.com”, “program-think.blogspot.com”]<br>jobs = [gevent.spawn(socket.gethostbyname, host) for host in hosts]<br>gevent.joinall(jobs, timeout=2)<br>print([job.value for job in jobs])<br>
+
+<h4>PyZMQ</h4>
+
+<p>Home：[<a href="https://github.com/zeromq/pyzmq" target="_blank" rel="external">https://github.com/zeromq/pyzmq</a>]</p>
+<p>这是 ZMQ（ZeroMQ）的 Python 封装库。同时支持 Python2 和 Python3。</p>
+<p>PyZMQ 2.2 之后的版本同时支持 ZMQ 的 3.x 和 4.x 版本。</p>
+<h4>nanomsg-python</h4>
+
+<p>Home：[<a href="https://github.com/tonysimpson/nanomsg-python" target="_blank" rel="external">https://github.com/tonysimpson/nanomsg-python</a>]</p>
+<p>这是 nanomsg 的 Python 封装库。同时支持 Python2 和 Python3。</p>
+<p>代码示例——Hello world</p>
+<source lang="python"><br>from &#95;&#95;future&#95;&#95; import print_function<br>from nanomsg import Socket, PAIR, PUB<br><br>s1 = Socket(PAIR)<br>s2 = Socket(PAIR)<br>s1.bind(“inproc://test”)<br>s2.connect(“inproc://test”)<br>s1.send(b”hello world”)<br>print(s2.recv())<br>s1.close()<br>s2.close()<br>
+
+<p>== 5.6 云计算 ==</p>
+<h4>Apache Libcloud</h4>
+
+<p>Home：[<a href="https://libcloud.apache.org/" target="_blank" rel="external">https://libcloud.apache.org/</a>]</p>
+<p>如今云提供商越来越多。这个库提供了统一的 API 让你访问各大知名云提供商提供的各种服务。</p>
+<p>代码示例——创建 DNS 记录</p>
+<source lang="python"><br>from libcloud.dns.types import Provider, RecordType<br>from libcloud.dns.providers import get_driver<br><br>cls = get_driver(Provider.ZERIGO)<br>driver = cls(“email”, “api key”)<br><br>zones = driver.list_zones()<br>zone = [zone for zone in zones if zone.domain == “mydomain.com”][0]<br><br>record = zone.create_record(name=”www”, type=RecordType.A, data=”127.0.0.1”)<br>print(record)<br>
+
+<hr>
+<p>= 6 数据库 =</p>
+<p>为了便于数据库开发，Python 社区制定了数据库的 API 规范（[<a href="https://www.python.org/dev/peps/pep-0249/" target="_blank" rel="external">https://www.python.org/dev/peps/pep-0249/</a> PEP 249]）。</p>
+<p>只要是涉及到数据库操作，标准库和大部分第三方库都会遵循该规范（请看如下几个模块的示例代码）。</p>
+<p>== 6.1 数据库中间件 ==</p>
+<p>=== 6.1.1 ODBC ===</p>
+<h4>pyODBC</h4>
+
+<p>Home：[<a href="https://github.com/mkleehammer/pyodbc" target="_blank" rel="external">https://github.com/mkleehammer/pyodbc</a>]</p>
+<p>pyODBC 封装了 ODBC API，通过它可以访问各种数据库（只要有 ODBC 驱动即可）。</p>
+<p>代码示例——查询某个 ODBC 数据源的某个表</p>
+<source lang="python"><br>import pyodbc<br><br>conn = pyodbc.connect(“DSN=xxx;PWD=password”)<br>cursor = conn.cursor()<br>cursor.execute(“SELECT field1 FROM table1”)<br><br>while True :<br>    row = cursor.fetchone()<br>    if not row :<br>        break<br>    print(row)<br><br>cursor.close()<br>conn.close()<br>
+
+<h4>ceODBC</h4>
+
+<p>Home：[<a href="http://ceodbc.sourceforge.net/" target="_blank" rel="external">http://ceodbc.sourceforge.net/</a>]</p>
+<p>又一个封装 ODBC API 的第三方库</p>
+<p>=== 6.1.2 JDBC ===</p>
+<h4>Jython</h4>
+
+<p>Jython 前面已经介绍过。有了它，你可以基于 [<a href="https://en.wikipedia.org/wiki/Jdbc" target="_blank" rel="external">https://en.wikipedia.org/wiki/Jdbc</a> JDBC] 操作数据库。</p>
+<p>=== 6.1.3 ADO &amp; ADO.NET ===</p>
+<h4>PyWin32</h4>
+
+<p>PyWin32 前面已经介绍过。有了它，你可以基于 [<a href="https://en.wikipedia.org/wiki/ActiveX_Data_Objects" target="_blank" rel="external">https://en.wikipedia.org/wiki/ActiveX_Data_Objects</a> ADO] 操作数据库。</p>
+<h4>IronPython</h4>
+
+<p>IronPython 前面已经介绍过。有了它，你可以基于 [<a href="https://en.wikipedia.org/wiki/ADO.NET" target="_blank" rel="external">https://en.wikipedia.org/wiki/ADO.NET</a> ADO.NET] 操作数据库。</p>
+<p>== 6.2 特定数据库 ==</p>
+<p>=== 6.2.1 MySQL ===</p>
+<h4>MySQL for Python</h4>
+
+<p>Home：[<a href="http://mysql-python.sourceforge.net/" target="_blank" rel="external">http://mysql-python.sourceforge.net/</a>]</p>
+<p>操作 MySQL 的第三方库。</p>
+<p>代码示例——查询某个 MySQL 数据库的某个表</p>
+<source lang="python"><br>import MySQLdb<br><br>conn = MySQLdb.connect(db=”test”, passwd=”password”)<br>cursor = conn.cursor()<br>cursor.execute(“SELECT field1 FROM table1”)<br><br>while True :<br>    row = cursor.fetchone()<br>    if not row :<br>        break<br>    print(row)<br><br>cursor.close()<br>conn.close()<br>
+
+<p>=== 6.2.2 PostgreSQL ===</p>
+<h4>psycopg</h4>
+
+<p>Home：[<a href="http://initd.org/psycopg/" target="_blank" rel="external">http://initd.org/psycopg/</a>]</p>
+<p>操作 PostgreSQL 的第三方库。</p>
+<h4>PyGreSQL</h4>
+
+<p>Home：[<a href="http://www.pygresql.org/" target="_blank" rel="external">http://www.pygresql.org/</a>]</p>
+<p>操作 PostgreSQL 的第三方库。</p>
+<p>=== 6.2.3 Oracle ===</p>
+<h4>cx_Oracle</h4>
+
+<p>Home：[<a href="http://cx-oracle.sourceforge.net/" target="_blank" rel="external">http://cx-oracle.sourceforge.net/</a>]</p>
+<p>操作 Oracle 的第三方库。</p>
+<p>=== 6.2.4 MS SQL Server ===</p>
+<h4>pymssql</h4>
+
+<p>Home：[<a href="http://pymssql.org/" target="_blank" rel="external">http://pymssql.org/</a>]</p>
+<p>操作微软 SQL Server 的第三方库。</p>
+<p>=== 6.2.5 IBM DB2 ===</p>
+<h4>ibm-db</h4>
+
+<p>Home：[<a href="https://pypi.python.org/pypi/ibm_db" target="_blank" rel="external">https://pypi.python.org/pypi/ibm_db</a>]</p>
+<p>操作 DB2 的第三方库。</p>
+<p>=== 6.2.6 SQLite ===</p>
+<h4>sqlite3</h4>
+
+<p>【标准库】</p>
+<p>sqlite3 从 Python 2.5 版本开始加入到标准库中。通过它，你可以很方便地操作 SQLite 数据库。</p>
+<p>[<a href="https://en.wikipedia.org/wiki/SQLite" target="_blank" rel="external">https://en.wikipedia.org/wiki/SQLite</a> SQLite] 是一个很优秀的轻量级数据库，俺前几年写过一篇博文推荐它（在“[<a href="https://program-think.blogspot.com/2009/04/how-to-use-sqlite.html" target="_blank" rel="external">https://program-think.blogspot.com/2009/04/how-to-use-sqlite.html</a> 这里]”）。</p>
+<p>代码示例——创建一个内存数据库，建表并插入记录</p>
+<source lang="python"><br>import sqlite3<br>conn = sqlite3.connect(“:memory:”)  &#35; “:memory:” 表示这是一个内存数据库<br>cursor = conn.cursor()<br>cursor.execute(“CREATE TABLE person (name text, age int)”)<br>cursor.execute(“INSERT INTO stocks VALUES (‘TOM’,20)”)<br>conn.commit()<br>conn.close()<br>
+
+<p>=== 6.2.7 MongoDB ===</p>
+<h4>PyMongo</h4>
+
+<p>Docs：[<a href="https://docs.mongodb.com/ecosystem/drivers/python/" target="_blank" rel="external">https://docs.mongodb.com/ecosystem/drivers/python/</a>]</p>
+<p>这是 MongoDB 官方提供的 Python 驱动。</p>
+<p>=== 6.2.8 Apache HBase ===</p>
+<h4>HappyBase</h4>
+
+<p>Home：[<a href="https://github.com/wbolster/happybase" target="_blank" rel="external">https://github.com/wbolster/happybase</a>]</p>
+<p>操作 HBase 的 Python 库，基于 [<a href="https://en.wikipedia.org/wiki/Apache_Thrift" target="_blank" rel="external">https://en.wikipedia.org/wiki/Apache_Thrift</a> Thrift] 连接到 HBase。</p>
+<p>代码示例——简单的存取操作</p>
+<source lang="python"><br>import happybase<br>connection = happybase.Connection(“hostname”)<br>table = connection.table(“table-name”)<br>table.put(b”row-key”, {b”test1”: b”data1”, b”test2”: b”data2”})<br>row = table.row(b”row-key”)<br>print(row[b”test1”])<br>
+
+<p>=== 6.2.9 Redis ===</p>
+<h4>redis-py</h4>
+
+<p>Home：[<a href="https://github.com/andymccurdy/redis-py" target="_blank" rel="external">https://github.com/andymccurdy/redis-py</a>]</p>
+<p>操作 Redis 的第三方 Python 客户端。</p>
+<p>代码示例——简单的存取操作</p>
+<source lang="python"><br>import redis<br>r = redis.StrictRedis(host=”localhost”, port=6379, db=0)<br>r.set(“foo”, “bar”)<br>print(r.get(“foo”))<br>
+
+<p>=== 6.2.10 LevelDB ===</p>
+<h4>Plyvel</h4>
+
+<p>Home：[<a href="https://github.com/wbolster/plyvel" target="_blank" rel="external">https://github.com/wbolster/plyvel</a>]</p>
+<p>操作 LevelDB 的 Python 库，速度快，同时兼容 Python2 和 Python3。</p>
+<p>代码示例——简单的存取操作</p>
+<source lang="python"><br>import plyvel<br>db = plyvel.DB(“/tmp/testdb/“, create_if_missing=True)<br>db.put(b”key”, b”value”)<br>print(db.get(b”key”))<br>db.close()<br>
+
+<p>=== 6.2.11 Berkeley DB ===</p>
+<h4>PyBSDDB</h4>
+
+<p>Home：[<a href="http://www.jcea.es/programacion/pybsddb.htm" target="_blank" rel="external">http://www.jcea.es/programacion/pybsddb.htm</a>]</p>
+<p>操作 Berkeley DB 的第三方库。</p>
+<p>== 6.3 ORM（Object-Relational Mapping） ==</p>
+<h4>SQLAlchemy</h4>
+
+<p>Home：[<a href="http://www.sqlalchemy.org/" target="_blank" rel="external">http://www.sqlalchemy.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/SQLAlchemy" target="_blank" rel="external">https://en.wikipedia.org/wiki/SQLAlchemy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/SQLAlchemy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SQLAlchemy</a> 维基百科]</p>
+<p>SQLAlchemy 支持的数据库有：MySQL、PostgreSQL、Sqlite、Oracle、MS SQL Server、Firebird、Sybase SQL Server、Informix、等。</p>
+<p>代码示例——通过对象的方式创建两张依赖关系的表</p>
+<source lang="python"><br>from sqlalchemy import *<br>from sqlalchemy.ext.declarative import declarative_base<br>from sqlalchemy.orm import relation, sessionmaker<br><br>Base = declarative_base()<br><br>class Movie(Base) :<br>    &#95;&#95;tablename&#95;&#95; = “movies”<br><br>    id = Column(Integer, primary_key=True)<br>    title = Column(String(255), nullable=False)<br>    year = Column(Integer)<br>    directed_by = Column(Integer, ForeignKey(“directors.id”))<br>    director = relation(“Director”, backref=”movies”, lazy=False)<br><br>    def &#95;&#95;init&#95;&#95;(self, title=None, year=None) :<br>        self.title = title<br>        self.year = year<br><br>    def &#95;&#95;repr&#95;&#95;(self) :<br>        return “Movie(%r, %r, %r)” % (self.title, self.year, self.director)<br><br>class Director(Base) :<br>    &#95;&#95;tablename&#95;&#95; = “directors”<br><br>    id = Column(Integer, primary_key=True)<br>    name = Column(String(50), nullable=False, unique=True)<br><br>    def &#95;&#95;init&#95;&#95;(self, name=None) :<br>        self.name = name<br><br>    def &#95;&#95;repr&#95;&#95;(self) :<br>        return “Director(%r)” % (self.name)<br><br>Base.metadata.create_all(create_engine(“dbms://user:pwd@host/dbname”))<br>
+
+<h4>SQLObject</h4>
+
+<p>Home：[<a href="http://sqlobject.org/" target="_blank" rel="external">http://sqlobject.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/SQLObject" target="_blank" rel="external">https://en.wikipedia.org/wiki/SQLObject</a> Wikipedia]</p>
+<p>SQLObject 支持的数据库有：MySQL、PostgreSQL、Sqlite、MS SQL Server、Firebird、Sybase SQL Server、SAP DB、等。</p>
+<p>代码示例——通过对象的方式创建表</p>
+<source lang="python"><br>from sqlobject import *<br>sqlhub.processConnection = connectionForURI(“sqlite:/:memory:”)<br><br>class Person(SQLObject) :<br>    first_name = StringCol()<br>    last_name = StringCol()<br><br>Person.createTable()<br>
+
+<h4>Peewee</h4>
+
+<p>Home：[<a href="http://www.peewee-orm.com/" target="_blank" rel="external">http://www.peewee-orm.com/</a>]</p>
+<p>一个轻量级的 ORM，支持 SQLite、MySQL 和 PostgreSQL，通过插件机制支持更多数据库。</p>
+<p>同时支持 Python2 和 Python3。</p>
+<p>代码示例——通过对象的方式创建表</p>
+<source lang="python"><br>from peewee import *<br><br>db = SqliteDatabase(“test.db”)<br><br>class Person(Model) :<br>    name = CharField()<br>    birthday = DateField()<br>    is_relative = BooleanField()<br>    class Meta :<br>        database = db  &#35; This model uses the “test.db”.<br><br>class Pet(Model) :<br>    owner = ForeignKeyField(Person, related_name=”pets”)<br>    name = CharField()<br>    animal_type = CharField()<br>    class Meta :<br>        database = db  &#35; This model uses the “test.db”.<br><br>db.connect()<br>db.create_tables([Person, Pet])<br>
+
+<hr>
+<p>= 7 GUI =</p>
+<p>== 7.1 GUI 框架 ==</p>
+<p>=== 7.1.1 基于 Tk ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Tk_(framework" target="_blank" rel="external">https://en.wikipedia.org/wiki/Tk_(framework</a>) Tk] 是一个跨平台的界面组件库。</p>
+<h4>Tkinter &amp; tkinter</h4>
+
+<p>【标准库】</p>
+<p>这是 Python 内置的标准库，封装了 Tcl/Tk 界面库。</p>
+<p>Python2 的模块名叫 Tkinter，到 Python3 模块名改为 tkinter</p>
+<p>代码示例——用 Tkinter 写 Hello world</p>
+<source lang="python"><br>from Tkinter import *<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    root = Tk()<br>    label = Label(root, text=”Hello, world”)<br>    label.pack()<br>    root.mainloop()<br>
+
+<p>=== 7.1.2 基于 wxWidgets ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/WxWidgets" target="_blank" rel="external">https://en.wikipedia.org/wiki/WxWidgets</a> wxWidgets] 是 C++ 开发的跨平台框架（不仅包括 GUI，还有其它功能）。</p>
+<h4>wxPython</h4>
+
+<p>Home：[<a href="http://www.wxpython.org/" target="_blank" rel="external">http://www.wxpython.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/WxPython" target="_blank" rel="external">https://en.wikipedia.org/wiki/WxPython</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/WxPython" target="_blank" rel="external">https://zh.wikipedia.org/wiki/WxPython</a> 维基百科]</p>
+<p>在所有的 wxWidgets 的 Python 封装库中，这个是名气最大的。</p>
+<p>[<a href="https://github.com/limodou/ulipad" target="_blank" rel="external">https://github.com/limodou/ulipad</a> Ulipad]（知名的国产的 Python IDE）就是基于 wxPython 开发的。</p>
+<p>代码示例——用 wxPython 写 Hello world</p>
+<source lang="python"><br>import wx<br><br>class Frame(wx.Frame) :<br>    pass<br><br>class App(wx.App) :<br>    def OnInit(self) :<br>        self.frame = Frame(parent=None, title=”Hello, world”)<br>        self.frame.Show()<br>        self.SetTopWindow(self.frame)<br>        return True<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    app = App()<br>    app.MainLoop()<br>
+
+<h4>PythonCard</h4>
+
+<p>Home：[<a href="http://pythoncard.sourceforge.net/" target="_blank" rel="external">http://pythoncard.sourceforge.net/</a>]</p>
+<p>又一个基于 wxWidgets 的 GUI 库。</p>
+<p>=== 7.1.3 基于 GTK+ ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/GTK%2B" target="_blank" rel="external">https://en.wikipedia.org/wiki/GTK%2B</a> GTK+] 全称是（GIMP Toolkit），由 C 开发的跨平台界面组件库。</p>
+<h4>PyGTK</h4>
+
+<p>Home：[<a href="http://www.pygtk.org/" target="_blank" rel="external">http://www.pygtk.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/PyGTK" target="_blank" rel="external">https://en.wikipedia.org/wiki/PyGTK</a> Wikipedia]</p>
+<p>它是 Python 对 GTK+2 的封装。</p>
+<p>代码示例——用 PyGTK 写 Hello world</p>
+<source lang="python"><br>import pygtk<br>pygtk.require(“2.0”)<br>import gtk<br><br>class HelloWorld :<br>    def &#95;&#95;init&#95;&#95;(self) :<br>        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)<br>        self.window.connect(“delete_event”, self.delete_event)<br>        self.window.connect(“destroy”, self.destroy)<br>        self.window.set_border_width(10)<br><br>        self.button = gtk.Button(“Hello, world”)<br>        self.button.connect(“clicked”, self.hello, None)<br>        self.button.connect_object(“clicked”, gtk.Widget.destroy, self.window)<br>        self.window.add(self.button)<br><br>        self.button.show()<br>        self.window.show()<br><br>    def main(self) :<br>        gtk.main()<br><br>    def hello(self, widget, data=None) :<br>        print(“Hello, world”)<br><br>    def delete_event(self, widget, event, data=None) :<br>        print(“delete event occurred”)<br>        return False<br><br>    def destroy(self, widget, data=None) :<br>        gtk.main_quit()<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    hello = HelloWorld()<br>    hello.main()<br>
+
+<h4>PyGObject（PyGI）</h4>
+
+<p>Home：[<a href="https://live.gnome.org/PyGObject" target="_blank" rel="external">https://live.gnome.org/PyGObject</a>]</p>
+<p>它是 Python 对 GTK+3 的封装。PyGTK 的官网也推荐它。</p>
+<p>代码示例——用 PyGObject 写 Hello world</p>
+<source lang="python"><br>from gi.repository import Gtk<br><br>class MyWindow(Gtk.Window):<br>    def &#95;&#95;init&#95;&#95;(self):<br>        Gtk.Window.&#95;&#95;init&#95;&#95;(self, title=”Hello World”)<br><br>        self.button = Gtk.Button(label=”Click Here”)<br>        self.button.connect(“clicked”, self.on_button_clicked)<br>        self.add(self.button)<br><br>    def on_button_clicked(self, widget):<br>        print(“Hello, world!”)<br><br>win = MyWindow()<br>win.connect(“delete-event”, Gtk.main_quit)<br>win.show_all()<br>Gtk.main()<br>
+
+<p>=== 7.1.4 基于 Qt ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Qt_(toolkit" target="_blank" rel="external">https://en.wikipedia.org/wiki/Qt_(toolkit</a>) Qt] 是 C++ 开发的跨平台框架（不仅包括 GUI，还有其它功能）。</p>
+<h4>PyQt</h4>
+
+<p>Home：[<a href="http://www.riverbankcomputing.com/software/pyqt/" target="_blank" rel="external">http://www.riverbankcomputing.com/software/pyqt/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/PyQt" target="_blank" rel="external">https://en.wikipedia.org/wiki/PyQt</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/PyQt" target="_blank" rel="external">https://zh.wikipedia.org/wiki/PyQt</a> 维基百科]</p>
+<p>这是 Python 对 Qt 的封装。</p>
+<p>代码示例——用 pyQt 写 Hello world</p>
+<source lang="python"><br>import sys<br>from PyQt4.QtGui import *<br><br>if &#95;&#95;name&#95;&#95; == “&#95;&#95;main&#95;&#95;” :<br>    app = QApplication(sys.argv)<br>    window = QWidget()<br><br>    window.resize(320, 240)<br>    window.setWindowTitle(“Hello, world”)<br>    window.show()<br>    sys.exit(app.exec_())<br>
+
+<h4>PySide</h4>
+
+<p>Home：[<a href="http://www.pyside.org/" target="_blank" rel="external">http://www.pyside.org/</a>]</p>
+<p>这也是 Python 对 Qt 的封装。</p>
+<p>=== 7.1.5 基于 FLTK ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/FLTK" target="_blank" rel="external">https://en.wikipedia.org/wiki/FLTK</a> FLTK] 全称是（Fast Light Tool Kit），由 C++ 开发的跨平台、轻量级界面组件库。</p>
+<h4>PyFLTK</h4>
+
+<p>Home：[<a href="http://pyfltk.sourceforge.net/" target="_blank" rel="external">http://pyfltk.sourceforge.net/</a>]</p>
+<p>这是 Python 对 FLTK 的封装。</p>
+<p>=== 7.1.6 基于 Windows 平台 ===</p>
+<h4>PyWin32</h4>
+
+<p>PyWin32 前面已经介绍过。它可以提供原生的 Windows GUI 界面。</p>
+<h4>IronPython</h4>
+
+<p>IronPython 前面已经介绍过。它可以提供 dotNET 的 GUI 界面。</p>
+<p>=== 7.1.7 基于 JVM 平台 ===</p>
+<h4>Jython</h4>
+
+<p>Jython 前面已经介绍过。它可以提供基于 Java 的 [<a href="https://en.wikipedia.org/wiki/Swing_%28Java%29" target="_blank" rel="external">https://en.wikipedia.org/wiki/Swing_%28Java%29</a> Swing] 界面。</p>
+<p>=== 7.1.8 （其它） ===</p>
+<h4>EasyGUI</h4>
+
+<p>Home：[<a href="http://easygui.sourceforge.net/" target="_blank" rel="external">http://easygui.sourceforge.net/</a>]</p>
+<p>EasyGUI 这是一个很轻量级的库。跟其它 GUI 不同之处在于——它没有“事件驱动”。</p>
+<h4>PyGUI</h4>
+
+<p>Home：[<a href="http://www.cosc.canterbury.ac.nz/greg.ewing/python_gui/" target="_blank" rel="external">http://www.cosc.canterbury.ac.nz/greg.ewing/python_gui/</a>]</p>
+<p>PyGUI 是一个更高层的 GUI 库，底层分别封装了 [<a href="http://python.net/crew/mhammond/win32/" target="_blank" rel="external">http://python.net/crew/mhammond/win32/</a> PyWin32]（Windows 平台）、[<a href="http://www.pygtk.org/" target="_blank" rel="external">http://www.pygtk.org/</a> PyGTK]（Linux 平台）、[<a href="http://pyobjc.sourceforge.net/" target="_blank" rel="external">http://pyobjc.sourceforge.net/</a> PyObjC]（Mac OS X 平台）。</p>
+<h4>Kivy</h4>
+
+<p>Home：[<a href="http://kivy.org/" target="_blank" rel="external">http://kivy.org/</a>]</p>
+<p>跨平台的多媒体框架和界面库，用来开发比较炫的界面。</p>
+<p>除了支持桌面操作系统，还支持 Android / iOS，支持多点触摸。</p>
+<h4>OcempGUI</h4>
+
+<p>Home：[<a href="http://ocemp.sourceforge.net/gui.html" target="_blank" rel="external">http://ocemp.sourceforge.net/gui.html</a>]</p>
+<p>基于 PyGame 的一个跨平台 GUI 库（PyGame 下面会提到）。</p>
+<p>== 7.2 图表 &amp; 报表 ==</p>
+<h4>matplotlib</h4>
+
+<p>Home：[<a href="http://matplotlib.org/" target="_blank" rel="external">http://matplotlib.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Matplotlib" target="_blank" rel="external">https://en.wikipedia.org/wiki/Matplotlib</a> Wikipedia]</p>
+<p>这是一个有名的图形库，主要用来绘制数学相关的图形。</p>
+<p>它跟后面提到的 [<a href="http://www.scipy.org/" target="_blank" rel="external">http://www.scipy.org/</a> SciPy] 整合可以起到类似 MATLAB 的效果。效果图在“[<a href="http://matplotlib.org/users/screenshots.html" target="_blank" rel="external">http://matplotlib.org/users/screenshots.html</a> 这里]”。</p>
+<h4>Gnuplot.py</h4>
+
+<p>Home：[<a href="http://gnuplot-py.sourceforge.net/" target="_blank" rel="external">http://gnuplot-py.sourceforge.net/</a>]</p>
+<p>这是 Python 对 [<a href="http://www.gnuplot.info/" target="_blank" rel="external">http://www.gnuplot.info/</a> gnuplot] 的封装。gnuplot 的效果图在“[<a href="http://www.gnuplot.info/screenshots/index.html" target="_blank" rel="external">http://www.gnuplot.info/screenshots/index.html</a> 这里]”。</p>
+<h4>PyQtGraph</h4>
+
+<p>Home：[<a href="http://www.pyqtgraph.org/" target="_blank" rel="external">http://www.pyqtgraph.org/</a>]</p>
+<p>这是一个纯 Python 的库，依赖于 PyQt4 / PySide。效果图在“[<a href="http://www.pyqtgraph.org/images/plotting_sm.png" target="_blank" rel="external">http://www.pyqtgraph.org/images/plotting_sm.png</a> 这里]”。</p>
+<h4>PyX</h4>
+
+<p>Home：[<a href="http://pyx.sourceforge.net/" target="_blank" rel="external">http://pyx.sourceforge.net/</a>]</p>
+<p>这个库可以跟 TeX / LaTeX 无缝整合，支持导出为 PostScript / PDF 格式。适合用来制作报表。效果图在“[<a href="http://pyx.sourceforge.net/gallery/index.html" target="_blank" rel="external">http://pyx.sourceforge.net/gallery/index.html</a> 这里]”。</p>
+<h4>Chaco</h4>
+
+<p>Home：[<a href="http://code.enthought.com/chaco/" target="_blank" rel="external">http://code.enthought.com/chaco/</a>]</p>
+<p>这是一个商业公司维护的库，主要提供2维图表。效果图在“[<a href="http://docs.enthought.com/chaco/user_manual/annotated_examples.html" target="_blank" rel="external">http://docs.enthought.com/chaco/user_manual/annotated_examples.html</a> 这里]”。</p>
+<hr>
+<p>= 8 信息安全 =</p>
+<p>== 8.1 密码学 ==</p>
+<h4>hashlib</h4>
+
+<p>【标准库】</p>
+<p>在 Python 2.5 版本加入到标准库中。通过它，你可以很方便地计算各种散列值。</p>
+<p>它支持的哈希算法有：MD5 SHA1 SHA224 SHA256 SHA384 SHA512</p>
+<p>关于散列算法，俺写过一篇扫盲（在“[<a href="https://program-think.blogspot.com/2013/02/file-integrity-check.html" target="_blank" rel="external">https://program-think.blogspot.com/2013/02/file-integrity-check.html</a> 这里]”）。</p>
+<p>代码示例——计算字符串的 SHA1 散列值</p>
+<source lang="python"><br>import hashlib<br>sha1 = hashlib.sha1(“Hello, world”).hexdigest()<br>
+
+<h4>PyCrypto</h4>
+
+<p>Home：[<a href="http://www.dlitz.net/software/pycrypto/" target="_blank" rel="external">http://www.dlitz.net/software/pycrypto/</a>]</p>
+<p>这个库包含了常见的对称加密算法（DES、AES、IDEA 等）、公钥加密算法（RSA、DSA 等）、散列算法（MD5、SHA1、RIPEMD 等）。</p>
+<h4>pyOpenSSL</h4>
+
+<p>Home：[<a href="http://pyopenssl.sourceforge.net/" target="_blank" rel="external">http://pyopenssl.sourceforge.net/</a>]</p>
+<p>[<a href="https://en.wikipedia.org/wiki/OpenSSL" target="_blank" rel="external">https://en.wikipedia.org/wiki/OpenSSL</a> OpenSSL] 在加密领域可是大名鼎鼎。这个库使用 Python 对 OpenSSL 进行很薄的封装。</p>
+<h4>Keyczar</h4>
+
+<p>Home：[<a href="https://github.com/google/keyczar" target="_blank" rel="external">https://github.com/google/keyczar</a>]</p>
+<p>这是 Google 提供的加密库，同时提供 C++、Java、Python 三种语言的实现。</p>
+<p>它提供了比较高层的 API， 使用者无需关心太多的细节。</p>
+<p>== 8.2 访问控制 ==</p>
+<h4>oauth2client</h4>
+
+<p>Home：[<a href="https://github.com/google/oauth2client" target="_blank" rel="external">https://github.com/google/oauth2client</a>]</p>
+<p>这是 Google 提供的 OAuth 客户端，支持 OAuth 2.0 规范。</p>
+<hr>
+<p>= 9 处理文件格式 =</p>
+<p>== 9.1 结构化数据格式 ==</p>
+<p>=== 9.1.1 CSV ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank" rel="external">https://en.wikipedia.org/wiki/Comma-separated_values</a> CSV] 是一种历史悠久的结构化数据存储格式。其效果类似于一张数据库二维表。</p>
+<h4>csv</h4>
+
+<p>【标准库】</p>
+<p>提供 CSV 格式文件的读写，可以手动指定行列分隔符。</p>
+<p>=== 9.1.2 JSON ===</p>
+<p>JSON 格式源自 JavaScript，如今在 Web 开发中广为应用。</p>
+<h4>json</h4>
+
+<p>【标准库】</p>
+<p>提供 JSON 格式的编码和解码。</p>
+<p>代码示例——编码/解码 JSON 字符串</p>
+<source lang="python"><br>import json<br><br>json.dumps([“foo”, {“bar”: (“baz”, None, 1.0, 2)}])<br>&#35; JSON 编码<br>&#35; 得到如下【字符串】<br>&#35; “””[“foo”, {“bar”: [“baz”, null, 1.0, 2]}]”””<br><br>json.loads(“””[“foo”, {“bar”:[“baz”, null, 1.0, 2]}]”””)<br>&#35; JSON 解码<br>&#35; 得到如下【对象】<br>&#35; [u”foo”, {u”bar”: [u”baz”, None, 1.0, 2]}]<br>
+
+<p>=== 9.1.3 YAML ===</p>
+<p>[<a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="external">https://en.wikipedia.org/wiki/YAML</a> YAML] 是一种类似于 json 的结构化数据格式。它在确保可读性的基础上，提供了超越 json 的灵活性和扩展性。</p>
+<h4>PyYAML</h4>
+
+<p>Home：[<a href="http://pyyaml.org/" target="_blank" rel="external">http://pyyaml.org/</a>]</p>
+<p>pyyaml 提供了 Python 对 YAML 的封装。</p>
+<p>== 9.2 压缩文件 &amp; 打包文件 ==</p>
+<p>=== 9.2.1 zip ===</p>
+<h4>zipfile</h4>
+
+<p>【标准库】</p>
+<p>提供对 zip 格式的读写。</p>
+<p>=== 9.2.2 bzip2（bz2） ===</p>
+<h4>bz2</h4>
+
+<p>【标准库】</p>
+<p>提供对 bzip2 格式的读写。</p>
+<p>=== 9.2.3 gzip（gz） ===</p>
+<h4>gzip</h4>
+
+<p>【标准库】</p>
+<p>提供对 gzip 格式的读写。</p>
+<h4>zlib</h4>
+
+<p>【标准库】</p>
+<p>提供对 zlib 格式的读写。</p>
+<p>=== 9.2.4 tar ===</p>
+<h4>tarfile</h4>
+
+<p>【标准库】</p>
+<p>提供对 tar 格式的读写。</p>
+<p>=== 9.2.5 7zip（7z） ===</p>
+<h4>PyLZMA</h4>
+
+<p>Home：[<a href="http://www.joachim-bauch.de/projects/pylzma/" target="_blank" rel="external">http://www.joachim-bauch.de/projects/pylzma/</a>]</p>
+<p>处理 7zip 格式的第三方库。</p>
+<p>=== 9.2.6 rar ===</p>
+<h4>rarfile</h4>
+
+<p>Home：[<a href="http://rarfile.berlios.de/" target="_blank" rel="external">http://rarfile.berlios.de/</a>]</p>
+<p>处理 rar 格式的第三方库。</p>
+<p>=== 9.2.7 msi ===</p>
+<h4>msilib</h4>
+
+<p>【标准库】</p>
+<p>提供对 msi 格式的读写，从 Python 2.5 版本开始加入标准库。</p>
+<p>== 9.3 标记语言 ==</p>
+<p>=== 9.3.1 XML ===</p>
+<h4>xml.dom &amp; xml.miniDom &amp; xml.etree.ElementTree</h4>
+
+<p>【标准库】</p>
+<p>用 DOM（Document Object Model）方式处理 XML 文件。</p>
+<h4>xml.sax &amp; xml.parsers.expat</h4>
+
+<p>【标准库】</p>
+<p>用 SAX（Simple API for XML）方式处理 XML 文件。</p>
+<h4>lxml</h4>
+
+<p>Home：[<a href="http://lxml.de/" target="_blank" rel="external">http://lxml.de/</a>]</p>
+<p>著名的 C 语言库 libxml 和 libxslt 的 Python 封装。</p>
+<p>功能很强，支持 XPath 1.0、XSLT 1.0、扩展 EXSLT、等。还可以用来解析 HTML 格式。</p>
+<p>=== 9.3.2 HTML ===</p>
+<h4>HTMLParser</h4>
+
+<p>【标准库】</p>
+<p>以回调方式解析 HTML/XHTML 文件内容。</p>
+<p>== 9.4 PDF ==</p>
+<h4>pyfpdf</h4>
+
+<p>Home：[<a href="https://github.com/reingart/pyfpdf" target="_blank" rel="external">https://github.com/reingart/pyfpdf</a>]</p>
+<p>这是 [<a href="http://www.fpdf.org/" target="_blank" rel="external">http://www.fpdf.org/</a> FPDF] 的 Python 移植库，用来生成 PDF 文档。</p>
+<p>支持的功能比较全（嵌入字体、嵌入图片），文档也比较详细。</p>
+<p>代码示例——简单的 Hello World 示例</p>
+<source lang="python"><br>from fpdf import FPDF<br><br>pdf = FPDF()<br>pdf.add_page()<br>pdf.set_font(“Arial”, “B”, 16)<br>pdf.cell(40, 10, “Hello, World”)<br>pdf.output(“test.pdf”, “F”)<br>
+
+<p>代码示例——支持写入 HTML 语法（目前支持几种常见的 HTML tag）</p>
+<source lang="python"><br>from pyfpdf import FPDF, HTMLMixin<br><br>class MyFPDF(FPDF, HTMLMixin) :<br>    pass<br><br>pdf = MyFPDF()<br>pdf.add_page()<br>pdf.write_html(html)<br>pdf.output(“test.pdf”, “F”)<br>
+
+<h4>pyPdf &amp; PyPDF2</h4>
+
+<p>Home：[<a href="http://knowah.github.com/PyPDF2/" target="_blank" rel="external">http://knowah.github.com/PyPDF2/</a>]</p>
+<p>pyPdf 目前已经不继续升级维护了。PyPDF2 是从 pyPdf 派生出来的，并继续增加新功能。</p>
+<p>它除了可以提取文件属性，还可以切分/合并文档，加密/解密文档。</p>
+<h4>PDFMiner</h4>
+
+<p>Home：[<a href="http://www.unixuser.org/~euske/python/pdfminer/" target="_blank" rel="external">http://www.unixuser.org/~euske/python/pdfminer/</a>]</p>
+<p>它可以提取 PDF 文件属性以及每页的文本，支持把内容输出为 HTML 格式。</p>
+<p>== 9.5 MS Office 文档 ==</p>
+<p>=== 9.5.1 Word（doc、docx） ===</p>
+<h4>python-docx</h4>
+
+<p>Home：[<a href="https://github.com/python-openxml/python-docx" target="_blank" rel="external">https://github.com/python-openxml/python-docx</a>]</p>
+<p>纯 python 实现的 docx 操作库，能够处理 docx 中的“文本、图片、样式”。</p>
+<p>同时支持 Python2 和 Python3。</p>
+<h4>PyWin32</h4>
+
+<p>PyWin32 前面已经介绍过。它可以基于 [<a href="https://en.wikipedia.org/wiki/Component_Object_Model" target="_blank" rel="external">https://en.wikipedia.org/wiki/Component_Object_Model</a> COM] 操作 Office 文档，包括 Word。</p>
+<p>（本地需要安装 Office）</p>
+<p>=== 9.5.2 Excel（xls、xlsx） ===</p>
+<h4>pyExcelerator</h4>
+
+<p>Home：[<a href="http://sourceforge.net/projects/pyexcelerator/" target="_blank" rel="external">http://sourceforge.net/projects/pyexcelerator/</a>]</p>
+<p>它可以支持 Office Excel（97/2000/XP/2003）以及 OpenOffice Calc 的文档。无需依赖外部软件。</p>
+<h4>PyWin32</h4>
+
+<p>PyWin32 前面已经介绍过。它可以基于 [<a href="https://en.wikipedia.org/wiki/Component_Object_Model" target="_blank" rel="external">https://en.wikipedia.org/wiki/Component_Object_Model</a> COM] 操作 Office 文档，包括 Excel。</p>
+<p>（本地需要安装 Office）</p>
+<p>=== 9.5.3 Power Point（ppt、pptx） ===</p>
+<h4>python-pptx</h4>
+
+<p>Home：[<a href="https://github.com/scanny/python-pptx" target="_blank" rel="external">https://github.com/scanny/python-pptx</a>]</p>
+<p>它可以用来生成 pptx（Open XML PowerPoint）格式的文档。</p>
+<h4>PyWin32</h4>
+
+<p>PyWin32 前面已经介绍过。它可以基于 [<a href="https://en.wikipedia.org/wiki/Component_Object_Model" target="_blank" rel="external">https://en.wikipedia.org/wiki/Component_Object_Model</a> COM] 操作 Office 文档，包括 Power Point。</p>
+<p>（本地需要安装 Office）</p>
+<p>== 9.6 RTF ==</p>
+<h4>PyRTF</h4>
+
+<p>Home：[<a href="http://pyrtf.sourceforge.net/" target="_blank" rel="external">http://pyrtf.sourceforge.net/</a>]</p>
+<p>它可以用来处理 RTF（富文本格式）文档。</p>
+<p>== 9.7 CHM ==</p>
+<h4>PyCHM</h4>
+
+<p>Home：[<a href="http://gnochm.sourceforge.net/pychm.html" target="_blank" rel="external">http://gnochm.sourceforge.net/pychm.html</a>]</p>
+<p>这是基于 [<a href="http://www.jedrea.com/chmlib/" target="_blank" rel="external">http://www.jedrea.com/chmlib/</a> chmlib] 的 Python 封装库。可以提取 CHM 文件的属性以及每个页面的内容。</p>
+<hr>
+<p>= 10 图像 =</p>
+<p>== 10.1 图像处理 ==</p>
+<h4>Python Imaging Library（PIL）</h4>
+
+<p>Home：[<a href="http://www.pythonware.com/products/pil/" target="_blank" rel="external">http://www.pythonware.com/products/pil/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Python_Imaging_Library" target="_blank" rel="external">https://en.wikipedia.org/wiki/Python_Imaging_Library</a> Wikipedia]</p>
+<p>这是一个很有名气的 Python 图像处理库，支持常见图像文件格式（BMP、JPG、GIF、PNG …）。</p>
+<p>它可以对图像进行各种常见的处理（旋转、缩放、剪切 …）。</p>
+<p>代码示例——为某个目录下所有 JPEG 创建缩略图</p>
+<source lang="python"><br>import os, glob<br>from PIL import Image<br><br>size = 128, 128<br>for file in glob.glob(“*.jpg”):<br>    name, ext = os.path.splitext(file)<br>    img = Image.open(file)<br>    img.thumbnail(size)<br>    img.save(name+”.thumbnail”, “JPEG”)<br>
+
+<p>代码示例——旋转某图片并显示</p>
+<source lang="python"><br>from PIL import Image<br><br>img = Image.open(“xxx.jpg”)<br>img = img.rotate(90)<br>img.show()<br>
+
+<h4>Wand</h4>
+
+<p>Home：[<a href="http://docs.wand-py.org/" target="_blank" rel="external">http://docs.wand-py.org/</a>]</p>
+<p>它通过前面提到 ctypes 实现了对 [<a href="https://en.wikipedia.org/wiki/ImageMagick" target="_blank" rel="external">https://en.wikipedia.org/wiki/ImageMagick</a> ImageMagick] 的封装（ImageMagick 是最强大的开源图片处理工具集）。</p>
+<p>代码示例——旋转并缩放某图片</p>
+<source lang="python"><br>from wand.image import Image<br>from wand.display import display<br><br>with Image(filename=”mona-lisa.png”) as img :<br>    print(img.size)<br>    for r in 1, 2, 3 :<br>        with img.clone() as new_img :<br>            new_img.resize(int(new_img.width/2), int(new_img.height/2))<br>            new_img.rotate(90 * r)<br>            new_img.save(filename=”mona-lisa-{0}.png”.format(r))<br>            display(new_img)<br>
+
+<h4>Pillow</h4>
+
+<p>Home：[<a href="http://python-pillow.org/" target="_blank" rel="external">http://python-pillow.org/</a>]</p>
+<p>你可以把它视作“轻量级的 PIL”。</p>
+<p>它的目标是比 PIL 更容易使用，并尽可能与 PIL 的 API 兼容。</p>
+<h4>PyGraphviz</h4>
+
+<p>Home：[<a href="https://github.com/pygraphviz/pygraphviz" target="_blank" rel="external">https://github.com/pygraphviz/pygraphviz</a>]</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Graphviz" target="_blank" rel="external">https://en.wikipedia.org/wiki/Graphviz</a> Graphviz] 是一个功能很强大的关系图【自动】生成工具，具体介绍可以参见俺的博文（在“[<a href="https://program-think.blogspot.com/2016/02/opensource-review-graphviz.html" target="_blank" rel="external">https://program-think.blogspot.com/2016/02/opensource-review-graphviz.html</a> 这里]”）</p>
+<p>这个库如其名所示，提供了 Python 对 Graphviz 的封装（基于 SWIG）。</p>
+<h4>Graphviz</h4>
+
+<p>Home：[<a href="https://github.com/xflr6/graphviz" target="_blank" rel="external">https://github.com/xflr6/graphviz</a>]</p>
+<p>这个库与上一个类似，也提供了 Graphviz 的 Python 的封装。</p>
+<p>这两个库都在 GitHub 上。（可能是因为出现较晚）这个库的 Star 和 Fork 数都不如上一个，不过俺感觉文档比较全。</p>
+<p>代码示例——创建一个 DOT 图并加入若干节点和连线</p>
+<source lang="python"><br>from graphviz import Digraph<br><br>dot = Digraph(comment=’The Round Table’)<br>&#35; 添加节点<br>dot.node(‘A’, ‘King Arthur’)<br>dot.node(‘B’, ‘Sir Bedevere the Wise’)<br>dot.node(‘L’, ‘Sir Lancelot the Brave’)<br>&#35; 添加连线<br>dot.edges([‘AB’, ‘AL’])<br>dot.edge(‘B’, ‘L’, constraint=’false’)<br>
+
+<p>== 10.2 图像格式转换 ==</p>
+<h4>Python Imaging Library（PIL）</h4>
+
+<p>PIL 前面已经介绍过。它支持常见图像文件格式（BMP、JPG、GIF、PNG …）之间的相互转换。</p>
+<h4>Wand</h4>
+
+<p>Wand 前面已经介绍过。由于它是针对 [<a href="https://en.wikipedia.org/wiki/ImageMagick" target="_blank" rel="external">https://en.wikipedia.org/wiki/ImageMagick</a> ImageMagick] 的封装。只要 ImageMagick 能转换的格式，它也可以转换。</p>
+<p>== 10.3 图像渲染 ==</p>
+<h4>Pycairo</h4>
+
+<p>Home：[<a href="http://cairographics.org/pycairo/" target="_blank" rel="external">http://cairographics.org/pycairo/</a>]</p>
+<p>[<a href="https://en.wikipedia.org/wiki/Cairo_%28graphics%29" target="_blank" rel="external">https://en.wikipedia.org/wiki/Cairo_%28graphics%29</a> Cairo] 是一个图像渲染引擎，提供了矢量图像的渲染功能。支持多种后端输出（包括：Win32 GDI、OpenGL、Xlib、XCB、PDF、PNG、SVG……）。</p>
+<p>Pycairo 是 Cairo 官方提供 Python 封装。</p>
+<p>= 11 游戏 =</p>
+<p>== 11.1 综合性的游戏引擎 ==</p>
+<h4>PyGame</h4>
+
+<p>Home：[<a href="http://www.pygame.org/" target="_blank" rel="external">http://www.pygame.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Pygame" target="_blank" rel="external">https://en.wikipedia.org/wiki/Pygame</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/Pygame" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Pygame</a> 维基百科]</p>
+<p>这是名气很大的跨平台游戏引擎，构建于 [<a href="https://zh.wikipedia.org/wiki/SDL" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SDL</a> SDL]（Simple DirectMedia Layer）之上。</p>
+<p>它起先是用来替代终止开发的 pySDL，包含了图像和音频的库。</p>
+<h4>Cocos2d</h4>
+
+<p>Home：[<a href="http://cocos2d.org/" target="_blank" rel="external">http://cocos2d.org/</a>]</p>
+<p>它是一个开源的 2D 游戏框架，最初使用 Python 编写的。后来该框架已经被移植到了多种语言和平台上。</p>
+<p>其功能包括了：GUI 组件、音效、物理引擎、脚本语言绑定、场景编辑器 …</p>
+<p>很多手机游戏是基于 Cocos2d 的衍生框架开发的。</p>
+<h4>Blender Game Engine</h4>
+
+<p>Home：[<a href="http://www.blender.org/" target="_blank" rel="external">http://www.blender.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/Game_Blender" target="_blank" rel="external">https://en.wikipedia.org/wiki/Game_Blender</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/Game_Blender" target="_blank" rel="external">https://zh.wikipedia.org/wiki/Game_Blender</a> 维基百科]</p>
+<p>它是 [<a href="https://en.wikipedia.org/wiki/Blender_%28software%29" target="_blank" rel="external">https://en.wikipedia.org/wiki/Blender_%28software%29</a> Blender] 的组成部分，虽然是以 C++ 编写，但内置了 Python 脚本的扩展。</p>
+<p>其功能包括：3D 渲染、碰撞检测、角色编辑器、音效、网络通讯、AI …</p>
+<p>== 11.2 3D 渲染引擎 ==</p>
+<h4>PyOpenGL</h4>
+
+<p>Home：[<a href="http://pyopengl.sourceforge.net/" target="_blank" rel="external">http://pyopengl.sourceforge.net/</a>]</p>
+<p>封装 [<a href="https://en.wikipedia.org/wiki/OpenGL" target="_blank" rel="external">https://en.wikipedia.org/wiki/OpenGL</a> OpenGL] 的 Python 库。</p>
+<h4>Python-Ogre</h4>
+
+<p>Home：[<a href="http://www.python-ogre.org/" target="_blank" rel="external">http://www.python-ogre.org/</a>]</p>
+<p>封装 [<a href="https://en.wikipedia.org/wiki/OGRE" target="_blank" rel="external">https://en.wikipedia.org/wiki/OGRE</a> OGRE] 的 Python 库。</p>
+<hr>
+<p>= 12 数值计算 &amp; 科学计算 =</p>
+<h4>NumPy</h4>
+
+<p>Home：[<a href="http://www.numpy.org/" target="_blank" rel="external">http://www.numpy.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/NumPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/NumPy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/NumPy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/NumPy</a> 维基百科]</p>
+<p>它提供了功能强大、性能很高的数值数组，可以用来进行各种数值计算（包括矩阵运算）。</p>
+<p>代码示例</p>
+<source lang="python"><br>&#35; 以下是传统 Python 写法，冗长且速度较慢<br>a = range(10000000)<br>b = range(10000000)<br>c = []<br>for i in range(len(a)) :<br>    c.append(a[i] + b[i])<br><br>&#35; 以下是 NumPy 的写法，简洁且速度飞快<br>import numpy as np<br>a = np.arange(10000000)<br>b = np.arange(10000000)<br>c = a + b<br>
+
+<h4>SciPy</h4>
+
+<p>Home：[<a href="http://www.scipy.org/" target="_blank" rel="external">http://www.scipy.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/SciPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/SciPy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/SciPy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SciPy</a> 维基百科]</p>
+<p>它依赖 NumPy 提供的多维数组。相比 NumPy，它提供了更高层的数学运算模块（统计、线性代数、积分、常微分方程求解、傅立叶变换、信号处理 …）。</p>
+<p>它被广泛用于科研和工程领域。</p>
+<h4>SymPy</h4>
+
+<p>Home：[<a href="http://sympy.org/" target="_blank" rel="external">http://sympy.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/SymPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/SymPy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/SymPy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SymPy</a> 维基百科]</p>
+<p>它是用来做符号计算的，其目标是成为一个全功能的“计算机代数系统”。</p>
+<p>它支持的功能包括：符号计算、高精度计算、模式匹配、绘图、解方程、微积分、组合数学、离散数学、几何学、概率与统计 ……</p>
+<hr>
+<p>= 13 （其它） =</p>
+<p>一些不方便归类的，暂时放到这里。</p>
+<h4>PyPy</h4>
+
+<p>Home：[<a href="http://www.pypy.org/" target="_blank" rel="external">http://www.pypy.org/</a>]</p>
+<p>Links：[<a href="https://en.wikipedia.org/wiki/PyPy" target="_blank" rel="external">https://en.wikipedia.org/wiki/PyPy</a> Wikipedia] [<a href="https://zh.wikipedia.org/wiki/PyPy" target="_blank" rel="external">https://zh.wikipedia.org/wiki/PyPy</a> 维基百科]</p>
+<p>它是一个用 Python 写的 Python 解释器（有点绕口令）。</p>
+<p>PyPy 支持 JIT（Just-in-time compilation）和沙箱技术，可做到【比 CPython 更快的运行速度】。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="\images\wechat-qcode.jpg" alt="旅行的意义 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旅行的意义 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="旅行的意义 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/18/金融软件行业名词解释/" rel="next" title="金融软件行业名词解释">
+                <i class="fa fa-chevron-left"></i> 金融软件行业名词解释
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="旅行的意义" />
+            
+              <p class="site-author-name" itemprop="name">旅行的意义</p>
+              <p class="site-description motion-element" itemprop="description">技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/luhu888" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luhu0105@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Python 开源库及示例代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">re</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">chardet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">StringIO & cStringIO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">difflib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">base64</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">uu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">binhex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">fractions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">pygtrie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.12.</span> <span class="nav-text">ctypes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.13.</span> <span class="nav-text">SWIG（Simplified Wrapper and Interface Generator）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.14.</span> <span class="nav-text">Cython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.15.</span> <span class="nav-text">Jython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.16.</span> <span class="nav-text">IronPython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.17.</span> <span class="nav-text">gopy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.18.</span> <span class="nav-text">PyObjC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.19.</span> <span class="nav-text">os</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.20.</span> <span class="nav-text">shutil</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.21.</span> <span class="nav-text">glob</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.22.</span> <span class="nav-text">fnmatch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.23.</span> <span class="nav-text">tempfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.24.</span> <span class="nav-text">threading</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.25.</span> <span class="nav-text">subprocess</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.26.</span> <span class="nav-text">multiprocessing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.27.</span> <span class="nav-text">mmap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.28.</span> <span class="nav-text">signal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.29.</span> <span class="nav-text">syslog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.30.</span> <span class="nav-text">PyWin32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.31.</span> <span class="nav-text">PyInstaller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.32.</span> <span class="nav-text">py2exe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.33.</span> <span class="nav-text">py2app</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.34.</span> <span class="nav-text">EasyInstall & Setuptools</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.35.</span> <span class="nav-text">httplib & httplib2 & http.request & urllib.parse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.36.</span> <span class="nav-text">Requests</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.37.</span> <span class="nav-text">SimpleHTTPServer & http.server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.38.</span> <span class="nav-text">Django</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.39.</span> <span class="nav-text">TurboGears</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.40.</span> <span class="nav-text">CherryPy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.41.</span> <span class="nav-text">web.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.42.</span> <span class="nav-text">Pyjamas & pyjs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.43.</span> <span class="nav-text">pyjaco</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.44.</span> <span class="nav-text">webbrowser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.45.</span> <span class="nav-text">pyv8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.46.</span> <span class="nav-text">PyWebKitGtk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.47.</span> <span class="nav-text">pywebsocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.48.</span> <span class="nav-text">Scapy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.49.</span> <span class="nav-text">socket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.50.</span> <span class="nav-text">asyncore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.51.</span> <span class="nav-text">asynchat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.52.</span> <span class="nav-text">PycURL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.53.</span> <span class="nav-text">ftplib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.54.</span> <span class="nav-text">pysftp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.55.</span> <span class="nav-text">smtplib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.56.</span> <span class="nav-text">imaplib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.57.</span> <span class="nav-text">poplib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.58.</span> <span class="nav-text">jabber.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.59.</span> <span class="nav-text">irclib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.60.</span> <span class="nav-text">telnetlib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.61.</span> <span class="nav-text">rdpy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.62.</span> <span class="nav-text">urlparse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.63.</span> <span class="nav-text">Protocol Buffers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.64.</span> <span class="nav-text">Apache Thrift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.65.</span> <span class="nav-text">Twisted</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.66.</span> <span class="nav-text">gevent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.67.</span> <span class="nav-text">PyZMQ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.68.</span> <span class="nav-text">nanomsg-python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.69.</span> <span class="nav-text">Apache Libcloud</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.70.</span> <span class="nav-text">pyODBC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.71.</span> <span class="nav-text">ceODBC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.72.</span> <span class="nav-text">Jython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.73.</span> <span class="nav-text">PyWin32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.74.</span> <span class="nav-text">IronPython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.75.</span> <span class="nav-text">MySQL for Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.76.</span> <span class="nav-text">psycopg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.77.</span> <span class="nav-text">PyGreSQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.78.</span> <span class="nav-text">cx_Oracle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.79.</span> <span class="nav-text">pymssql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.80.</span> <span class="nav-text">ibm-db</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.81.</span> <span class="nav-text">sqlite3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.82.</span> <span class="nav-text">PyMongo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.83.</span> <span class="nav-text">HappyBase</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.84.</span> <span class="nav-text">redis-py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.85.</span> <span class="nav-text">Plyvel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.86.</span> <span class="nav-text">PyBSDDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.87.</span> <span class="nav-text">SQLAlchemy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.88.</span> <span class="nav-text">SQLObject</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.89.</span> <span class="nav-text">Peewee</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.90.</span> <span class="nav-text">Tkinter & tkinter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.91.</span> <span class="nav-text">wxPython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.92.</span> <span class="nav-text">PythonCard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.93.</span> <span class="nav-text">PyGTK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.94.</span> <span class="nav-text">PyGObject（PyGI）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.95.</span> <span class="nav-text">PyQt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.96.</span> <span class="nav-text">PySide</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.97.</span> <span class="nav-text">PyFLTK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.98.</span> <span class="nav-text">PyWin32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.99.</span> <span class="nav-text">IronPython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.100.</span> <span class="nav-text">Jython</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.101.</span> <span class="nav-text">EasyGUI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.102.</span> <span class="nav-text">PyGUI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.103.</span> <span class="nav-text">Kivy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.104.</span> <span class="nav-text">OcempGUI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.105.</span> <span class="nav-text">matplotlib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.106.</span> <span class="nav-text">Gnuplot.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.107.</span> <span class="nav-text">PyQtGraph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.108.</span> <span class="nav-text">PyX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.109.</span> <span class="nav-text">Chaco</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.110.</span> <span class="nav-text">hashlib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.111.</span> <span class="nav-text">PyCrypto</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.112.</span> <span class="nav-text">pyOpenSSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.113.</span> <span class="nav-text">Keyczar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.114.</span> <span class="nav-text">oauth2client</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.115.</span> <span class="nav-text">csv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.116.</span> <span class="nav-text">json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.117.</span> <span class="nav-text">PyYAML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.118.</span> <span class="nav-text">zipfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.119.</span> <span class="nav-text">bz2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.120.</span> <span class="nav-text">gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.121.</span> <span class="nav-text">zlib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.122.</span> <span class="nav-text">tarfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.123.</span> <span class="nav-text">PyLZMA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.124.</span> <span class="nav-text">rarfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.125.</span> <span class="nav-text">msilib</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.126.</span> <span class="nav-text">xml.dom & xml.miniDom & xml.etree.ElementTree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.127.</span> <span class="nav-text">xml.sax & xml.parsers.expat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.128.</span> <span class="nav-text">lxml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.129.</span> <span class="nav-text">HTMLParser</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.130.</span> <span class="nav-text">pyfpdf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.131.</span> <span class="nav-text">pyPdf & PyPDF2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.132.</span> <span class="nav-text">PDFMiner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.133.</span> <span class="nav-text">python-docx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.134.</span> <span class="nav-text">PyWin32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.135.</span> <span class="nav-text">pyExcelerator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.136.</span> <span class="nav-text">PyWin32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.137.</span> <span class="nav-text">python-pptx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.138.</span> <span class="nav-text">PyWin32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.139.</span> <span class="nav-text">PyRTF</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.140.</span> <span class="nav-text">PyCHM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.141.</span> <span class="nav-text">Python Imaging Library（PIL）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.142.</span> <span class="nav-text">Wand</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.143.</span> <span class="nav-text">Pillow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.144.</span> <span class="nav-text">PyGraphviz</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.145.</span> <span class="nav-text">Graphviz</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.146.</span> <span class="nav-text">Python Imaging Library（PIL）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.147.</span> <span class="nav-text">Wand</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.148.</span> <span class="nav-text">Pycairo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.149.</span> <span class="nav-text">PyGame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.150.</span> <span class="nav-text">Cocos2d</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.151.</span> <span class="nav-text">Blender Game Engine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.152.</span> <span class="nav-text">PyOpenGL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.153.</span> <span class="nav-text">Python-Ogre</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.154.</span> <span class="nav-text">NumPy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.155.</span> <span class="nav-text">SciPy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.156.</span> <span class="nav-text">SymPy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.157.</span> <span class="nav-text">PyPy</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旅行的意义</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io"></a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
