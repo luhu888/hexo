@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type='text/javascript' src='//cdn.bootcss.com/cavas_nest.js/1.0.0/canvas-nest.min.js'></script>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="用户体验测试 首先，来看一下什么是用户体验；根据百度定义，用户体验（User Experience，简称UE/UX），是一种纯主观在用户使用产品过程中建立起来的感受。 京东一直都非常重视用户体验，我们的价值观核心就是“客户为先”，客户包括消费者、供应商和商家。京东的用户体验我觉得应该分为:商城系统的操作体验和购物过程的服务体验。服务包括我们的配送、客服、售后等；对商城系统的体验我觉得就不只包括我们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="旅行的意义">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/用户体验测试/index.html">
+<meta property="og:site_name" content="旅行的意义">
+<meta property="og:description" content="用户体验测试 首先，来看一下什么是用户体验；根据百度定义，用户体验（User Experience，简称UE/UX），是一种纯主观在用户使用产品过程中建立起来的感受。 京东一直都非常重视用户体验，我们的价值观核心就是“客户为先”，客户包括消费者、供应商和商家。京东的用户体验我觉得应该分为:商城系统的操作体验和购物过程的服务体验。服务包括我们的配送、客服、售后等；对商城系统的体验我觉得就不只包括我们">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/2x9vEc8.jpg">
+<meta property="og:image" content="https://i.imgur.com/dXm4YxE.jpg">
+<meta property="og:image" content="https://i.imgur.com/aWUydhj.jpg">
+<meta property="og:image" content="https://i.imgur.com/8xYT44g.jpg">
+<meta property="og:image" content="https://i.imgur.com/v7OwsUN.jpg">
+<meta property="og:updated_time" content="2018-02-22T11:38:34.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="旅行的意义">
+<meta name="twitter:description" content="用户体验测试 首先，来看一下什么是用户体验；根据百度定义，用户体验（User Experience，简称UE/UX），是一种纯主观在用户使用产品过程中建立起来的感受。 京东一直都非常重视用户体验，我们的价值观核心就是“客户为先”，客户包括消费者、供应商和商家。京东的用户体验我觉得应该分为:商城系统的操作体验和购物过程的服务体验。服务包括我们的配送、客服、售后等；对商城系统的体验我觉得就不只包括我们">
+<meta name="twitter:image" content="https://i.imgur.com/2x9vEc8.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/22/用户体验测试/"/>
+
+
+
+
+
+  <title> | 旅行的意义</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅行的意义</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">--好记性不如烂笔头。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/用户体验测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅行的意义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅行的意义">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-22T22:41:48+08:00">
+                2018-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用户体验测试</p>
+<p>首先，来看一下什么是用户体验；根据百度定义，用户体验（User Experience，简称UE/UX），是一种纯主观在用户使用产品过程中建立起来的感受。</p>
+<p>京东一直都非常重视用户体验，我们的价值观核心就是“客户为先”，客户包括消费者、供应商和商家。京东的用户体验我觉得应该分为:商城系统的操作体验和购物过程的服务体验。服务包括我们的配送、客服、售后等；对商城系统的体验我觉得就不只包括我们的消费者、供应商和商家了，应该包括我们所有的系统使用者的体验，比如我们的消费者、供应商、商家等外部用户，采销、财务、配送、库房、售后、客服等所有公司内部用户。</p>
+<p>下面是我在工作当中及学习当中积累的一些用户体验方面的知识，分享给大家。</p>
+<p>首先给大家分享一下2位大师的观点：</p>
+<p>Krug可用性三大定律：</p>
+<p>1、 别让我思考</p>
+<p>2、 点击多少次没关系，只要每次点击都无需思考</p>
+<p>3、 去掉每个页面上一半的文字，然后把剩下的文字再去掉一半</p>
+<p>尼尔森十大原则：</p>
+<p>1、   Visibility of system status 系统可见性原则</p>
+<p>2、   Match between system and the real world 匹配系统与真实世界（环境贴切）</p>
+<p>3、   User control and freedom用户的控制性和自由度（撤销重作原则）</p>
+<p>4、   Consistency and standards一致性和标准化（一致性原则）</p>
+<p>5、   Error prevention  防错原则</p>
+<p>6、   Recognition rather than recall 识别比记忆好（易取原则）</p>
+<p>7、   Flexibility and efficiency of use 使用的灵活高效（灵活高效原则）</p>
+<p>8、   Aesthetic and minimalist design 审美和简约的设计（易扫原则）</p>
+<p>9、   Help users recognize, diagnose, and recover from errors 帮助用户识别，诊断，并从错误中恢复（容错原则）</p>
+<p>10、        Help and documentation  帮助文档（人性化帮助原则）</p>
+<p>大师的观点我不做太多介绍，网上或书上有很多他们的详细说明，我个人还是非常喜欢Krug的可用性三大定律，非常简单，但是一语中的，看完之后有一种醍醐灌顶、拨云见日的感觉。Krug可用性三大定律我是摘自《点石成金：访客至上的Web和移动可用性设计秘笈》这边书，作者Steve Krug。</p>
+<p>下面主要分享一下我自己通过学习总结的内容。</p>
+<p>1、 符合用户实际场景</p>
+<p>我们的系统操作一定跟用户的实际业务场景联系起来，如果不考虑实际的业务场景，做出来的系统一定会给用户增加烦恼，并最终还得重新返工。这样的例子很多，比如以下几个例子：</p>
+<p>例1：采销人员做一些下采购单或审核操作，如果我们只是支持单条数据操作，功能是满足需求了，但是实际场景中，采销人员由于工作量巨大，他们经常需要进行批量的操作。所以批量操作功能必须支持，才能满足真正的用户需求。</p>
+<p>例2：通过查询得到需要处理的数据（图1），处理完（图2）之后返回，查询页的查询条件往往需要保存下来，以方便继续操作。 </p>
+<p>例3 ：我们给超市做的POS收银系统，由于收银员一般都比较忙，要求的就是速度，所以他们一般用的鼠标或键盘输入比较少，用扫码枪和键盘快捷键比较多，所以我们必须提供扫码枪和快捷键的操作功能。</p>
+<p>另外实际的用户场景，一定要多考虑我们的用户，他们的年龄、职业、学历等。比如老年人手机，要求字体一定要大；对于互联网或计算机操作不太熟悉的人，就要求系统功能一定要简单，文字描述一定要简单易懂。</p>
+<p>2、易用性要强；</p>
+<p>易用性包括易理解性、易学性、易操作性。<br><img src="https://i.imgur.com/2x9vEc8.jpg" alt=""></p>
+<p>这里面提的‘通用券’，一般人真的很难理解是什么意思，太专业了，只能猜测。</p>
+<p>易学性就是要求我们的系统学习成本一定要低，最好是一看就会，不需要用户花费太多时间和精力去学习。比如操作系统为什么大家都是用windows，而很少有人使用Linux系统（当然除了技术人员）；就是因为windows使用起来更形象，不需要花费太多时间去学习，也容易学会。输入法我记得刚开始学计算机的时候大家用的都是五笔，可现在呢，大家都用汉语拼音输入法；就是因为他的学习成本更低。</p>
+<p>3、给用户的选择尽量少；界面上的菜单、按钮、选择项越少越好<br><img src="https://i.imgur.com/dXm4YxE.jpg" alt=""><br><img src="https://i.imgur.com/aWUydhj.jpg" alt=""></p>
+<p>上面第一个图里，大家应该都遇到过，下载的地址太多；很多地址根本与自己想要下的软件毫无关系，不是病毒就是流氓软件，用一句话来形容就是“真流氓”。</p>
+<p>第二个图是一家门户网站，大家也经常上这种网站，但是给我的感觉很不好，我不知道进入这个网页该干什么，一般也可能就是看看新闻，别的就是大家各依所需，该看什么看什么了。但是感觉内容太多太乱了，给人一种很烦躁的感觉。</p>
+<p>4、提供用户想要的信息<br><img src="https://i.imgur.com/8xYT44g.jpg" alt=""></p>
+<p>图中商品基本信息比较少，购买的用户很多想了解的信息都没有，这样就会给用户造成很大的困惑。比如妈妈买奶粉都想要了解奶粉的品牌、奶源产地、净含量、适用年龄等，如果想要了解的信息没有，那用户就有可能放弃这次购买计划。</p>
+<p>5、快速、响应；</p>
+<p>系统响应速度要快；</p>
+<p>对于用户响应时间，有一个普遍的标准。2/5/10秒原则。也就是说，在2秒之内给客户响应认为是“非常有吸引力”的用户体验。在5秒之内响应认为“比较不错”的用户体验，在10秒内响应是最“糟糕”的用户体验。如果超过10秒还没有得到响应，那么大多用户会认为这次请求是失败的。</p>
+<p>系统响应速度的快慢将非常直接的影响用户的体验，想象一下，如果一个页面打开经常要5秒以上，执行一个操作需要等待半天，估计很多用户都是没有这个耐心的。</p>
+<p>最近我使用微信进行AA付款，打开付款页面，不敢点击[付款]按钮 ，得让系统“飞”一会 ，因为如果进入页面立马点击，会提示“系统初始化中。。。”，然后就无法付款了，只能退出重新进入了。这样就会导致每次AA付款，一旦着急点，往往会是最慢的一个，然后就会受到大家的“惩罚”。</p>
+<p>系统的任何操作要有响应</p>
+<p>如果系统处理的数据较大，慢很正常；但是不正常的也是用户最怕的就是系统没有任何反应。点击了确定或其他按钮，然后就像没点击一样，系统没有一点反馈；这时用户的感觉就是系统死掉了？功能出问题了？还是我的鼠标坏了？</p>
+<p>6、友好准确的提示<br><img src="https://i.imgur.com/v7OwsUN.jpg" alt=""></p>
+<p>上面的错误提示非常常见，尤其是在我们测试当中。如果我们的用户在操作系统时，弹出了上面的提示信息，那估计把用户就吓坏了，我干了什么？怎么系统会弹出这么多英文提示Or代码？我操作的数据会不会丢了啊？我的账号还安全吗？这种提示会给用户带来很大的困扰。有时候这种后台日志信息也会泄露我们系统很多机密。所以这种异常直接抛出给用户，无论从用户体验还是从安全角度，是应该绝对杜绝的。</p>
+<p>7、及时性；</p>
+<p>帮助文档、用户提示、系统广告、政策等要及时更新；</p>
+<p>最近在与我们的系统用户交流中，用户提出了，希望我们系统的帮助文档能够更新一下；有时我们只是关注系统功能变化了，升级了，功能是否OK；但却很少会想到，我们的帮助文档是否有影响，是否需要更新。</p>
+<p>比如我们上一些网站，发现很多公告、政策、信息早已过期，那我们就会觉得这个网站已经是僵尸网站；或者整个网站都很好，只是一条广告过时了，用户还以为有效，当发现广告里的优惠早就过期，那用户一定会有一种被欺骗的感觉，用户体验立马降为0.</p>
+<p>8、一致性</p>
+<p>提到“一致性”大家首先想到的肯定是界面风格、操作习惯的一致性。除了这些，还有需要我们注意的就是数据状态的一致性。</p>
+<p>因为系统设计经常会把读写库分离，在数据库压力比较大的时候，就会造成数据同步不及时；明明修改了的数据，在其他系统或模块显示还是旧的数据，造成有些操作无法进行，给用户也造成了困惑，用户体验很不好。所以对于一些特殊场景或情况，我们还是需要考虑一些方法去解决。比如对于一些特殊重要的功能是否可以提供不同的接口，或者可以允许读同一个库等。总之无论什么原因，都不能影响用户的使用，用户的体验。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="\images\wechat-qcode.jpg" alt="旅行的意义 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旅行的意义 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="旅行的意义 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/22/python开源库总结/" rel="next" title="python开源库总结">
+                <i class="fa fa-chevron-left"></i> python开源库总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/22/用户体验测试１/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="旅行的意义" />
+            
+              <p class="site-author-name" itemprop="name">旅行的意义</p>
+              <p class="site-description motion-element" itemprop="description">技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/luhu888" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luhu0105@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旅行的意义</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io"></a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

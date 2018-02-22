@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type='text/javascript' src='//cdn.bootcss.com/cavas_nest.js/1.0.0/canvas-nest.min.js'></script>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="【转】web测试总结–用户体验测试一、什么是用户体验 用户体验，英文叫做user experience，缩写为UE，或者UX。一个较常见的定义是“指用户访问一个网站或者使用一个产品时的全部体验。他们的印象和感觉，是否成功，是否享受，是否还想再来使用。他们能够忍受的问题，疑惑和BUG的程度。” 这是由英文直接翻译而来，生硬费解。而在我看来，用户体验就是一种用户在使用产品时所建立起来的心理感受。心理感">
+<meta property="og:type" content="article">
+<meta property="og:title" content="旅行的意义">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/用户体验测试１/index.html">
+<meta property="og:site_name" content="旅行的意义">
+<meta property="og:description" content="【转】web测试总结–用户体验测试一、什么是用户体验 用户体验，英文叫做user experience，缩写为UE，或者UX。一个较常见的定义是“指用户访问一个网站或者使用一个产品时的全部体验。他们的印象和感觉，是否成功，是否享受，是否还想再来使用。他们能够忍受的问题，疑惑和BUG的程度。” 这是由英文直接翻译而来，生硬费解。而在我看来，用户体验就是一种用户在使用产品时所建立起来的心理感受。心理感">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-22T11:38:39.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="旅行的意义">
+<meta name="twitter:description" content="【转】web测试总结–用户体验测试一、什么是用户体验 用户体验，英文叫做user experience，缩写为UE，或者UX。一个较常见的定义是“指用户访问一个网站或者使用一个产品时的全部体验。他们的印象和感觉，是否成功，是否享受，是否还想再来使用。他们能够忍受的问题，疑惑和BUG的程度。” 这是由英文直接翻译而来，生硬费解。而在我看来，用户体验就是一种用户在使用产品时所建立起来的心理感受。心理感">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/22/用户体验测试１/"/>
+
+
+
+
+
+  <title> | 旅行的意义</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅行的意义</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">--好记性不如烂笔头。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/用户体验测试１/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="旅行的意义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅行的意义">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-22T22:41:49+08:00">
+                2018-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>【转】web测试总结–用户体验测试<br>一、什么是用户体验</p>
+<p>用户体验，英文叫做user experience，缩写为UE，或者UX。一个较常见的定义是“指用户访问一个网站或者使用一个产品时的全部体验。他们的印象和感觉，是否成功，是否享受，是否还想再来使用。他们能够忍受的问题，疑惑和BUG的程度。”</p>
+<p>这是由英文直接翻译而来，生硬费解。而在我看来，用户体验就是一种用户在使用产品时所建立起来的心理感受。心理感受是纯主观性的，也就带有一定的不确定因素，不过，在界定用户基本确定的情况下，其用户体验的共性是能够通过良好的设计来实现的。</p>
+<p>二、提升用户体验的重要性</p>
+<p>从用户角度来说，如今软件行业发展甚为迅速，各种软件产品更是形形色色，用户成了强势的群体，他们不再满足于使用的软件能实现其需要的功能，更追求一种使用过程中的良好的心理感受，用一种形象的说法就是用户是用他的脚来为软件投票的，非常简单的道理，你的产品不好，他就走掉了。</p>
+<p>从软件公司的角度来讲，提升产品的用户体验度可增加用户对软件产品乃至公司品牌的好感和信任度，这会使得我们的产品在市场上更有竞争力。同时，若从产品开发之初，就本着一种提升用户体验度的思想，那么还可节约后期的开发及测试成本。</p>
+<p>因此，提升用户体验度从近处来说是为了完善当前产品，从长远来看，则可影响到公司的长期发展。</p>
+<p>三、用户体验包括什么</p>
+<p>有人将用户体验与软件的运行效率混为一谈，认为用户体验就指响应时间、可靠性、稳定性这三方面。其实这只是用户体验的一部分。我认为用户体验度可用几个简单的词来概括：</p>
+<p>有用：此处的有用是指正确的实现了用户的需求，勿庸置疑，这是最基本最首要的一点。</p>
+<p>易用：这也非常关键，不容易使用的产品，也是没用的。产品要让用户一看就知道怎么去用，而不要去读用户手册。这也是设计的一个方向。</p>
+<p>好用：这就包括软件的运行效率等方面，社会节奏越来越快，用户不会接受需要两分钟才能进入某页面的一个软件。</p>
+<p>友好：良好的人机交互，这就要求我们开发过程中以用户为中心，这一点会体现到产品的各个细节，包括一句简单的提示用语。我们需要记住一点：我们要做的是去适应用户，而不是改变用户。</p>
+<p>四、如何提升产品的用户体验度</p>
+<p>1、树立意识</p>
+<p>若要使我们开发出来的产品具有良好的用户体验度，我觉得，首先大家要树立以用户为中心的这样一种意识，这一点无论对于开发人员或是测试人员都是必需的（当然，测试人员的这种意识会显得更重要）。在软件产品的使用中，用户不会介意我们当他当成“傻瓜型用户”，越简便的操作越会得到用户喜欢。</p>
+<p>当这种意识贯彻到了软件生命周期的各个阶段，那么，我们开发出来的产品会是成功的。</p>
+<p>2、把握规则与灵活</p>
+<p>所谓规则也就是强调统一性：整个软件产品的风格应是一致的，相同功能在不同地方的操作方式应是统一的，等等。</p>
+<p>所谓灵活，就是允许特殊情况特殊处理：有时，当常规的几个操作可以揉为一个简单的步骤时，那么我们绝不会要求用户分几步。</p>
+<p>遵守统一的规则是基本原则，适情况的灵活处理是‘改革开放’。</p>
+<p>3、完善细节</p>
+<p>前面我们说过，用户体验是一种纯主观的心理感受，因此，某些细节之处对于软件功能来说也许影响甚小，但对于用户、对于我们要将软件实现产品化，或许就起着很大的作用了。只要会使用电脑的人大概都不会不知道百度、Google，我们稍稍留意就可发现它们在细节方面是下了很大的功夫的。举例来说，5.12地震发生后，当国家刚公布全民哀悼日的消息，百度就在第一时间将网站的style换成了灰白色；又如，它们的Logo不会一成不变，在情人节、端午节等时刻我们就会发现Logo换成了漂亮的、有节日特征的图片了。而事实上，百度有专门的“用户体验部”和用户体验设计师，也由此可见，欲成功的产品是不会忽视用户体验的。</p>
+<p>细节分布于软件产品的各个方面，但概括来说，我以为我们可从以下几个点着手完善：</p>
+<p>优化流程：此处的流程单指用户要完成某任务的操作流程而并非指软件系统的开发流程。这需要我们在开发或测试的时候通过揣测用户的心理、模拟用户的操作来评估当前流程是否还需要优化，如考虑当前操作若细分为两个步骤是否更恰当？这几个操作步骤是否可简化？这个功能移植到某处是否更方便用户操作？</p>
+<p>界面美观与协调：这在用户体验话题中大概是被提得最多的要素，这一点上本身又包括太多的细节，如布局、色彩、字体，甚至按钮及输入框的长宽大小等都应考虑到。</p>
+<p>提示用语友好规范：提示用语会伴随在用户的整个使用过程中，因此，强调用语规范并且温馨友好的是很有必要的。特别是对于我们做外包行业的公司，更应该要强调这一点，因为这不只会影响用户的心情，还会影响对我们人员及公司水平和服务态度的看法。</p>
+<p>符合用户习惯：由于每个用户都有个体特殊性，因此不可能面面俱到，但是至少得符合通用操作习惯，如支持鼠标与键盘操作等等。</p>
+<p>适时提供帮助：这包括两个方面，一是在操作过程中，对软件要执行的动作等应有简略的说明；另一方面，当用户在使用过程中，遇到难题时，应该能够即时地寻求到帮助，包括提供用户手册等。</p>
+<p>针对于我们公司的具体实际，我觉得还应该强调一点，那就是本地化与全球化：本地化和全球化不仅仅是简单的文字翻译转换，还必须根据目标语言国家的市场特点、文化习惯、法律法规、风俗禁忌等情况进行本地特性开发、界面布局调整等工作。这对于我们树立一个成功的外包企业形象是必需的。</p>
+<p>我觉得用户体验是一个既浅显又高深的话题，作为一名测试人员，我要做的就是不断地学习、应用和总结。上面所说的都是一些认识还很浅的理论，可能还有一些不完善甚至不正确的观点在里面，希望能够得到大家指正。</p>
+<p>　　网站体验的分类</p>
+<p>　　1、感官体验：呈现给用户视听上的体验，强调舒适性。</p>
+<p>　　2、交互体验：呈现给用户操作上的体验，强调易用/可用性。</p>
+<p>　　3、情感体验：呈现给用户心理上的体验，强调友好性。</p>
+<p>　　4、浏览体验：呈现给用户浏览上的体验，强调吸引性。</p>
+<p>　　5、信任体验：呈现给用户的信任体验，强调可靠性。</p>
+<p>　　网站体验的76个体验点</p>
+<p>一、感官体验：呈现给用户视听上的体验，强调舒适性。</p>
+<p>　　1. 设计风格：符合目标客户的审美习惯，并具有一定的引导性。</p>
+<p>　　网站在设计之前，必须明确目标客户群体，并针对目标客户的审美喜好，进行分析，从而确定网站的总体设计风格。</p>
+<p>　　2. 网站LOGO：确保logo的保护空间，确保品牌的清晰展示而又不占据过分空间。</p>
+<p>　　3. 页面速度：正常情况下，尽量确保页面在5秒内打开。如果是大 型门户网站，必须考虑南北互通问题，进行必要的压力测试。</p>
+<p>　　4. 页面布局：重点突出，主次分明，图文并茂。与企业的营销目标相结合，将目标客户最感兴趣的，最具有销售力的信息放置在最重要的位置。</p>
+<p>　　5. 页面色彩：与品牌整体形象相统一，主色调+辅助色不超过三种颜色。以恰当的色彩明度和亮度，确保浏览者的浏览舒适度。</p>
+<p>　　6. 动画效果：与主画面相协调，打开速度快，动画效果节奏适中，不干扰主画面浏览。</p>
+<p>　　7. 页面导航：导航条清晰明了、突出，层级分明。</p>
+<p>　　8. 页面大小：适合多数浏览器浏览（以15寸及17寸显示器为主）。</p>
+<p>　　9. 图片展示：比例协调、不变形，图片清晰。图片排列既不过于密集，也不会过于疏远。</p>
+<p>　　10. 图标使用：简洁、明了、易懂、准确，与页面整体风格统一。</p>
+<p>　　11. 广告位：避免干扰视线，广告图片符合整体风格，避免喧宾夺主。</p>
+<p>　　12. 背景音乐：与整体网站主题统一，文件要小，不能干扰阅读。要设置开关按钮及音量控制按钮。</p>
+<p>二、交互体验：呈现给用户操作上的体验，强调易用/可用性。</p>
+<p>　　13. 会员申请：介绍清晰的会员权责，并提示用户确认已阅读条款。</p>
+<p>　　14. 会员注册：流程清晰、简洁。待会员注册成功后，再详细完善资料。</p>
+<p>　　15. 表单填写：尽量采用下拉选择，需填写部分需注明要填写内容，并对必填字段作出限制。（如手机位数、邮编等等，避免无效信息）</p>
+<p>　　16. 表单提交：表单填写后需输入验证码，防止注水。提交成功后，应显示感谢提示。</p>
+<p>　　17. 按钮设置：对于交互性的按钮必须清晰突出，以确保用户可以清楚地点击。</p>
+<p>　　18. 点击提示：点击浏览过的信息颜色需要显示为不同的颜色，以区分于未阅读内容，避免重复阅读。</p>
+<p>　　19. 错误提示：若表单填写错误，应指明填写错误之处，并保存原有填写内容，减少重复工作。</p>
+<p>　　20. 在线问答：用户提问后后台要及时反馈，后台显示有新提问以确保回复及时。</p>
+<p>　　21. 意见反馈：当用户在使用中发生任何问题，都可随时提供反馈意见。</p>
+<p>　　22. 在线调查：为用户关注的问题设置调查，并显示调查结果，提高用户的参与度。</p>
+<p>　　23. 在线搜索：搜索提交后，显示清晰列表，并对该搜索结果中的相关字符以不同颜色加以区分。</p>
+<p>　　24. 页面刷新：尽量采用无刷新（AJAX）技术，以减少页面的刷新率。</p>
+<p>　　Ajax是新兴的网络开发技术的象征。它将JavaScript和XML技术结合在一起，用户每次调用新数据时，无需反复向服务器发出请求，而是在浏览器的缓存区预先获取下次可能用到的数据，界面的响应速度因此得到了显著提升。</p>
+<p>　　25. 新开窗口：尽量减少新开的窗口，以避免开过多的无效窗口，设置弹出窗口的关闭功能。</p>
+<p>　　26. 资料安全：确保资料的安全保密，对于客户密码和资料进行加密保存。</p>
+<p>　　27. 显示路径：无论用户浏览到哪一个层级，哪一个页面，都可以清楚知道看到该页面的路径。</p>
+<p>三、浏览体验：呈现给用户浏览上的体验，强调吸引性。</p>
+<p>　　28. 栏目的命名：与栏目内容准确相关，简洁清晰，不宜过于深奥。</p>
+<p>　　29. 栏目的层级：最多不超过三层，导航清晰，运用JAVAscrip等技术使得层级之间伸缩便利。</p>
+<p>　　30. 内容的分类：同一栏目下，不同分类区隔清晰，不要互相包含或混淆。</p>
+<p>　　31. 内容的丰富性：每一个栏目应确保足够的信息量，避免栏目无内容情况出现。</p>
+<p>　　32. 内容的原创性：尽量多采用原创性内容，以确保内容的可读性。</p>
+<p>　　33. 信息的更新频率：确保稳定的更新频率，以吸引浏览者经常浏览。</p>
+<p>　　34. 信息的编写方式：段落标题加粗，以区别于内文。采用倒金字塔结构。</p>
+<p>　　35.  新文章的标记：为新文章提供不同标识（如new），吸引浏览者查看。</p>
+<p>　　36. 文章导读：为重要内容在首页设立导读，使得浏览者可以了解到所需信息。文字截取字数准确，避免断章取义。</p>
+<p>　　37. 精彩内容的推荐：在频道首页或文章左右侧，提供精彩内容推荐，吸引浏览者浏览。</p>
+<p>　　38. 相关内容的推荐：在用户浏览文章的左右侧或下部，提供相关内容推荐，吸引浏览者浏览。</p>
+<p>　　39. 收藏夹的设置：为会员设置收藏夹，对于喜爱的产品或信息，可进行收藏。</p>
+<p>　　40. 栏目的订阅：提供Rss或邮件订阅功能</p>
+<p>　　41. 信息的搜索：在页面的醒目位置，提供信息搜索框，便于查找到所需内容。</p>
+<p>　　42. 页面打印：允许用户打印该页资料，以便于保存。</p>
+<p>　　43. 文字排列：标题与正文明显区隔，段落清晰。</p>
+<p>　　44. 文字字体：采用易于阅读的字体，避免文字过小或过密造成的阅读障碍。可对字体进行大中小设置，以满足不同的浏览习惯。</p>
+<p>　　45. 页面底色：不能干扰主体页面的阅读。</p>
+<p>　　46. 页面的长度：设置一定的页面长度，避免页面过长而影响阅读。</p>
+<p>　　47. 分页浏览：对于长篇文章 进行分页浏览。</p>
+<p>　　48. 语言版本：为面向不同国家的客户提供不同的浏览版本。</p>
+<p>　　49. 快速通道：为有明确目的的用户提供快速入口。</p>
+<p>四、情感体验：呈现给用户心理上的体验，强调友好性。</p>
+<p>　　50. 客户分类：将不同的浏览者进行划分（如消费者、经销商、内部员工），为客户提供不同的服务。</p>
+<p>　　51. 友好提示：对于每一个操作进行友好提示，以增加浏览者的亲和度。</p>
+<p>　　52. 会员交流：提供便利的会员交流功能（如论坛），增进会员感情。</p>
+<p>　　53. 售后反馈：定期进行售后的反馈跟踪，提高客户满意度。</p>
+<p>　　54. 会员优惠：定期举办会员优惠活动，让会员感觉到实实在在的利益。</p>
+<p>　　55. 会员推荐：根据会员资料及购买习惯，为其推荐适合的产品或服务。</p>
+<p>　　56. 鼓励用户参与：提供用户评论、投票等功能，让会员更多地参与进来。</p>
+<p>　　57. 会员活动：定期举办网上会员活动，提供会员网下交流机会。</p>
+<p>　　58. 专家答疑：为用户提出的疑问进行专业解答。</p>
+<p>　　59. 邮件/短信问候：针对不同客户，为客户定期提供邮件/短信问候，增进与客户间感情。</p>
+<p>　　60. 好友推荐：提供邮件推荐功能。</p>
+<p>　　61. 网站地图：为用户提供清晰的网站指引。</p>
+<p>五、信任体验：呈现给用户的信任体验，强调可靠性。</p>
+<p>　　62. 搜索引擎：查找相关内容可以显示在搜索引擎前列。</p>
+<p>　　63. 公司介绍：真实可靠的信息发布，包括公司规模、发展状况、公司资质等。</p>
+<p>　　64. 投资者关系：上市公司需为股民提供真实准确的年报，财务信息等。</p>
+<p>　　65. 服务保障：将公司的服务保障清晰列出，增强客户信任。</p>
+<p>　　66. 页面标题：准确地描述公司名称及相关内容。</p>
+<p>　　67. 文章来源：为摘引的文章标注摘引来源，避免版权纠纷。</p>
+<p>　　68. 文章编辑作者：为原创性文章注明编辑或作者，以提高文章的可信度。</p>
+<p>　　69. 联系方式：准确有效的地址、电话等联系方式，便于查找。</p>
+<p>　　70. 服务热线：将公司的服务热线列在醒目的地方，便于客户查找。</p>
+<p>　　71. 有效的投诉途径：为客户提供投诉或建议邮箱或在线反馈。</p>
+<p>　　72. 安全及隐私条款：对于交互式网站，注明安全及隐私条款可以减少客户顾虑，避免纠纷。</p>
+<p>　　73. 法律声明：对于网站法律条款的声明可以避免企业陷入不必要的纠纷中。</p>
+<p>　　74. 网站备案：让浏览者确认网站的合法性。</p>
+<p>　　75. 相关链接：对于集团企业及相关企业的链接，应该具有相关性。</p>
+<p>　　76. 帮助中心：对于流程较复杂的服务，必须具备帮助中心进行服务介绍。</p>
+<p>　　用户体验性测试确实要关注的东西太多，所以只有更关注用户，才能得到用户的信任，才能进一步提高用户对产品的满意度。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="\images\wechat-qcode.jpg" alt="旅行的意义 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="旅行的意义 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="旅行的意义 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/22/用户体验测试/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/22/电商测试总结/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="旅行的意义" />
+            
+              <p class="site-author-name" itemprop="name">旅行的意义</p>
+              <p class="site-description motion-element" itemprop="description">技术博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/luhu888" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:luhu0105@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">旅行的意义</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io"></a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
